@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>직업재활평가 및 계획서 작성기</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 메인 앱 컨테이너 -->
+  <div id="app-container">
+
+<!-- 상단 머리 : 왼쪽(제목·평가지 관리, 두 줄에 걸침) + 오른쪽 2줄 -->
+<div class="head-bar">
+  <div class="head-left">
+    <h1>직업재활평가 및<br>계획서 작성기</h1>
+  </div>
+  <div class="head-right">
+
+    <div class="head-rows">
+    <!-- 윗줄 : 연도·평가지 선택 (여기서 고른 값이 아래 모든 양식지에 적용) + 배율·휴지통 -->
+    <div class="top-bar">
+      <div class="sel-pill">
+        <select id="g-year-sel" style="width:118px;" onchange="onGlobalSelChange()">
+        </select>
+        <select id="g-type-sel" style="width:132px;" onchange="onGlobalSelChange()">
+        </select>
+      </div>
+      <div class="zoom-ctl">
+        <button id="zoom-100" class="on" onclick="setZoom(1)">100%</button>
+        <button id="zoom-125" onclick="setZoom(1.25)">125%</button>
+      </div>
+      <button class="tab-btn" onclick="openTrash()">휴지통</button>
+    </div>
+
+    <!-- 아랫줄 : 양식지 탭 -->
+    <div class="form-bar">
+      <button class="tab-btn active" data-pane="pane-person" onclick="showPane('pane-person')">상황 및 현장 평가지</button>
+      <button class="tab-btn" data-pane="pane-report" onclick="showPane('pane-report')">평가종합보고서</button>
+      <button class="tab-btn" data-pane="pane-conference" onclick="showPane('pane-conference')">사례회의</button>
+      <button class="tab-btn" data-pane="pane-plan" onclick="showPane('pane-plan')">직업재활계획서</button>
+      <button class="tab-btn" data-pane="pane-status" onclick="showPane('pane-status')">현재상황</button>
+      <button class="tab-btn" data-pane="pane-template" onclick="showPane('pane-template')">평가지 관리</button>
+    </div>
+    </div>
+
+  </div>
+  <div class="conn-badge">
+    <button class="tab-btn" onclick="exportData()">자료 내보내기</button>
+    <button class="tab-btn" onclick="document.getElementById('import-file').click()">자료 불러오기</button>
+    <input id="import-file" type="file" accept=".json,application/json" style="display:none;" onchange="importData(this)">
+  </div>
+</div>
+<div class="data-note no-print">자료는 이 컴퓨터의 이 브라우저에만 저장됩니다. 인터넷 기록을 지우면 사라지니 [자료 내보내기]로 보관하세요.</div>
+
+<!-- ══════════════ 탭1: 평가지 ══════════════ -->
+<div class="pane" id="pane-template">
+  <div class="pane-header" style="padding-left:228px;">
+    <select id="tmpl-year-sel" class="form-inp" style="width:90px;flex:none;" onchange="loadTemplate()">
+    </select>
+    <button class="btn btn-outline btn-sm" onclick="addYear()" title="연도 추가">+ 연도추가</button>
+    <select id="tmpl-type-sel" class="form-inp" style="width:110px;flex:none;" onchange="loadTemplate()">
+    </select>
+    <button class="btn btn-outline btn-sm" onclick="addJobType()" title="직무 추가">+ 평가지추가</button>
+    <button class="btn btn-danger btn-sm" onclick="deleteJobType()" title="현재 직무 삭제">평가지 삭제</button>
+    <button class="btn btn-outline btn-sm" onclick="copyPrevTemplate()" title="전년도 같은 직무의 평가지 항목을 그대로 가져오기">전년도 평가지 복사</button>
+    <button class="btn btn-primary btn-sm" onclick="saveTemplate()">평가지 저장</button>
+    <button class="btn btn-outline btn-sm" onclick="initDefaultTemplate()">평가지 초기화</button>
+    <span id="tmpl-saving" style="font-size:11px;color:var(--text2);margin-left:6px;"></span>
+  </div>
+  <div class="pane-body" style="padding:8px 16px;">
+    <div class="person-layout">
+      <div class="person-list-panel">
+        <div id="tmpl-explorer" style="overflow-y:auto;flex:1;display:flex;flex-direction:column;gap:6px;"></div>
+      </div>
+      <div class="person-score-panel">
+        <div id="tmpl-lock-banner" style="display:none;background:#FFF3E0;border:1.5px solid #FFB74D;color:#E65100;font-weight:700;font-size:12px;padding:8px 12px;border-radius:6px;margin-bottom:10px;"></div>
+        <div id="tmpl-tree"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ 탭2: 상황 및 현장 평가지 ══════════════ -->
+<div class="pane active" id="pane-person">
+  <div class="pane-header" style="padding-left:228px;">
+    <select id="eval-year-sel" class="form-inp" style="width:90px;flex:none;" onchange="onEvalSelChange()">
+    </select>
+    <select id="eval-type-sel" class="form-inp" style="width:110px;flex:none;" onchange="onEvalSelChange()">
+    </select>
+    <button class="btn btn-primary btn-sm" onclick="openAddPerson()">+ 평가 대상 추가</button>
+    <button class="btn btn-green btn-sm" onclick="saveScores()" id="btn-save-scores" disabled>평가 점수 저장</button>
+    <button class="btn btn-outline btn-sm" onclick="window.print()" id="btn-print">평가지 인쇄</button>
+    <span id="score-saving" style="font-size:11px;color:var(--text2);"></span>
+  </div>
+  <div class="pane-body" style="padding:8px 16px;">
+    <div class="person-layout">
+      <!-- 왼쪽: 사람 목록 -->
+      <div class="person-list-panel">
+        <input class="search-box" type="text" placeholder="이름 검색..." oninput="filterPersons(this.value)" id="person-search">
+        <div id="person-list" style="overflow-y:auto;flex:1;display:flex;flex-direction:column;gap:6px;"></div>
+      </div>
+      <!-- 오른쪽: 점수 입력 -->
+      <div class="person-score-panel" style="display:flex;gap:0;overflow:hidden;">
+        <div style="flex:1;overflow:auto;" id="score-area">
+          <div style="display:flex;align-items:center;justify-content:center;height:200px;color:var(--text2);">
+            ← 왼쪽에서 사람을 선택하세요
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ 탭3: 평가종합보고서 ══════════════ -->
+<div class="pane" id="pane-report">
+  <div class="pane-header" style="padding-left:228px;">
+    <select id="rpt-year-sel" class="form-inp" style="width:90px;flex:none;" onchange="loadReportPersons()">
+    </select>
+    <select id="rpt-type-sel" class="form-inp" style="width:110px;flex:none;" onchange="loadReportPersons()">
+    </select>
+    <button class="btn btn-green btn-sm" onclick="saveReport()">종합보고서 저장</button>
+    <button class="btn btn-primary btn-sm" onclick="window.print()">종합보고서 인쇄</button>
+    <button class="btn btn-outline btn-sm" onclick="copyPrevReport()" title="전년도 보고서 내용 가져오기 (평가일·[6] 직업수준 및 목표 제외)">전년도 내용 복사</button>
+    <button class="btn btn-outline btn-sm" onclick="copySameYearReport()" title="같은 해 다른 평가지 보고서에서 배경정보·직업재활 방향 등 사람 정보 가져오기 (점수·평가일·직업수준 및 목표 제외)">같은 해 다른 평가지에서 복사</button>
+  </div>
+  <div class="pane-body" style="padding:8px 16px;">
+    <div class="person-layout">
+      <div class="person-list-panel">
+        <input class="search-box" type="text" placeholder="이름 검색..." oninput="filterReportPersons(this.value)">
+        <div id="report-person-list" style="overflow-y:auto;flex:1;display:flex;flex-direction:column;gap:6px;"></div>
+      </div>
+      <div class="person-score-panel" style="overflow:auto;display:flex;gap:0;">
+        <div id="report-body" style="flex:1;overflow:auto;">
+          <div style="display:flex;align-items:center;justify-content:center;height:200px;color:var(--text2);">
+            ← 왼쪽에서 사람을 선택하세요
+          </div>
+        </div>
+        <!-- 목표 설정 패널 (5점이하 패널 인쇄 제외) -->
+        <div id="low-items-panel" class="no-print" style="width:420px;min-width:420px;border-left:1px solid #dee3e9;background:#fff;overflow:auto;flex-shrink:0;">
+          <div class="lp-sticky">
+            <div class="lp-head">목표 설정 (5점 이하 항목)</div>
+            <div class="lp-actions">
+              <button class="lp-apply" onclick="applyLowGoals()">목표 적용</button>
+            </div>
+          </div>
+          <div id="low-items-list" style="padding:14px 16px;color:#5d6c7b;">
+            사람을 선택하세요
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ 탭4: 직업재활계획서 ══════════════ -->
+<div class="pane" id="pane-plan">
+  <div class="pane-header" style="padding-left:228px;">
+    <select id="plan-year-sel" class="form-inp" style="width:90px;flex:none;" onchange="loadPlanPersons()">
+    </select>
+    <select id="plan-type-sel" class="form-inp" style="width:110px;flex:none;" onchange="loadPlanPersons()">
+    </select>
+    <button class="btn btn-green btn-sm" onclick="savePlan()">직업재활계획서 저장</button>
+    <button class="btn btn-primary btn-sm" onclick="printPlan()">직업재활계획서 인쇄</button>
+  </div>
+  <div class="pane-body" style="padding:8px 16px;">
+    <div class="person-layout">
+      <div class="person-list-panel">
+        <input class="search-box" type="text" placeholder="이름 검색..." oninput="filterPlanPersons(this.value)">
+        <div id="plan-person-list" style="overflow-y:auto;flex:1;display:flex;flex-direction:column;gap:6px;"></div>
+      </div>
+      <div class="person-score-panel" style="display:flex;gap:0;overflow:hidden;">
+        <div id="plan-body" style="flex:1;overflow:auto;">
+          <div style="display:flex;align-items:center;justify-content:center;height:200px;color:var(--text2);">
+            ← 왼쪽에서 사람을 선택하세요
+          </div>
+        </div>
+        <div id="method-panel" class="no-print">
+          <div class="mp-head">
+            수행방법 목록
+          </div>
+          <div id="direct-sec-title" class="mp-sec">수행방법 추가</div>
+          <div class="mp-actions">
+            <label class="mp-label" for="method-inp-method">방법</label>
+            <input id="method-inp-method" class="mp-input" type="text">
+            <label class="mp-label" for="method-inp-content">내용</label>
+            <textarea id="method-inp-content" class="mp-textarea"></textarea>
+            <label class="mp-label" for="method-inp-session">회기</label>
+            <input id="method-inp-session" class="mp-input" type="text">
+            <button onclick="addMethodItem()" class="mp-parse-btn">추가</button>
+          </div>
+          <div id="method-list" class="mp-list">
+            <div class="mp-empty">방법·내용·회기를 적고 [추가]를 누르세요</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ 탭5: 사례회의 ══════════════ -->
+<div class="pane" id="pane-conference">
+  <div class="pane-header" style="padding-left:228px;">
+    <select id="conf-year-sel" class="form-inp" style="width:90px;flex:none;" onchange="loadConferencePersons()">
+    </select>
+    <select id="conf-type-sel" class="form-inp" style="width:110px;flex:none;" onchange="loadConferencePersons()">
+    </select>
+    <button class="btn btn-green btn-sm" onclick="saveConference()">회의록 저장</button>
+    <button class="btn btn-primary btn-sm" onclick="window.print()">회의록 인쇄</button>
+  </div>
+  <div class="pane-body" style="padding:8px 16px;">
+    <div class="person-layout">
+      <div class="person-list-panel">
+        <input class="search-box" type="text" placeholder="이름 검색..." oninput="filterConferencePersons(this.value)">
+        <div id="conf-person-list" style="overflow-y:auto;flex:1;display:flex;flex-direction:column;gap:6px;"></div>
+      </div>
+      <div class="person-score-panel" style="overflow:auto;">
+        <div id="conf-body">
+          <div style="display:flex;align-items:center;justify-content:center;height:200px;color:var(--text2);">
+            ← 왼쪽에서 사람을 선택하세요
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ 탭6: 현재상황 ══════════════ -->
+<div class="pane" id="pane-status">
+  <div class="pane-header" style="padding-left:228px;">
+    <button class="btn btn-primary btn-sm" onclick="loadStatusBoard()">새로고침</button>
+  </div>
+  <div class="pane-body" style="padding:16px 16px 16px 228px;overflow:auto;">
+    <div id="status-board" style="max-width:1100px;">
+      <div style="display:flex;align-items:center;justify-content:center;height:200px;color:var(--text2);">
+        로딩 중...
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 모달: 사람 추가 -->
+<div class="modal-overlay" id="modal-add-person">
+  <div class="modal">
+    <h3>새 평가 대상 추가</h3>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div class="form-row"><span class="form-label">이름 *</span><input class="form-inp" id="new-name" placeholder="홍길동"></div>
+      <div class="form-row"><span class="form-label">생년월일</span><input class="form-inp" id="new-birth" type="date" min="1900-01-01" max="2099-12-31"></div>
+      <div class="form-row"><span class="form-label">장애명</span><input class="form-inp" id="new-disability" placeholder="지적(심한장애)"></div>
+      <div class="form-row"><span class="form-label">담당자</span><input class="form-inp" id="new-manager" placeholder="담당자명 (직무별로 따로 저장됨)"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeModal('modal-add-person')">취소</button>
+      <button class="btn btn-primary" onclick="addPerson()">추가</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- 모달: 휴지통 -->
+<div class="modal-overlay" id="modal-trash">
+  <div class="modal" style="max-width:500px;">
+    <h3>휴지통</h3>
+    <div id="trash-list" style="max-height:400px;overflow-y:auto;display:flex;flex-direction:column;gap:8px;"></div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="document.getElementById('modal-trash').style.display='none'">닫기</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ App Logic ══════════════ -->
+<script type="module" src="js/main.js"></script>
+</div><!-- app-container 끝 -->
+</body>
+</html>

@@ -1,0 +1,10 @@
+import './공통.js';
+import './평가지관리.js';
+import './점수입력.js';
+import './AI.js';
+import './보고서.js';
+import './계획서.js';
+import './유틸.js';
+import './현재상황.js';
+import './휴지통.js';
+import './사례회의.js';
