@@ -56,10 +56,10 @@
 <!-- ══════════════ 탭1: 평가지 ══════════════ -->
 <div class="pane" id="pane-template">
   <div class="pane-header" style="padding-left:228px;">
-    <select id="tmpl-year-sel" class="form-inp" style="width:90px;flex:none;" onchange="loadTemplate()">
+    <select id="tmpl-year-sel" class="form-inp" style="width:90px;flex:none;" onchange="onTmplSelChange()">
     </select>
     <button class="btn btn-outline btn-sm" onclick="addYear()" title="연도 추가">+ 연도추가</button>
-    <select id="tmpl-type-sel" class="form-inp" style="width:110px;flex:none;" onchange="loadTemplate()">
+    <select id="tmpl-type-sel" class="form-inp" style="width:110px;flex:none;" onchange="onTmplSelChange()">
     </select>
     <button class="btn btn-outline btn-sm" onclick="addJobType()" title="직무 추가">+ 평가지추가</button>
     <button class="btn btn-danger btn-sm" onclick="deleteJobType()" title="현재 직무 삭제">평가지 삭제</button>
