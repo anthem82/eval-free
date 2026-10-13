@@ -1,4 +1,4 @@
-// src/ 를 파일 하나(dist/index.html)로 묶는다 — 내려받아 더블클릭(file://)해도 열리도록
+// src/ 를 파일 하나(docs/index.html)로 묶는다 — 내려받아 더블클릭(file://)해도 열리도록
 // 사용: npm install (처음 한 번) → npm run build
 import { build } from 'esbuild';
 import fs from 'node:fs';
@@ -29,10 +29,10 @@ html = html.replace(SCRIPT, () => `<script>\n${js}</script>`);
 
 // 단일 파일 조건 검사: 모듈 스크립트·바깥 주소가 남으면 실패 (SVG 이름공간 w3.org 는 요청이 아니라 제외)
 const bad = [/type="module"/, /<script[^>]+src=/, /<link[^>]+href=/, /https?:\/\/(?!www\.w3\.org\/)/].filter(re => re.test(html));
-if (bad.length) throw new Error('dist 에 남으면 안 되는 것이 있습니다: ' + bad.join(', '));
+if (bad.length) throw new Error('docs 에 남으면 안 되는 것이 있습니다: ' + bad.join(', '));
 
-fs.mkdirSync(path.join(root, 'dist'), { recursive: true });
-fs.writeFileSync(path.join(root, 'dist', 'index.html'), html);
+fs.mkdirSync(path.join(root, 'docs'), { recursive: true });
+fs.writeFileSync(path.join(root, 'docs', 'index.html'), html);
 // 내려받아 더블클릭하는 사람용 — 내용은 index.html 과 같고 이름만 알아보기 쉽게
-fs.writeFileSync(path.join(root, 'dist', '직업재활평가 및 계획서 작성기.html'), html);
-console.log('dist/index.html', (html.length / 1024).toFixed(0) + 'KB');
+fs.writeFileSync(path.join(root, 'docs', '직업재활평가 및 계획서 작성기.html'), html);
+console.log('docs/index.html', (html.length / 1024).toFixed(0) + 'KB');
