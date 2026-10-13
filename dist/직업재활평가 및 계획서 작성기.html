@@ -1,0 +1,4289 @@
+<!DOCTYPE html>
+<!--
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  직업재활평가 및 계획서 작성기 (무료 공개판)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  이 프로그램은 직업재활의 발전을 바라는 마음으로 무료로 나눕니다.
+  직업재활 현장에서 실제로 쓰려고 만든 것을 다듬어 내놓았습니다.
+  자유롭게 쓰고, 우리 시설에 맞게 고치고, 다른 시설과 나누셔도 됩니다.
+  고친 것을 다시 나눠 주시면 더 반갑겠습니다.
+
+  있는 그대로 드리는 것이라 따로 지원이나 보증은 해 드리지 못합니다.
+  대신 아래 안내를 따라 AI의 도움을 받으면 혼자서도 충분히 고쳐 쓰실 수 있습니다.
+
+
+  ■ 먼저 알아 두세요
+
+  · 자료는 이 파일을 연 컴퓨터의 브라우저 안에만 저장됩니다. 인터넷 어디로도 보내지 않습니다.
+  · 브라우저의 인터넷 기록(쿠키·사이트 자료)을 지우면 자료도 함께 사라집니다.
+    화면 위의 [자료 내보내기]로 자주 보관해 주세요.
+  · 다른 컴퓨터로 옮길 때는 [자료 내보내기]로 받은 파일을 그 컴퓨터에서 [자료 불러오기] 하면 됩니다.
+  · 크롬이나 엣지에서 쓰시기를 권합니다.
+
+
+  ■ AI에게 맡겨 고쳐 쓰고 싶은 분께
+
+  코드를 몰라도 괜찮습니다. Claude, ChatGPT, Gemini 같은 AI에게 이 파일을 건네고 말로 부탁하면 됩니다.
+
+  1. 고치기 전에 [자료 내보내기]로 자료를 보관하고, 이 파일도 사본을 하나 떠 두세요.
+     잘못되면 사본으로 돌아가면 되니 마음 놓고 해 보셔도 됩니다.
+  2. AI에게 이 파일을 통째로 주고 이렇게 말해 보세요.
+       "이 파일은 직업재활 평가와 계획서를 쓰는 프로그램이야.
+        맨 위 안내글을 먼저 읽고, ○○을 △△으로 바꿔 줘.
+        다른 부분은 건드리지 말고, 무엇을 바꿨는지 쉬운 말로 알려 줘."
+  3. 한 번에 한 가지만 부탁하세요. 받은 파일을 열어 직접 눌러 본 뒤에 다음 것을 부탁하면 안전합니다.
+  4. 이용자의 실제 이름, 장애 정보, 평가 내용은 AI에게 보여 주지 마세요.
+     이 파일에는 그런 자료가 들어 있지 않으니 이 파일만 주는 것은 괜찮습니다.
+     [자료 내보내기]로 받은 파일은 실제 자료이니 AI에 올리지 마세요.
+
+  이런 부탁을 해 볼 수 있습니다.
+  · "화면 제목을 우리 시설 이름으로 바꿔 줘"
+  · "계획서 서명란의 직책을 우리 시설에 맞게 바꿔 줘"
+  · "보고서 인쇄 양식에서 이 칸을 더 넓혀 줘"
+  · "점수 등급을 나누는 기준을 바꿔 줘"
+
+
+  ■ 인터넷 주소로 띄워 쓰고 싶은 분께
+
+  · 이 파일 하나만 올리면 됩니다. 올릴 때 파일 이름을 index.html 로 바꿔 주세요.
+    깃허브 Pages 같은 무료 호스팅에 올릴 수 있습니다.
+    AI에게 "이 파일을 깃허브 Pages 에 올리는 방법을 처음 하는 사람에게 설명하듯 차근차근 알려 줘"
+    하고 물어보세요.
+  · 주소로 띄워도 자료는 접속한 사람 각자의 브라우저에만 저장됩니다.
+    직원끼리 자료가 저절로 합쳐지지는 않습니다.
+  · 여러 사람이 같은 자료를 함께 보려면 서버에 저장하도록 고쳐야 합니다.
+    그때는 로그인과 접근 권한을 반드시 함께 만들어 달라고 AI에게 부탁하세요.
+    이용자의 개인정보가 인터넷에 올라가는 일이므로 기관의 개인정보 처리 기준도 먼저 확인해 주세요.
+
+
+  ■ AI와 개발자를 위한 구조 안내
+
+  · 이 파일은 src 폴더의 소스를 묶어 만든 단일 파일입니다.
+    소스가 있으면 src 를 고친 뒤 npm install, npm run build 로 dist/index.html 을 다시 만듭니다.
+    소스 없이 이 파일만 고쳐도 그대로 동작합니다.
+  · 프레임워크 없이 순수 HTML, CSS, JS 입니다. 바깥 주소를 부르지 않아 인터넷 없이도 돌아갑니다.
+    이 성질은 지켜 주세요.
+  · 저장은 브라우저 IndexedDB 입니다(DB 이름 eval-free). 문서 경로는 "묶음/문서이름" 입니다.
+      persons     대상자
+      roster      연도_평가지 별 명단과 담당자
+      scores      대상자ID_연도_평가지 별 점수, 보고서, 계획서, 사례회의
+      templates   연도_평가지 별 평가지 항목 { cat, no, content }
+      settings    selectors(연도와 평가지 목록), methodItems(수행방법 목록)
+  · 점수는 평가지 항목 번호(no)를 열쇠로 저장합니다. 그래서 점수가 입력된 평가지는 잠깁니다.
+    번호 방식이나 잠금을 바꿀 때는 기존 점수가 다른 항목에 붙지 않는지 꼭 확인해 주세요.
+  · 전년도 비교는 항목의 내용 글자가 같은 것끼리, 소계는 대분류 이름이 같은 것끼리 맞춥니다.
+  · 화면 전환은 탭이고, 버튼의 onclick 은 window 에 붙은 함수를 부릅니다.
+  · 요청받은 부분만 고쳐 주세요. 저장 형식을 바꾸면 [자료 내보내기] 파일(format: eval-free, version)을
+    예전 것도 읽을 수 있게 함께 살펴 주세요.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+-->
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>직업재활평가 및 계획서 작성기</title>
+<style>
+:root {
+  --primary: #1565C0;
+  --primary-light: #1976D2;
+  --accent: #FF6F00;
+  --bg: #F5F7FA;
+  --surface: #FFFFFF;
+  --border: #CFD8DC;
+  --text: #212121;
+  --text2: #546E7A;
+  --green: #2E7D32;
+  --red: #C62828;
+  --yellow-bg: #FFFDE7;
+  --blue-bg: #E3F2FD;
+  --sub1-bg: #E8F5E9;
+  --sub2-bg: #FFF8E1;
+  --radius: 6px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+button, input, select, textarea { font-family: inherit; }
+body { font-family: 'Suit','Malgun Gothic','맑은 고딕',sans-serif; font-size: 13px; background: var(--bg); color: var(--text); height: 100vh; display: flex; flex-direction: column; zoom: var(--ui-zoom, 1); }
+#app-container { flex: 1; min-height: 0; display: flex; flex-direction: column; overflow: hidden; }
+
+/* ── 상단 탭 ── */
+.head-bar { display: flex; align-items: stretch; background: #fff; border-bottom: 1px solid #dee3e9; flex-shrink: 0; position: relative; }
+.head-left { width: 216px; flex-shrink: 0; display: flex; align-items: center; padding: 0 16px; border-right: 1px solid #dee3e9; }
+.head-left h1 { color: #0a1317; font-size: 18px; font-weight: 700; letter-spacing: -.2px; margin-right: 4px; white-space: nowrap; }
+.head-right { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.head-rows { width: fit-content; max-width: 100%; }
+.top-bar { display: flex; align-items: center; gap: 8px; padding: 8px 16px 8px 28px; flex-shrink: 0; justify-content: space-between; }
+.tab-btn { padding: 7px 16px; color: #5d6c7b; background: none; border: none; border-radius: 100px; cursor: pointer; font-family: inherit; font-size: 15px; font-weight: 700; letter-spacing: -.15px; transition: all .15s; white-space: nowrap; }
+.tab-btn:hover { color: #0a1317; background: #f1f4f7; }
+.tab-btn.active { color: #fff; background: var(--primary); }
+.conn-badge { position: absolute; top: 10px; right: 16px; display: flex; align-items: center; }
+.data-note { flex-shrink: 0; background: #fff; border-bottom: 1px solid #dee3e9; padding: 6px 16px 6px 228px; font-size: 14px; color: #5d6c7b; }
+/* 연도·평가지 두 목록을 알약 하나에 담고 가운데 세로선으로 나눔 (메타 검색바 형태) */
+.sel-pill { display: flex; align-items: stretch; background: #fff; border: 1px solid #ced0d4; border-radius: 100px; overflow: hidden; }
+.sel-pill select { border: none; background: transparent; font-family: inherit; font-size: 15px; font-weight: 700; letter-spacing: -.15px; color: #0a1317; padding: 7.4px 36px 7.4px 19px; outline: none; cursor: pointer; -webkit-appearance: none; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235d6c7b' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; }
+.sel-pill select:hover { background-color: #f1f4f7; }
+.sel-pill select + select { border-left: 1px solid #ced0d4; }
+.form-bar { display: flex; align-items: center; gap: 8px; padding: 8px 16px 8px 12px; flex-shrink: 0; position: relative; }
+/* 줄 사이 실선 — 두 줄을 fit-content로 묶었으므로 화면 오른쪽 끝까지 늘려 그린다(컨테이너가 잘라줌) */
+.form-bar::before { content: ''; position: absolute; top: 0; left: 0; width: 100vw; height: 1px; background: #dee3e9; }
+.zoom-ctl { display: flex; align-items: center; gap: 6px; }
+.zoom-ctl button { background: #fff; border: 2px solid #dee3e9; border-radius: 100px; padding: 5px 14px; font-family: inherit; font-size: 14px; font-weight: 700; letter-spacing: -.14px; color: #5d6c7b; cursor: pointer; transition: all .15s; }
+.zoom-ctl button:hover { border-color: #ced0d4; }
+.zoom-ctl button.on { background: var(--primary); border-color: var(--primary); color: #fff; }
+
+/* ── 공통 레이아웃 ── */
+.pane { display: none; flex: 1; overflow: hidden; flex-direction: column; }
+.pane.active { display: flex; }
+.pane-header { background: var(--surface); border-bottom: 1px solid #dee3e9; padding: 10px 16px; display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.pane-header h2 { font-size: 14px; font-weight: 700; color: var(--primary); }
+.pane-body { flex: 1; overflow: auto; padding: 12px 16px; }
+
+/* ── 버튼 ── */
+.btn { border: none; border-radius: var(--radius); cursor: pointer; font-family: inherit; font-size: 12px; font-weight: 600; padding: 6px 14px; transition: opacity .15s; }
+.btn:hover { opacity: .85; }
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-accent { background: var(--accent); color: #fff; }
+.btn-green { background: var(--green); color: #fff; }
+.btn-outline { background: #fff; color: var(--primary); border: 1.5px solid var(--primary); }
+.btn-sm { padding: 4px 10px; font-size: 11px; }
+.btn-danger { background: #E53935; color: #fff; }
+
+/* ── 탭별 버튼줄 : 메타 알약 버튼 (저장=파랑 채움 / 다음단계=검정 채움 / 나머지=흰 고스트) ── */
+.pane-header .btn { border-radius: 100px; font-size: 14px; font-weight: 700; letter-spacing: -.14px; padding: 9px 20px; transition: background-color .15s, border-color .15s, color .15s; }
+.pane-header .btn:hover { opacity: 1; }
+.pane-header .btn-green { background: var(--primary); color: #fff; border: none; }
+.pane-header .btn-green:hover { background: #0d4f9e; }
+.pane-header .btn-accent { background: #0a1317; color: #fff; border: none; }
+.pane-header .btn-accent:hover { background: #444950; }
+.pane-header .btn-primary, .pane-header .btn-outline { background: #fff; color: #0a1317; border: 2px solid rgba(10,19,23,.12); }
+.pane-header .btn-primary:hover, .pane-header .btn-outline:hover { background: #f1f4f7; border-color: rgba(10,19,23,.2); }
+.pane-header .btn-danger { background: #e41e3f; color: #fff; border: none; }
+.pane-header .btn:disabled { background: #bcc0c4; color: #fff; border: none; cursor: default; }
+
+/* ── 현재상황 표 (메타 디자인) ── */
+#status-board .st-group { background: #fff; border: 1px solid #dee3e9; border-radius: 16px; overflow: hidden; margin-bottom: 20px; }
+#status-board .st-group-head { display: flex; align-items: center; gap: 10px; padding: 16px 20px; border-bottom: 1px solid #dee3e9; }
+#status-board .st-group-title { font-size: 18px; font-weight: 700; letter-spacing: -.2px; color: #0a1317; }
+#status-board table { width: 100%; border-collapse: collapse; }
+#status-board th { font-size: 14px; font-weight: 700; letter-spacing: -.14px; color: #5d6c7b; text-align: center; padding: 10px 6px; border-bottom: 1px solid #dee3e9; white-space: nowrap; }
+#status-board td { font-size: 15px; padding: 9px 6px; border-bottom: 1px solid #eef1f4; text-align: center; }
+#status-board th.st-l, #status-board td.st-mgr { text-align: left; white-space: nowrap; }
+#status-board td.st-name { text-align: center; white-space: nowrap; }
+#status-board td.st-mgr { font-size: 14px; color: #5d6c7b; padding-left: 20px; }
+#status-board th.st-l { padding-left: 20px; }
+#status-board td.st-name { font-size: 15px; font-weight: 700; letter-spacing: -.15px; color: #0a1317; }
+#status-board .st-div { border-left: 1px solid #dee3e9; }
+#status-board .st-mgr-row td { background: #f1f4f7; font-size: 15px; font-weight: 700; color: #0a1317; text-align: left; padding: 8px 20px; border-bottom: 1px solid #dee3e9; }
+#status-board .st-cnt { font-weight: 400; color: #5d6c7b; }
+#status-board td.st-cell { cursor: pointer; }
+#status-board td.st-cell:hover { background: #f7f9fb; }
+#status-board .st-badge { display: inline-block; border-radius: 100px; padding: 3px 12px; font-size: 13px; font-weight: 700; letter-spacing: -.13px; }
+#status-board .st-done { background: rgba(49,162,76,.14); color: #1e7a37; }
+#status-board .st-part { background: rgba(242,169,24,.20); color: #8a5a00; }
+#status-board .st-none { background: #f1f4f7; color: #8595a4; }
+
+/* ── 종합보고서 목표 설정 패널 (메타 디자인) ── */
+#low-items-panel .lp-sticky { position: sticky; top: 0; z-index: 2; background: #fff; border-bottom: 1px solid #dee3e9; }
+#low-items-panel .lp-head { padding: 14px 16px 10px; font-size: 16px; font-weight: 700; letter-spacing: -.16px; color: #0a1317; }
+#low-items-panel .lp-actions { padding: 0 16px 12px; }
+#low-items-panel .lp-apply { width: 100%; background: var(--primary); color: #fff; border: none; border-radius: 100px; padding: 10px; font-family: inherit; font-size: 14px; font-weight: 700; letter-spacing: -.14px; cursor: pointer; transition: background-color .15s; }
+#low-items-panel .lp-apply:hover { background: #0d4f9e; }
+#low-items-panel .lp-hint { font-size: 13px; color: #8595a4; margin-bottom: 12px; }
+#low-items-panel .lp-cat { display: inline-block; background: #f1f4f7; color: #0a1317; font-size: 14px; font-weight: 700; letter-spacing: -.14px; padding: 4px 12px; border-radius: 100px; margin-bottom: 4px; }
+#low-items-panel .lp-item { display: flex; align-items: flex-start; gap: 10px; padding: 10px 0; border-bottom: 1px solid #eef1f4; }
+#low-items-panel .lp-item input[type=checkbox] { width: 16px; height: 16px; margin-top: 3px; accent-color: var(--primary); cursor: pointer; flex-shrink: 0; }
+#low-items-panel .lp-text { font-size: 15px; letter-spacing: -.15px; color: #0a1317; line-height: 1.5; }
+#low-items-panel .lp-sub { display: flex; align-items: center; gap: 6px; margin-top: 6px; font-size: 13px; color: #5d6c7b; }
+#low-items-panel .lp-num { width: 56px; border: 1px solid #ced0d4; border-radius: 8px; padding: 4px 6px; font-family: inherit; font-size: 14px; font-weight: 700; text-align: center; outline: none; }
+#low-items-panel .lp-num:focus { border-color: var(--primary); }
+#low-items-panel .lp-prev { font-size: 13px; color: #0457cb; background: rgba(0,100,224,.08); border-radius: 8px; padding: 6px 10px; margin-top: 6px; line-height: 1.45; }
+#low-items-panel .lp-empty { font-size: 15px; font-weight: 700; color: #1e7a37; padding: 10px 0; }
+
+/* ── 계획서 수행방법 목록 패널 (메타 디자인) ── */
+#method-panel { width: 420px; min-width: 420px; flex-shrink: 0; overflow: auto; background: #fff; border-left: 1px solid #dee3e9; }
+#method-panel .mp-head { position: sticky; top: 0; z-index: 2; background: #fff; border-bottom: 1px solid #dee3e9; padding: 14px 16px 10px; font-size: 16px; font-weight: 700; letter-spacing: -.16px; color: #0a1317; }
+#method-panel .mp-actions { padding: 12px 16px; }
+#method-panel .mp-label { display: block; font-size: 16px; font-weight: 700; color: #5d6c7b; margin: 8px 0 4px; }
+#method-panel .mp-label:first-child { margin-top: 0; }
+#method-panel .mp-input { width: 100%; font-family: inherit; font-size: 16px; border: 1px solid #ced0d4; border-radius: 8px; padding: 8px 10px; outline: none; }
+#method-panel .mp-input:focus { border-color: var(--primary); }
+#method-panel .mp-textarea { width: 100%; height: 80px; font-family: inherit; font-size: 16px; border: 1px solid #ced0d4; border-radius: 8px; padding: 8px 10px; resize: vertical; outline: none; }
+#method-panel .mp-textarea:focus { border-color: var(--primary); }
+#method-panel .mp-parse-btn { width: 100%; background: var(--primary); color: #fff; border: none; border-radius: 100px; padding: 10px; font-family: inherit; font-size: 16px; font-weight: 700; letter-spacing: -.14px; cursor: pointer; margin-top: 8px; transition: background-color .15s; }
+#method-panel .mp-parse-btn:hover { background: #0d4f9e; }
+#method-panel .mp-list { padding: 0 16px 16px; }
+#method-panel .mp-empty { font-size: 15px; color: #8595a4; text-align: center; padding: 16px 0; }
+#method-panel .mp-item { position: relative; padding: 12px 34px 12px 14px; border: 1px solid #dee3e9; border-radius: 12px; margin-bottom: 8px; background: #fff; cursor: pointer; transition: background-color .15s; }
+#method-panel .mp-item:hover { background: #f1f4f7; }
+#method-panel .mp-title { font-size: 15px; font-weight: 700; letter-spacing: -.15px; color: #0a1317; }
+#method-panel .mp-desc { font-size: 14px; color: #5d6c7b; line-height: 1.5; margin-top: 4px; white-space: pre-wrap; }
+#method-panel .mp-del { position: absolute; top: 8px; right: 8px; background: none; border: none; color: #8595a4; cursor: pointer; font-size: 15px; line-height: 1; padding: 2px 4px; }
+#method-panel .mp-del:hover { color: #0a1317; }
+#method-panel .mp-sec { padding: 14px 16px 8px; font-size: 16px; font-weight: 700; color: #5d6c7b; }
+
+/* ── 엑셀 스타일 테이블 ── */
+.xl-wrap { overflow: auto; border: 1px solid var(--border); border-radius: var(--radius); background: #fff; }
+.xl-table { border-collapse: collapse; min-width: 100%; }
+.xl-table th { background: #FAFAFA; color: var(--text2); font-size: 11px; font-weight: 700; padding: 6px 8px; border: 1px solid var(--border); white-space: nowrap; position: sticky; top: 0; z-index: 2; }
+.xl-table td { border: 1px solid #E0E0E0; padding: 0; vertical-align: middle; }
+.xl-table td.idx { background: #FAFAFA; color: var(--text2); font-size: 11px; text-align: center; padding: 4px 6px; width: 36px; }
+.xl-table td.cat-cell { background: #ECEFF1; font-weight: 700; font-size: 13px; text-align: center; padding: 4px 6px; }
+.cat-title-row td { border-top: 2px solid #0D47A1; }
+.xl-cell { width: 100%; border: none; outline: none; padding: 5px 7px; font-family: inherit; font-size: 12px; background: transparent; min-height: 28px; resize: none; }
+.xl-cell:focus { background: #E8F4FD; }
+.score-cell { width: 54px; }
+.score-inp { width: 100%; border: none; outline: none; text-align: center; font-size: 14px; font-weight: 700; background: var(--yellow-bg); padding: 5px 2px; font-family: inherit; }
+.score-inp:focus { background: #BBDEFB; }
+.score-inp.empty { color: #BDBDBD; }
+.prev-cell { background: none; text-align: center; font-size: 12px; font-weight: 600; color: #546E7A; padding: 5px 4px; width: 50px; }
+.rate-cell { background: none; text-align: center; font-size: 11px; font-weight: 600; color: var(--green); padding: 5px 4px; width: 58px; }
+.subtotal-row td { background: #FAFAFA !important; font-weight: 700; font-size: 12px; text-align: center; padding: 5px 8px; }
+.total-row td { background: #546E7A !important; color: #fff !important; font-weight: 700; font-size: 13px; text-align: center; padding: 6px 8px; }
+.row-selected td { outline: 2px solid var(--primary) !important; outline-offset: -1px; }
+
+/* ── 사람 탭 레이아웃 ── */
+.person-layout { display: flex; gap: 3%; height: 100%; }
+.person-list-panel { width: 200px; flex-shrink: 0; display: flex; flex-direction: column; gap: 8px; }
+.person-card { background: #fff; border: 1.5px solid var(--border); border-radius: var(--radius); padding: 10px 12px; cursor: pointer; transition: all .15s; }
+.person-card:hover { border-color: var(--primary-light); background: var(--blue-bg); }
+.person-card.active { border-color: var(--primary); background: var(--blue-bg); }
+.person-card .pname { font-weight: 700; font-size: 13px; }
+.person-card .pmeta { font-size: 11px; color: var(--text2); margin-top: 2px; }
+.person-score-panel { flex: 1; overflow: auto; }
+.tx-year { font-size: 14px; font-weight: 700; letter-spacing: -.14px; color: #5d6c7b; padding: 8px 2px 2px; }
+#tmpl-explorer .tx-item .pmeta { color: #8595a4; }
+.search-box { background: #fff; border: 1.5px solid var(--border); border-radius: var(--radius); padding: 6px 10px; font-family: inherit; font-size: 12px; width: 100%; outline: none; }
+.search-box:focus { border-color: var(--primary); }
+
+/* ── 입력 폼 ── */
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px; }
+.form-row { display: flex; align-items: center; gap: 8px; }
+.form-label { font-size: 11px; font-weight: 700; color: var(--text2); white-space: nowrap; min-width: 60px; }
+.form-inp { border: 1.5px solid var(--border); border-radius: 4px; padding: 5px 8px; font-family: inherit; font-size: 12px; flex: 1; outline: none; }
+.form-inp:focus { border-color: var(--primary); }
+
+/* ── 보고서 탭 ── */
+.report-section { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 12px; }
+.report-section h3 { font-size: 13px; font-weight: 700; color: var(--primary); border-bottom: 1.5px solid var(--primary); padding-bottom: 5px; margin-bottom: 10px; }
+.auto-block { background: #F1F8E9; border-left: 3px solid #66BB6A; padding: 8px 12px; border-radius: 0 4px 4px 0; font-size: 12px; line-height: 1.8; margin-bottom: 6px; }
+.auto-line { color: #1B5E20; }
+.editable-block { border: 1.5px dashed #A5D6A7; border-radius: 4px; padding: 8px 10px; min-height: 80px; font-size: 12px; line-height: 1.7; outline: none; background: #FAFAFA; white-space: pre-wrap; }
+.editable-block:focus { background: #fff; border-color: var(--primary); }
+.result-table { border-collapse: collapse; width: 100%; font-size: 12px; }
+.result-table th { background: #E3F2FD; padding: 6px 10px; border: 1px solid var(--border); font-weight: 700; text-align: center; }
+.result-table td { padding: 6px 10px; border: 1px solid var(--border); text-align: center; }
+.up { color: var(--green); font-weight: 700; }
+.dn { color: var(--red); font-weight: 700; }
+.grade-badge { display: inline-block; width: 32px; height: 32px; line-height: 32px; text-align: center; border-radius: 50%; font-size: 18px; font-weight: 900; }
+.gA { background: #C8E6C9; color: #1B5E20; }
+.gB { background: #DCEDC8; color: #33691E; }
+.gC { background: #FFF9C4; color: #F57F17; }
+.gD { background: #FFE0B2; color: #E65100; }
+.gE { background: #FFCDD2; color: #B71C1C; }
+
+/* ── 계획서 탭 ── */
+.plan-section { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px; }
+.plan-section h3 { font-size: 13px; font-weight: 700; color: var(--green); border-bottom: 1.5px solid var(--green); padding-bottom: 5px; margin-bottom: 10px; }
+.plan-table { border-collapse: collapse; width: 100%; font-size: 12px; }
+.plan-table th { background: #E8F5E9; padding: 6px 10px; border: 1px solid var(--border); font-weight: 700; }
+.plan-table td { padding: 5px 8px; border: 1px solid var(--border); vertical-align: middle; text-align: left; }
+.goal-inp { border: 1px solid #C8E6C9; border-radius: 3px; padding: 4px 6px; font-family: inherit; font-size: 12px; width: 100%; outline: none; margin: 2px 0; }
+.goal-inp:focus { border-color: var(--green); background: #F1F8E9; }
+.sign-row { display: flex; gap: 24px; margin-top: 8px; font-size: 12px; }
+.sign-box { border-bottom: 1px solid #333; min-width: 100px; padding: 2px 0; text-align: center; }
+
+/* ── 토스트 ── */
+.toast { position: fixed; bottom: 24px; right: 24px; background: #323232; color: #fff; padding: 10px 18px; border-radius: 20px; font-size: 13px; opacity: 0; transform: translateY(20px); transition: all .3s; pointer-events: none; z-index: 999; }
+.toast.show { opacity: 1; transform: translateY(0); }
+
+/* ── 모달 ── */
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.45); z-index: 100; display: none; align-items: center; justify-content: center; }
+.modal-overlay.show { display: flex; }
+.modal { background: #fff; border-radius: 10px; padding: 24px; min-width: 320px; max-width: 480px; width: 90%; }
+.modal h3 { font-size: 15px; font-weight: 700; margin-bottom: 16px; color: var(--primary); }
+.modal-footer { display: flex; justify-content: flex-end; gap: 8px; margin-top: 20px; }
+
+/* ── 로딩 ── */
+.spinner { display: inline-block; width: 18px; height: 18px; border: 2px solid rgba(255,255,255,.4); border-top-color: #fff; border-radius: 50%; animation: spin .7s linear infinite; vertical-align: middle; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── 평가지 트리 ── */
+.tree-job { background:#fff; border:1.5px solid var(--border); border-radius:8px; margin-bottom:10px; overflow:hidden; }
+.tree-job-header { display:flex; align-items:center; gap:8px; padding:10px 14px; background:#1565C0; color:#fff; cursor:pointer; user-select:none; }
+.tree-job-header:hover { background:#1976D2; }
+.tree-job-header .job-title { font-size:14px; font-weight:700; flex:1; }
+.tree-job-header .job-count { font-size:11px; opacity:.8; }
+.tree-job-header .chevron { font-size:12px; transition:transform .2s; }
+.tree-job-header .chevron.open { transform:rotate(90deg); }
+.tree-job-body { display:none; padding:10px 12px; background:#F8F9FA; }
+.tree-job-body.open { display:block; }
+
+.tree-cat { background:#fff; border:1px solid #E0E0E0; border-radius:6px; margin-bottom:8px; overflow:hidden; }
+.tree-cat-header { display:flex; align-items:center; gap:8px; padding:8px 12px; background:#E3F2FD; cursor:pointer; user-select:none; }
+.tree-cat-header:hover { background:#ECEFF1; }
+.tree-cat-header .cat-name { font-size:13px; font-weight:700; color:#1565C0; flex:1; }
+.tree-cat-header .cat-actions { display:flex; gap:4px; opacity:0; transition:opacity .15s; }
+.tree-cat-header:hover .cat-actions { opacity:1; }
+.tree-cat-header .chevron { font-size:11px; color:#1565C0; transition:transform .2s; }
+.tree-cat-header .chevron.open { transform:rotate(90deg); }
+.tree-cat-body { display:none; }
+.tree-cat-body.open { display:block; }
+
+.tree-items-table { width:100%; border-collapse:collapse; }
+.tree-items-table th { background:#ECEFF1; font-size:11px; font-weight:700; color:#546E7A; padding:5px 8px; border-bottom:1px solid #E0E0E0; text-align:left; position:sticky; top:0; }
+.tree-items-table td { border-bottom:1px solid #F5F5F5; padding:0; vertical-align:middle; }
+.tree-items-table tr:last-child td { border-bottom:none; }
+.tree-items-table tr:hover td { background:#F8F9FA; }
+.tree-cell { width:100%; border:none; outline:none; padding:6px 8px; font-family:inherit; font-size:12px; background:transparent; }
+.tree-cell:focus { background:#E3F2FD; }
+.tree-cell.no-cell { width:40px; text-align:center; }
+.tree-add-row { display:flex; align-items:center; gap:6px; padding:6px 10px; border-top:1px dashed #CFD8DC; background:#FAFAFA; }
+.tree-add-btn { background:none; border:1px dashed #90CAF9; color:#1565C0; border-radius:4px; padding:3px 10px; font-size:11px; cursor:pointer; font-family:inherit; }
+.tree-add-btn:hover { background:#E3F2FD; }
+.tree-add-cat-btn { background:none; border:1px dashed #A5D6A7; color:#2E7D32; border-radius:4px; padding:4px 12px; font-size:12px; cursor:pointer; font-family:inherit; margin-top:4px; }
+.tree-add-cat-btn:hover { background:#BBDEFB; }
+.tree-cat-name-inp { width:250px; border:1px solid #90CAF9; border-radius:4px; padding:3px 8px; font-size:13px; font-weight:700; color:#1565C0; font-family:inherit; outline:none; background:#fff; }
+.tree-cat-name-inp:focus { border-color:#1565C0; background:#E3F2FD; }
+
+/* A4 미리보기 */
+.a4-preview {
+  background: white;
+  width: 210mm;
+  min-height: 297mm;
+  margin: 16px auto;
+  padding: 12mm 12mm;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  box-sizing: border-box;
+}
+.a4-preview .xl-wrap {
+  border: none;
+  border-radius: 0;
+}
+.a4-title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 900;
+  padding: 0 0 10px;
+  border-bottom: 2px solid #333;
+  margin-bottom: 10px;
+}
+.a4-info {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.no-print { }
+
+@media print {
+  .no-print { display: none !important; }
+  .head-bar, .top-bar, .form-bar, .pane-header, .person-list-panel { display: none !important; }
+  .pane { display: block !important; height: auto !important; overflow: visible !important; }
+  .pane:not(.active) { display: none !important; }
+  .prev-year-col { display: none !important; }
+  .person-score-panel { overflow: visible !important; height: auto !important; background: white !important; display: block !important; }
+  #score-area { overflow: visible !important; height: auto !important; }
+  #report-body { overflow: visible !important; height: auto !important; }
+  #plan-body { overflow: visible !important; height: auto !important; }
+  .xl-wrap { overflow: visible !important; }
+  .a4-preview { box-shadow: none !important; margin: 0 !important; width: 100% !important; }
+  .pane-body { overflow: visible !important; padding: 0 !important; height: auto !important; }
+  .person-layout { display: block !important; height: auto !important; overflow: visible !important; }
+  html, body { background: white !important; height: auto !important; overflow: visible !important; display: block !important; }
+  body { zoom: 1 !important; }
+  /* 바깥 컨테이너(flex + overflow:hidden)가 페이지 넘김 내용을 잘라서 풀어줌 */
+  #app-container { display: block !important; height: auto !important; min-height: 0 !important; overflow: visible !important; flex: none !important; }
+  .editable-block { overflow: visible !important; break-inside: auto; }
+  /* 계획서: 6번 섹션은 항상 2페이지부터, 제목 위아래 여백을 키워 1페이지를 1~5번으로 채움 */
+  .plan-page2 { break-before: page; page-break-before: always; }
+  #plan-body h2 { margin: 10mm 0 6mm !important; }
+  @page { size: A4 portrait; margin: 10mm; }
+}
+
+/* 연도·평가지 선택은 상단 공통 선택바로 일원화 — 탭마다 있던 선택기는 값만 유지하고 감춘다 */
+#eval-year-sel, #eval-type-sel,
+#rpt-year-sel, #rpt-type-sel,
+#conf-year-sel, #conf-type-sel,
+#plan-year-sel, #plan-type-sel,
+#tmpl-year-sel, #tmpl-type-sel { display: none; }
+
+</style>
+</head>
+<body>
+  <!-- 메인 앱 컨테이너 -->
+  <div id="app-container">
+
+<!-- 상단 머리 : 왼쪽(제목·평가지 관리, 두 줄에 걸침) + 오른쪽 2줄 -->
+<div class="head-bar">
+  <div class="head-left">
+    <h1>직업재활평가 및<br>계획서 작성기</h1>
+  </div>
+  <div class="head-right">
+
+    <div class="head-rows">
+    <!-- 윗줄 : 연도·평가지 선택 (여기서 고른 값이 아래 모든 양식지에 적용) + 배율·휴지통 -->
+    <div class="top-bar">
+      <div class="sel-pill">
+        <select id="g-year-sel" style="width:118px;" onchange="onGlobalSelChange()">
+        </select>
+        <select id="g-type-sel" style="width:132px;" onchange="onGlobalSelChange()">
+        </select>
+      </div>
+      <div class="zoom-ctl">
+        <button id="zoom-100" class="on" onclick="setZoom(1)">100%</button>
+        <button id="zoom-125" onclick="setZoom(1.25)">125%</button>
+      </div>
+      <button class="tab-btn" onclick="openTrash()">휴지통</button>
+    </div>
+
+    <!-- 아랫줄 : 양식지 탭 -->
+    <div class="form-bar">
+      <button class="tab-btn active" data-pane="pane-person" onclick="showPane('pane-person')">상황 및 현장 평가지</button>
+      <button class="tab-btn" data-pane="pane-report" onclick="showPane('pane-report')">평가종합보고서</button>
+      <button class="tab-btn" data-pane="pane-conference" onclick="showPane('pane-conference')">사례회의</button>
+      <button class="tab-btn" data-pane="pane-plan" onclick="showPane('pane-plan')">직업재활계획서</button>
+      <button class="tab-btn" data-pane="pane-status" onclick="showPane('pane-status')">현재상황</button>
+      <button class="tab-btn" data-pane="pane-template" onclick="showPane('pane-template')">평가지 관리</button>
+    </div>
+    </div>
+
+  </div>
+  <div class="conn-badge">
+    <button class="tab-btn" onclick="exportData()">자료 내보내기</button>
+    <button class="tab-btn" onclick="document.getElementById('import-file').click()">자료 불러오기</button>
+    <input id="import-file" type="file" accept=".json,application/json" style="display:none;" onchange="importData(this)">
+  </div>
+</div>
+<div class="data-note no-print">자료는 이 컴퓨터의 이 브라우저에만 저장됩니다. 인터넷 기록을 지우면 사라지니 [자료 내보내기]로 보관하세요.</div>
+
+<!-- ══════════════ 탭1: 평가지 ══════════════ -->
+<div class="pane" id="pane-template">
+  <div class="pane-header" style="padding-left:228px;">
+    <select id="tmpl-year-sel" class="form-inp" style="width:90px;flex:none;" onchange="onTmplSelChange()">
+    </select>
+    <button class="btn btn-outline btn-sm" onclick="addYear()" title="연도 추가">+ 연도추가</button>
+    <select id="tmpl-type-sel" class="form-inp" style="width:110px;flex:none;" onchange="onTmplSelChange()">
+    </select>
+    <button class="btn btn-outline btn-sm" onclick="addJobType()" title="직무 추가">+ 평가지추가</button>
+    <button class="btn btn-danger btn-sm" onclick="deleteJobType()" title="현재 직무 삭제">평가지 삭제</button>
+    <button class="btn btn-outline btn-sm" onclick="copyPrevTemplate()" title="전년도 같은 직무의 평가지 항목을 그대로 가져오기">전년도 평가지 복사</button>
+    <button class="btn btn-primary btn-sm" onclick="saveTemplate()">평가지 저장</button>
+    <button class="btn btn-outline btn-sm" onclick="initDefaultTemplate()">평가지 초기화</button>
+    <span id="tmpl-saving" style="font-size:11px;color:var(--text2);margin-left:6px;"></span>
+  </div>
+  <div class="pane-body" style="padding:8px 16px;">
+    <div class="person-layout">
+      <div class="person-list-panel">
+        <div id="tmpl-explorer" style="overflow-y:auto;flex:1;display:flex;flex-direction:column;gap:6px;"></div>
+      </div>
+      <div class="person-score-panel">
+        <div id="tmpl-lock-banner" style="display:none;background:#FFF3E0;border:1.5px solid #FFB74D;color:#E65100;font-weight:700;font-size:12px;padding:8px 12px;border-radius:6px;margin-bottom:10px;"></div>
+        <div id="tmpl-tree"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ 탭2: 상황 및 현장 평가지 ══════════════ -->
+<div class="pane active" id="pane-person">
+  <div class="pane-header" style="padding-left:228px;">
+    <select id="eval-year-sel" class="form-inp" style="width:90px;flex:none;" onchange="onEvalSelChange()">
+    </select>
+    <select id="eval-type-sel" class="form-inp" style="width:110px;flex:none;" onchange="onEvalSelChange()">
+    </select>
+    <button class="btn btn-primary btn-sm" onclick="openAddPerson()">+ 평가 대상 추가</button>
+    <button class="btn btn-green btn-sm" onclick="saveScores()" id="btn-save-scores" disabled>평가 점수 저장</button>
+    <button class="btn btn-outline btn-sm" onclick="window.print()" id="btn-print">평가지 인쇄</button>
+    <span id="score-saving" style="font-size:11px;color:var(--text2);"></span>
+  </div>
+  <div class="pane-body" style="padding:8px 16px;">
+    <div class="person-layout">
+      <!-- 왼쪽: 사람 목록 -->
+      <div class="person-list-panel">
+        <input class="search-box" type="text" placeholder="이름 검색..." oninput="filterPersons(this.value)" id="person-search">
+        <div id="person-list" style="overflow-y:auto;flex:1;display:flex;flex-direction:column;gap:6px;"></div>
+      </div>
+      <!-- 오른쪽: 점수 입력 -->
+      <div class="person-score-panel" style="display:flex;gap:0;overflow:hidden;">
+        <div style="flex:1;overflow:auto;" id="score-area">
+          <div style="display:flex;align-items:center;justify-content:center;height:200px;color:var(--text2);">
+            ← 왼쪽에서 사람을 선택하세요
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ 탭3: 평가종합보고서 ══════════════ -->
+<div class="pane" id="pane-report">
+  <div class="pane-header" style="padding-left:228px;">
+    <select id="rpt-year-sel" class="form-inp" style="width:90px;flex:none;" onchange="loadReportPersons()">
+    </select>
+    <select id="rpt-type-sel" class="form-inp" style="width:110px;flex:none;" onchange="loadReportPersons()">
+    </select>
+    <button class="btn btn-green btn-sm" onclick="saveReport()">종합보고서 저장</button>
+    <button class="btn btn-primary btn-sm" onclick="window.print()">종합보고서 인쇄</button>
+    <button class="btn btn-outline btn-sm" onclick="copyPrevReport()" title="전년도 보고서 내용 가져오기 (평가일·[6] 직업수준 및 목표 제외)">전년도 내용 복사</button>
+    <button class="btn btn-outline btn-sm" onclick="copySameYearReport()" title="같은 해 다른 평가지 보고서에서 배경정보·직업재활 방향 등 사람 정보 가져오기 (점수·평가일·직업수준 및 목표 제외)">같은 해 다른 평가지에서 복사</button>
+  </div>
+  <div class="pane-body" style="padding:8px 16px;">
+    <div class="person-layout">
+      <div class="person-list-panel">
+        <input class="search-box" type="text" placeholder="이름 검색..." oninput="filterReportPersons(this.value)">
+        <div id="report-person-list" style="overflow-y:auto;flex:1;display:flex;flex-direction:column;gap:6px;"></div>
+      </div>
+      <div class="person-score-panel" style="overflow:auto;display:flex;gap:0;">
+        <div id="report-body" style="flex:1;overflow:auto;">
+          <div style="display:flex;align-items:center;justify-content:center;height:200px;color:var(--text2);">
+            ← 왼쪽에서 사람을 선택하세요
+          </div>
+        </div>
+        <!-- 목표 설정 패널 (5점이하 패널 인쇄 제외) -->
+        <div id="low-items-panel" class="no-print" style="width:420px;min-width:420px;border-left:1px solid #dee3e9;background:#fff;overflow:auto;flex-shrink:0;">
+          <div class="lp-sticky">
+            <div class="lp-head">목표 설정 (5점 이하 항목)</div>
+            <div class="lp-actions">
+              <button class="lp-apply" onclick="applyLowGoals()">목표 적용</button>
+            </div>
+          </div>
+          <div id="low-items-list" style="padding:14px 16px;color:#5d6c7b;">
+            사람을 선택하세요
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ 탭4: 직업재활계획서 ══════════════ -->
+<div class="pane" id="pane-plan">
+  <div class="pane-header" style="padding-left:228px;">
+    <select id="plan-year-sel" class="form-inp" style="width:90px;flex:none;" onchange="loadPlanPersons()">
+    </select>
+    <select id="plan-type-sel" class="form-inp" style="width:110px;flex:none;" onchange="loadPlanPersons()">
+    </select>
+    <button class="btn btn-green btn-sm" onclick="savePlan()">직업재활계획서 저장</button>
+    <button class="btn btn-primary btn-sm" onclick="printPlan()">직업재활계획서 인쇄</button>
+  </div>
+  <div class="pane-body" style="padding:8px 16px;">
+    <div class="person-layout">
+      <div class="person-list-panel">
+        <input class="search-box" type="text" placeholder="이름 검색..." oninput="filterPlanPersons(this.value)">
+        <div id="plan-person-list" style="overflow-y:auto;flex:1;display:flex;flex-direction:column;gap:6px;"></div>
+      </div>
+      <div class="person-score-panel" style="display:flex;gap:0;overflow:hidden;">
+        <div id="plan-body" style="flex:1;overflow:auto;">
+          <div style="display:flex;align-items:center;justify-content:center;height:200px;color:var(--text2);">
+            ← 왼쪽에서 사람을 선택하세요
+          </div>
+        </div>
+        <div id="method-panel" class="no-print">
+          <div class="mp-head">
+            수행방법 목록
+          </div>
+          <div id="direct-sec-title" class="mp-sec">수행방법 추가</div>
+          <div class="mp-actions">
+            <label class="mp-label" for="method-inp-method">방법</label>
+            <input id="method-inp-method" class="mp-input" type="text">
+            <label class="mp-label" for="method-inp-content">내용</label>
+            <textarea id="method-inp-content" class="mp-textarea"></textarea>
+            <label class="mp-label" for="method-inp-session">회기</label>
+            <input id="method-inp-session" class="mp-input" type="text">
+            <button onclick="addMethodItem()" class="mp-parse-btn">추가</button>
+          </div>
+          <div id="method-list" class="mp-list">
+            <div class="mp-empty">방법·내용·회기를 적고 [추가]를 누르세요</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ 탭5: 사례회의 ══════════════ -->
+<div class="pane" id="pane-conference">
+  <div class="pane-header" style="padding-left:228px;">
+    <select id="conf-year-sel" class="form-inp" style="width:90px;flex:none;" onchange="loadConferencePersons()">
+    </select>
+    <select id="conf-type-sel" class="form-inp" style="width:110px;flex:none;" onchange="loadConferencePersons()">
+    </select>
+    <button class="btn btn-green btn-sm" onclick="saveConference()">회의록 저장</button>
+    <button class="btn btn-primary btn-sm" onclick="window.print()">회의록 인쇄</button>
+  </div>
+  <div class="pane-body" style="padding:8px 16px;">
+    <div class="person-layout">
+      <div class="person-list-panel">
+        <input class="search-box" type="text" placeholder="이름 검색..." oninput="filterConferencePersons(this.value)">
+        <div id="conf-person-list" style="overflow-y:auto;flex:1;display:flex;flex-direction:column;gap:6px;"></div>
+      </div>
+      <div class="person-score-panel" style="overflow:auto;">
+        <div id="conf-body">
+          <div style="display:flex;align-items:center;justify-content:center;height:200px;color:var(--text2);">
+            ← 왼쪽에서 사람을 선택하세요
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ 탭6: 현재상황 ══════════════ -->
+<div class="pane" id="pane-status">
+  <div class="pane-header" style="padding-left:228px;">
+    <button class="btn btn-primary btn-sm" onclick="loadStatusBoard()">새로고침</button>
+  </div>
+  <div class="pane-body" style="padding:16px 16px 16px 228px;overflow:auto;">
+    <div id="status-board" style="max-width:1100px;">
+      <div style="display:flex;align-items:center;justify-content:center;height:200px;color:var(--text2);">
+        로딩 중...
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 모달: 사람 추가 -->
+<div class="modal-overlay" id="modal-add-person">
+  <div class="modal">
+    <h3>새 평가 대상 추가</h3>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div class="form-row"><span class="form-label">이름 *</span><input class="form-inp" id="new-name" placeholder="홍길동"></div>
+      <div class="form-row"><span class="form-label">생년월일</span><input class="form-inp" id="new-birth" type="date" min="1900-01-01" max="2099-12-31"></div>
+      <div class="form-row"><span class="form-label">장애명</span><input class="form-inp" id="new-disability" placeholder="지적(심한장애)"></div>
+      <div class="form-row"><span class="form-label">담당자</span><input class="form-inp" id="new-manager" placeholder="담당자명 (직무별로 따로 저장됨)"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeModal('modal-add-person')">취소</button>
+      <button class="btn btn-primary" onclick="addPerson()">추가</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- 모달: 휴지통 -->
+<div class="modal-overlay" id="modal-trash">
+  <div class="modal" style="max-width:500px;">
+    <h3>휴지통</h3>
+    <div id="trash-list" style="max-height:400px;overflow-y:auto;display:flex;flex-direction:column;gap:8px;"></div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="document.getElementById('modal-trash').style.display='none'">닫기</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ App Logic ══════════════ -->
+<script>
+(() => {
+  // src/js/저장소.js
+  var DB_NAME = "eval-free";
+  var STORE = "docs";
+  var EXPORT_FORMAT = "eval-free";
+  var COLLECTIONS = ["persons", "roster", "scores", "settings", "templates"];
+  var db = { name: DB_NAME };
+  function showStorageError(e) {
+    console.error("저장소 오류:", e);
+    if (document.getElementById("storage-error")) return;
+    const el = document.createElement("div");
+    el.id = "storage-error";
+    el.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:10000;background:#FFF3E0;border-bottom:1.5px solid #FFB74D;color:#E65100;font-weight:700;font-size:16px;padding:12px 16px;text-align:center;";
+    el.textContent = "이 브라우저에서는 자료를 저장할 수 없습니다. 사생활 보호(시크릿) 창이면 일반 창으로 열거나, 크롬·엣지 최신 버전으로 열어 주세요.";
+    (document.body || document.documentElement).appendChild(el);
+  }
+  var dbPromise = null;
+  function openDB() {
+    if (dbPromise) return dbPromise;
+    dbPromise = new Promise((resolve, reject) => {
+      let req;
+      try {
+        if (typeof indexedDB === "undefined" || !indexedDB) throw new Error("IndexedDB를 쓸 수 없는 환경입니다");
+        req = indexedDB.open(DB_NAME, 1);
+      } catch (e) {
+        reject(e);
+        return;
+      }
+      req.onupgradeneeded = () => {
+        if (!req.result.objectStoreNames.contains(STORE)) req.result.createObjectStore(STORE);
+      };
+      req.onsuccess = () => resolve(req.result);
+      req.onerror = () => reject(req.error || new Error("저장소를 열 수 없습니다"));
+      req.onblocked = () => reject(new Error("저장소가 다른 창에서 사용 중입니다"));
+    });
+    dbPromise.catch(showStorageError);
+    return dbPromise;
+  }
+  openDB().catch(() => {
+  });
+  async function withStore(mode, fn) {
+    const idb = await openDB();
+    return new Promise((resolve, reject) => {
+      let result;
+      const tx = idb.transaction(STORE, mode);
+      tx.oncomplete = () => resolve(result);
+      tx.onerror = () => reject(tx.error || new Error("저장 실패"));
+      tx.onabort = () => reject(tx._err || tx.error || new Error("저장이 취소되었습니다"));
+      try {
+        result = fn(tx.objectStore(STORE), tx);
+      } catch (e) {
+        try {
+          tx.abort();
+        } catch (_) {
+        }
+        reject(e);
+      }
+    });
+  }
+  function doc(_db, col, id) {
+    return { kind: "doc", col, id: String(id), path: `${col}/${id}` };
+  }
+  function collection(_db, col) {
+    return { kind: "collection", col, filters: [] };
+  }
+  function where(field, op, value) {
+    if (op !== "==") throw new Error("where는 == 만 지원합니다");
+    return { field, value };
+  }
+  function query(colRef, ...filters) {
+    return { kind: "collection", col: colRef.col, filters: [...colRef.filters, ...filters] };
+  }
+  var DELETE_FIELD = { __deleteField: true };
+  function deleteField() {
+    return DELETE_FIELD;
+  }
+  function isPlainObject(v) {
+    return v !== null && typeof v === "object" && !Array.isArray(v) && Object.getPrototypeOf(v) === Object.prototype;
+  }
+  function clone(v) {
+    return v === void 0 ? void 0 : JSON.parse(JSON.stringify(v));
+  }
+  function mergeInto(target, src) {
+    Object.keys(src).forEach((k) => {
+      const v = src[k];
+      if (v === void 0) return;
+      if (isPlainObject(v) && Object.keys(v).length > 0 && isPlainObject(target[k])) mergeInto(target[k], v);
+      else target[k] = v;
+    });
+    return target;
+  }
+  function docSnap(ref, data) {
+    const has = data !== void 0;
+    return { id: ref.id, ref, exists: () => has, data: () => has ? data : void 0 };
+  }
+  async function getDoc(ref) {
+    const data = await withStore("readonly", (store) => {
+      const box = {};
+      store.get(ref.path).onsuccess = (e) => {
+        box.v = e.target.result;
+      };
+      return box;
+    });
+    return docSnap(ref, data.v);
+  }
+  async function readCollection(colRef) {
+    const range = IDBKeyRange.bound(colRef.col + "/", colRef.col + "/￿");
+    const box = await withStore("readonly", (store) => {
+      const b = { keys: [], vals: [] };
+      store.getAllKeys(range).onsuccess = (e) => {
+        b.keys = e.target.result;
+      };
+      store.getAll(range).onsuccess = (e) => {
+        b.vals = e.target.result;
+      };
+      return b;
+    });
+    const docs = [];
+    box.keys.forEach((key, i) => {
+      const data = box.vals[i];
+      if (colRef.filters.every((f) => data && data[f.field] === f.value)) {
+        const id = String(key).slice(colRef.col.length + 1);
+        docs.push(docSnap(doc(db, colRef.col, id), data));
+      }
+    });
+    return docs;
+  }
+  async function getDocs(colRef) {
+    const docs = await readCollection(colRef);
+    return { docs, size: docs.length, empty: docs.length === 0, forEach: (fn) => docs.forEach(fn) };
+  }
+  async function getCountFromServer(colRef) {
+    const docs = await readCollection(colRef);
+    return { data: () => ({ count: docs.length }) };
+  }
+  async function setDoc(ref, data, options) {
+    const next = clone(data);
+    await withStore("readwrite", (store) => {
+      if (options && options.merge) {
+        store.get(ref.path).onsuccess = (e) => {
+          store.put(mergeInto(e.target.result || {}, next), ref.path);
+        };
+      } else {
+        store.put(next, ref.path);
+      }
+    });
+  }
+  async function updateDoc(ref, data) {
+    const patch = {};
+    Object.keys(data).forEach((k) => {
+      patch[k] = data[k] === DELETE_FIELD ? DELETE_FIELD : clone(data[k]);
+    });
+    await withStore("readwrite", (store, tx) => {
+      store.get(ref.path).onsuccess = (e) => {
+        const cur = e.target.result;
+        if (cur === void 0) {
+          tx._err = new Error("없는 문서입니다: " + ref.path);
+          tx.abort();
+          return;
+        }
+        Object.keys(patch).forEach((key) => {
+          const parts = key.split(".");
+          let obj = cur;
+          for (let i = 0; i < parts.length - 1; i++) {
+            if (!isPlainObject(obj[parts[i]])) {
+              if (patch[key] === DELETE_FIELD) return;
+              obj[parts[i]] = {};
+            }
+            obj = obj[parts[i]];
+          }
+          const last = parts[parts.length - 1];
+          if (patch[key] === DELETE_FIELD) delete obj[last];
+          else if (patch[key] !== void 0) obj[last] = patch[key];
+        });
+        store.put(cur, ref.path);
+      };
+    });
+  }
+  async function addDoc(colRef, data) {
+    const id = Date.now().toString(36) + Math.random().toString(36).slice(2, 10);
+    const ref = doc(db, colRef.col, id);
+    const next = clone(data);
+    await withStore("readwrite", (store) => {
+      store.add(next, ref.path);
+    });
+    return ref;
+  }
+  async function deleteDoc(ref) {
+    await withStore("readwrite", (store) => {
+      store.delete(ref.path);
+    });
+  }
+  async function exportAll() {
+    const box = await withStore("readonly", (store) => {
+      const b = { keys: [], vals: [] };
+      store.getAllKeys().onsuccess = (e) => {
+        b.keys = e.target.result;
+      };
+      store.getAll().onsuccess = (e) => {
+        b.vals = e.target.result;
+      };
+      return b;
+    });
+    const docs = {};
+    box.keys.forEach((k, i) => {
+      docs[k] = box.vals[i];
+    });
+    return { format: EXPORT_FORMAT, version: 1, exportedAt: (/* @__PURE__ */ new Date()).toISOString(), docs };
+  }
+  function checkImport(obj) {
+    if (!isPlainObject(obj) || obj.format !== EXPORT_FORMAT || obj.version !== 1 || !isPlainObject(obj.docs)) {
+      return "이 프로그램에서 내보낸 파일이 아닙니다";
+    }
+    for (const key of Object.keys(obj.docs)) {
+      const slash = key.indexOf("/");
+      const col = key.slice(0, slash);
+      if (slash < 1 || slash === key.length - 1 || !COLLECTIONS.includes(col) || !isPlainObject(obj.docs[key])) {
+        return "파일 내용이 올바르지 않습니다 (" + key + ")";
+      }
+    }
+    return null;
+  }
+  async function importAll(obj) {
+    const err = checkImport(obj);
+    if (err) throw new Error(err);
+    await withStore("readwrite", (store) => {
+      store.clear();
+      Object.keys(obj.docs).forEach((key) => store.put(obj.docs[key], key));
+    });
+  }
+  window.exportData = async function() {
+    try {
+      const data = await exportAll();
+      const d = /* @__PURE__ */ new Date();
+      const pad = (n) => String(n).padStart(2, "0");
+      const stamp = `${d.getFullYear()}${pad(d.getMonth() + 1)}${pad(d.getDate())}`;
+      const blob = new Blob([JSON.stringify(data, null, 1)], { type: "application/json" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = `직업재활평가_자료_${stamp}.json`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(a.href), 1e3);
+      toast(`자료 ${Object.keys(data.docs).length}건을 파일로 내보냈습니다`);
+    } catch (e) {
+      alert("내보내기 실패: " + e.message);
+    }
+  };
+  window.importData = async function(input) {
+    const file = input.files && input.files[0];
+    input.value = "";
+    if (!file) return;
+    let obj;
+    try {
+      obj = JSON.parse(await file.text());
+    } catch (e) {
+      alert("불러오기 실패: 자료 파일(.json)이 아닙니다.");
+      return;
+    }
+    const err = checkImport(obj);
+    if (err) {
+      alert("불러오기 실패: " + err);
+      return;
+    }
+    const cnt = Object.keys(obj.docs).length;
+    if (!confirm(`지금 자료를 이 파일 내용으로 바꿉니다.
+
+파일: ${file.name} (자료 ${cnt}건)
+지금 이 브라우저에 있는 자료는 모두 지워집니다. 계속할까요?`)) return;
+    try {
+      await importAll(obj);
+    } catch (e) {
+      alert("불러오기 실패: " + e.message + "\n\n기존 자료는 그대로입니다.");
+      return;
+    }
+    alert("불러오기 완료. 화면을 새로 엽니다.");
+    location.reload();
+  };
+
+  // src/js/AI.js
+  var STYLE_RULES = `- 번역투 금지: "~에 대해", "~를 통해", "~에 있어", "~와 관련하여", "~에 의해"는 쓰지 말고 조사로 직결할 것 (예: "직무능력에 대해 평가" → "직무능력을 평가", "지도에 의해 향상됨" → "지도로 향상됨").
+- "~을 바탕으로", "~을 위해"를 반복하지 말 것. "~에서의", "~으로의" 같은 겹조사는 풀어 쓸 것.
+- "~를 가지고 있다"는 "~이 있다"로 쓰고, 이중 피동("~되어진다")은 쓰지 말 것.
+- 문두 접속사(또한, 따라서, 즉, 나아가, 아울러)나 "이는", "이 점에서"로 문장을 시작하지 말 것.
+- 상투적 마무리(결론적으로, 요약하면, 이를 통해, 시사하는 바가 크다, 주목할 만하다)와 "~인 것이다", "~다는 의미이다" 같은 결말을 쓰지 말 것.
+- 과장 어휘(획기적, 압도적, 현저히, 탁월한 등)와 "-적" 추상어 나열(전반적, 체계적, 지속적 등)을 피하고 수치와 관찰 사실로 서술할 것.
+- "~할 수 있다", "~로 보인다", "~할 것이다"를 반복하지 말고, 자료로 확인되는 내용은 단정형으로 쓸 것.
+- "평가 결과가 ~을 보여준다"처럼 사물을 주어로 세우지 말고 대상자를 주어로 쓸 것.
+- 연결어미(-고, -며, -지만, -어서) 바로 뒤에 쉼표를 찍지 말고, 따옴표로 단어를 강조하지 말 것.
+- 명사 앞에 긴 꾸밈말을 겹겹이 달지 말고 두 문장으로 나눌 것.
+- 아래 자료에 없는 사실·비유·추측을 덧붙이지 말 것.`;
+  async function copyPrompt(prompt2, name) {
+    const n = (name || "").trim();
+    const text = n ? prompt2.replaceAll(n, "대상자") : prompt2;
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch (e) {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.cssText = "position:fixed;top:0;left:0;opacity:0;";
+      document.body.appendChild(ta);
+      ta.select();
+      const ok = document.execCommand("copy");
+      ta.remove();
+      if (!ok) throw new Error("클립보드에 복사할 수 없습니다");
+    }
+    toast("복사했습니다. 채팅 AI에 붙여 넣고, 나온 글을 아래 칸에 붙여 넣으세요.", 4500);
+  }
+
+  // src/js/유틸.js
+  function getGrade(pct) {
+    if (pct >= 95) return "A";
+    if (pct >= 80) return "B";
+    if (pct >= 50) return "C";
+    if (pct >= 20) return "D";
+    return "E";
+  }
+  function gradeLabel(g) {
+    return { A: "우수함", B: "양호함", C: "부족함", D: "매우부족", E: "훈련부적합" }[g] || "";
+  }
+  function esc(s) {
+    if (!s) return "";
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+
+  // src/js/보고서.js
+  window.loadReportPersons = async function() {
+    const year = document.getElementById("rpt-year-sel").value;
+    const type = document.getElementById("rpt-type-sel").value;
+    const rosterSnap = await getDoc(doc(db, "roster", `${year}_${type}`));
+    const personIds = rosterSnap.exists() ? rosterSnap.data().personIds || [] : [];
+    const mgrs = rosterSnap.exists() ? rosterSnap.data().managers || {} : {};
+    const allList = await fetchPersonsAll();
+    const list = [];
+    allList.forEach((d) => {
+      if (personIds.includes(d.id) && !d.deleted) list.push({ ...d, manager: mgrs[d.id] !== void 0 ? mgrs[d.id] : d.manager || "" });
+    });
+    list.sort((a, b) => a.name.localeCompare(b.name, "ko"));
+    renderReportPersonList(list);
+    if (currentPerson && list.find((p) => p.id === currentPerson.id)) {
+      await selectReportPerson(currentPerson.id, list);
+    }
+  };
+  function renderReportPersonList(list) {
+    const el = document.getElementById("report-person-list");
+    if (!el) return;
+    el.innerHTML = "";
+    if (list.length === 0) {
+      el.innerHTML = '<div style="color:var(--text2);font-size:12px;text-align:center;padding:20px 0;">등록된 사람이 없어요</div>';
+      return;
+    }
+    list.forEach((p) => {
+      const div = document.createElement("div");
+      div.className = "person-card" + (currentPerson?.id === p.id ? " active" : "");
+      div.innerHTML = `<div class="pname">${esc(p.name)}</div><div class="pmeta">${esc(p.disability || "")} ${p.birth || ""}</div>`;
+      div.onclick = () => {
+        selectReportPerson(p.id, list);
+      };
+      el.appendChild(div);
+    });
+  }
+  async function selectReportPerson(id, list) {
+    const year = document.getElementById("rpt-year-sel").value;
+    const type = document.getElementById("rpt-type-sel").value;
+    setCurrentPerson(list.find((p) => p.id === id));
+    if (!currentPerson) return;
+    renderReportPersonList(list);
+    const scoreSnap = await getDoc(doc(db, "scores", `${id}_${year}_${type}`));
+    setCurrentScores(scoreSnap.exists() ? scoreSnap.data().scores || {} : {});
+    setReportData(scoreSnap.exists() ? scoreSnap.data().report || {} : {});
+    window.reportData = reportData;
+    setPlanData(scoreSnap.exists() ? scoreSnap.data().plan || {} : {});
+    window.planData = planData;
+    const prevYear = String(parseInt(year) - 1);
+    const prevSnap = await getDoc(doc(db, "scores", `${id}_${prevYear}_${type}`));
+    setPrevScores(prevSnap.exists() ? prevSnap.data().scores || {} : {});
+    setPrevShortGoals(prevSnap.exists() ? prevSnap.data().report?.shortGoals || [] : []);
+    const prevTmplData = await getTmplData(prevYear, type);
+    setPrevItems(prevTmplData ? prevTmplData.items || [] : []);
+    const tmplData = await getTmplData(year, type);
+    window._currentItems = tmplData ? tmplData.items || [] : DEFAULT_ITEMS;
+    renderReport();
+  }
+  window.filterReportPersons = function(q) {
+    const els = document.querySelectorAll("#report-person-list .person-card");
+    els.forEach((el) => {
+      el.style.display = el.textContent.includes(q) ? "" : "none";
+    });
+  };
+  window.goReport = async function() {
+    const ey = document.getElementById("eval-year-sel").value;
+    const et = document.getElementById("eval-type-sel").value;
+    const rySel = document.getElementById("rpt-year-sel");
+    const rtSel = document.getElementById("rpt-type-sel");
+    if (rySel) {
+      for (let o of rySel.options) if (o.value === ey) {
+        rySel.value = ey;
+        break;
+      }
+    }
+    if (rtSel) {
+      for (let o of rtSel.options) if (o.value === et) {
+        rtSel.value = et;
+        break;
+      }
+    }
+    showPane("pane-report", true);
+    await loadReportPersons();
+    if (currentPerson) renderReport();
+  };
+  async function renderReport() {
+    if (!currentPerson) return;
+    const year = document.getElementById("rpt-year-sel").value;
+    const type = document.getElementById("rpt-type-sel").value;
+    const tmplData = await getTmplData(year, type);
+    const items = tmplData ? tmplData.items : DEFAULT_ITEMS;
+    const groups = groupItems(items);
+    const prevGroups = prevItems.length > 0 ? groupItems(prevItems) : groups;
+    setCurrentGroupStats([]);
+    const groupStats = groups.map((g) => {
+      const keys = g.items.map((it) => String(it.no));
+      const sum = calcSum(keys, currentScores);
+      const max = g.items.length * 10;
+      const prevGroup = prevGroups.find((pg) => pg.cat === g.cat);
+      let psum = 0, pmax = 0;
+      if (prevGroup && prevItems.length > 0) {
+        prevGroup.items.forEach((pit) => {
+          const pkey = String(pit.no);
+          const score = prevScores[pkey] !== void 0 ? prevScores[pkey] : null;
+          if (score !== null) psum += score;
+        });
+        pmax = prevGroup.items.length * 10;
+      } else {
+        psum = calcSum(keys, prevScores);
+        pmax = g.items.length * 10;
+      }
+      return {
+        cat: g.cat,
+        sum,
+        psum,
+        max,
+        pmax,
+        pct: max > 0 ? sum / max * 100 : 0,
+        ppct: pmax > 0 ? psum / pmax * 100 : 0
+      };
+    });
+    setCurrentGroupStats(groupStats);
+    const totalSum = groupStats.reduce((s, g) => s + g.sum, 0);
+    const totalMax = groupStats.reduce((s, g) => s + g.max, 0);
+    const prevTotalSum = groupStats.reduce((s, g) => s + g.psum, 0);
+    const prevTotalMax = groupStats.reduce((s, g) => s + g.pmax, 0);
+    const totalPct = totalMax > 0 ? totalSum / totalMax * 100 : 0;
+    const prevTotalPct = prevTotalMax > 0 ? prevTotalSum / prevTotalMax * 100 : 0;
+    const grade = getGrade(totalPct);
+    const lowItems = items.filter((it) => {
+      const v = currentScores[String(it.no)];
+      return v !== void 0 && v <= 5;
+    });
+    const autoLines = groupStats.map(
+      (g) => `▶ ${g.cat} 영역 : ${g.sum}점 / ${g.max}점 (수행률 ${g.pct.toFixed(1)}%)`
+    );
+    const progressLines = groupStats.map((g) => {
+      const d = (g.pct - g.ppct).toFixed(1);
+      const sign = g.pct > g.ppct ? "▲ 상승" : g.pct < g.ppct ? "▼ 하락" : "변화없음";
+      return `▶ ${g.cat} : 전년도 ${g.ppct.toFixed(1)}% → 당해 ${g.pct.toFixed(1)}% (${sign} ${Math.abs(d)}%p)`;
+    });
+    const rd = reportData;
+    document.getElementById("report-body").innerHTML = `
+  <div style="max-width:860px;">
+    <h2 style="font-size:18px;font-weight:900;letter-spacing:2px;text-align:center;padding:10px 0 14px;color:var(--primary);">평가 종합 보고서</h2>
+    <!-- 기본사항 -->
+    <div class="report-section" style="padding:10px 14px;">
+      <h3>[1] 기본사항</h3>
+      <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:8px;">
+        <table style="width:100%;border-collapse:collapse;">
+          <tr style="border-bottom:1px solid var(--border);">
+            <td rowspan="2" style="font-size:17px;font-weight:900;color:var(--primary);padding:4px 20px 4px 0;border-right:2px solid var(--border);width:90px;vertical-align:middle;text-align:center">${esc(currentPerson.name)}</td>
+            <td style="padding:4px 16px;font-size:12px;color:var(--text2);">생년월일 : <b>${esc(currentPerson.birth || "-")}</b></td>
+            <td style="padding:4px 16px;font-size:12px;color:var(--text2);">장애명 : <b>${esc(currentPerson.disability || "-")}</b></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td style="padding:4px 16px;font-size:12px;color:var(--text2);">평가일 : <input class="form-inp" type="date" id="rpt-eval-date" value="${rd.evalDate || ""}" style="width:140px;padding:3px 6px;"></td>
+            <td style="padding:4px 16px;font-size:12px;color:var(--text2);">평가파트 : <b>${type}</b></td>
+            <td style="padding:4px 16px;font-size:12px;color:var(--text2);">평가자 : <b>${esc(currentPerson.manager || "-")}</b></td>
+          </tr>
+        </table>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;border-top:1.5px solid var(--primary);padding-top:10px;width:100%;">
+          <div style="display:flex;align-items:center;gap:10px;font-size:12px;">
+            <span style="min-width:60px;color:var(--text2);font-weight:700;">평가목적 :</span>
+            <input class="form-inp" style="flex:1;" placeholder="평가목적을 입력하세요"
+              value="${esc(rd.evalPurpose || "")}"
+              oninput="reportData.evalPurpose=this.value">
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:12px;">
+            <span style="min-width:60px;color:var(--text2);font-weight:700;">평가방법 :</span>
+            <input class="form-inp" style="flex:1;" placeholder="평가방법을 입력하세요"
+              value="${esc(rd.evalMethod || "")}"
+              oninput="reportData.evalMethod=this.value">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 배경정보 -->
+    <div class="report-section">
+      <h3>[2] 배경정보</h3>
+      <div>
+        ${[
+      { key: "bg_behavior", label: "행동관찰" },
+      { key: "bg_disability", label: "장애관련(*)" },
+      { key: "bg_family", label: "가정환경관련(*)" },
+      { key: "bg_education", label: "교육 및 훈련관련(*)" },
+      { key: "bg_learning", label: "기초학습능력관련(*)" },
+      { key: "bg_career", label: "직업경력관련(*)" },
+      { key: "bg_living", label: "생활적응능력관련(*)" }
+    ].map((item) => `
+          <div style="margin-bottom:8px;">
+            <div style="font-size:11px;font-weight:700;margin-bottom:3px;">${item.label}</div>
+            <div class="editable-block" contenteditable="true" id="rpt-${item.key}"
+              oninput="reportData[this.dataset.key]=this.innerText" data-key="${item.key}"
+              >${esc(rd[item.key] || "")}</div>
+          </div>
+        `).join("")}
+      </div>
+    </div>
+
+    <!-- 평가결과 -->
+    <div class="report-section">
+      <h3>[3] 평가결과</h3>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start;">
+        <div style="flex:1;min-width:300px;">
+          <table class="result-table">
+            <tr><th>영역</th><th>당해 수행률</th><th>전년도 수행률</th><th>등락</th></tr>
+            ${groupStats.map((g) => `
+              <tr>
+                <td>${esc(g.cat)}</td>
+                <td><b>${g.pct.toFixed(1)}%</b></td>
+                <td style="color:#888;">${g.ppct.toFixed(1)}%</td>
+                <td class="${g.pct >= g.ppct ? "up" : "dn"}">${g.pct >= g.ppct ? "▲" : "▼"}${Math.abs(g.pct - g.ppct).toFixed(1)}%p</td>
+              </tr>`).join("")}
+            <tr style="background:#EDE7F6;">
+              <td><b>합계</b></td>
+              <td><b>${totalPct.toFixed(1)}%</b></td>
+              <td style="color:#888;">${prevTotalPct.toFixed(1)}%</td>
+              <td class="${totalPct >= prevTotalPct ? "up" : "dn"}">${totalPct >= prevTotalPct ? "▲" : "▼"}${Math.abs(totalPct - prevTotalPct).toFixed(1)}%p</td>
+            </tr>
+          </table>
+        </div>
+        <div style="text-align:center;padding:10px;">
+          <div style="font-size:11px;color:var(--text2);margin-bottom:6px;">종합 등급</div>
+          <div class="grade-badge g${grade}" style="width:60px;height:60px;line-height:60px;font-size:32px;">${grade}</div>
+          <div style="font-size:11px;margin-top:6px;">${gradeLabel(grade)}</div>
+          <div style="font-size:11px;color:var(--text2);margin-top:4px;">${totalSum}점 / ${totalMax}점</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 자동 서술 -->
+    <!-- 종합소견 -->
+    <div class="report-section">
+      <h3>[4] 직업재활 방향</h3>
+      <div style="margin-bottom:6px;font-size:11px;font-weight:700;">직업적 강점</div>
+      <div class="editable-block" contenteditable="true" id="rpt-strength"
+        oninput="reportData.strength=this.innerText"
+        >${esc(rd.strength || "")}</div>
+      <div style="margin:8px 0 6px;font-size:11px;font-weight:700;">직업적 제한점</div>
+      <div class="editable-block" contenteditable="true" id="rpt-limitation"
+        oninput="reportData.limitation=this.innerText"
+        >${esc(rd.limitation || "")}</div>
+      <div style="margin:8px 0 6px;font-size:11px;font-weight:700;">직업적 소견</div>
+      <div class="editable-block" contenteditable="true" id="rpt-summary"
+        oninput="reportData.summary=this.innerText"
+        >${esc(rd.summary || "")}</div>
+    </div>
+
+    <div class="report-section">
+      <h3>[5] 종합소견</h3>
+
+      <!-- 영역별 점수 결과 -->
+      <div style="font-size:12px;font-weight:700;color:var(--primary);border-bottom:1px solid var(--border);padding-bottom:4px;margin-bottom:6px;">영역별 점수 결과</div>
+      <div class="auto-block" style="margin-bottom:12px;">
+        ${autoLines.map((l) => `<div class="auto-line">${l}</div>`).join("")}
+      </div>
+
+      <!-- 문항별 결과 -->
+      <div style="font-size:12px;font-weight:700;color:var(--primary);border-bottom:1px solid var(--border);padding-bottom:4px;margin-bottom:8px;">문항별 결과</div>
+      ${groupStats.map((g, gi) => `
+        <div style="margin-bottom:10px;">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
+            <div class="auto-line" style="flex:1;">${esc(g.cat)} 영역 : ${g.sum}점 / ${g.max}점 (수행률 ${g.pct.toFixed(1)}%)</div>
+            
+          </div>
+          <div class="editable-block" contenteditable="true" id="rpt-group-${gi}"
+            onkeydown="if(event.key==='Enter'){document.execCommand('insertLineBreak');event.preventDefault();}" oninput="if(!reportData.groupResults)reportData.groupResults=[];reportData.groupResults[${gi}]=this.innerText"
+            >${esc((rd.groupResults || [])[gi] || "")}</div>
+        </div>
+      `).join("")}
+
+      <!-- 진전도 비교 -->
+      <div style="font-size:12px;font-weight:700;color:var(--primary);border-bottom:1px solid var(--border);padding-bottom:4px;margin:12px 0 6px;">진전도 비교</div>
+      <div class="auto-block" style="margin-bottom:12px;">
+        ${progressLines.map((l) => `<div class="auto-line">${l}</div>`).join("")}
+      </div>
+
+      <!-- 평가결과 소견 -->
+      <div style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:4px;margin-bottom:6px;">
+  <div style="font-size:12px;font-weight:700;color:var(--primary);">평가결과 소견</div>
+  
+</div>
+      <div class="editable-block" contenteditable="true" id="rpt-eval-opinion"
+        oninput="reportData.evalOpinion=this.innerText"
+        >${esc(rd.evalOpinion || "")}</div>
+    </div>
+
+    <!-- 직업수준 및 목표 -->
+    <div class="report-section">
+      <h3>[6] 직업수준 및 목표</h3>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+        <span style="font-size:12px;font-weight:700;">직업목표:</span>
+        <input class="form-inp" id="rpt-joblevel" value="${esc(rd.jobLevel || "보호고용")}"
+          oninput="reportData.jobLevel=this.value" style="width:150px;">
+      </div>
+      <div style="margin-bottom:8px;">
+        <div style="font-size:11px;font-weight:700;color:var(--primary);margin-bottom:4px;">장기목표</div>
+        <div id="long-goal-list"></div>
+        <button class="btn btn-outline btn-sm no-print" onclick="addGoal('long')" style="margin-top:4px;">+ 추가</button>
+      </div>
+      <div>
+        <div style="font-size:11px;font-weight:700;color:var(--green);margin-bottom:4px;">단기목표</div>
+        <div id="short-goal-list"></div>
+        <button class="btn btn-outline btn-sm no-print" onclick="addGoal('short')" style="margin-top:4px;">+ 추가</button>
+      </div>
+    </div>
+    
+  </div>`;
+    window._lowItems = lowItems;
+    renderLowPanel();
+    renderGoals();
+  }
+  function renderLowPanel() {
+    const lowItems = window._lowItems || [];
+    const lowPanel = document.getElementById("low-items-list");
+    if (!lowPanel) return;
+    if (lowItems.length === 0) {
+      lowPanel.innerHTML = '<div class="lp-empty">5점 이하 항목 없음</div>';
+      return;
+    }
+    const registeredContents = new Set((reportData.shortGoals || []).map((sg) => {
+      const m = sg.text.match(/\] (.+?) - /);
+      return m ? m[1] : "";
+    }));
+    const catMap = {};
+    lowItems.forEach((it) => {
+      if (!catMap[it.cat]) catMap[it.cat] = [];
+      catMap[it.cat].push(it);
+    });
+    let html = '<div class="lp-hint">체크 후 향상 목표점수 입력 → 목표 자동 생성</div>';
+    Object.keys(catMap).forEach((cat) => {
+      html += `<div style="margin-bottom:16px;">
+      <div class="lp-cat">${esc(cat)}</div>`;
+      catMap[cat].forEach((it) => {
+        const curScore = currentScores[String(it.no)] || 0;
+        const inShortGoal = registeredContents.has(it.content);
+        const lc = (reportData.lowChecks || {})[it.no];
+        const isChecked = lc && lc.checked !== void 0 ? lc.checked : inShortGoal;
+        const tgtScore = (reportData.lowChecks || {})[it.no]?.target || "";
+        html += `<div class="lp-item">
+        <input type="checkbox" ${isChecked ? "checked" : ""} onchange="onLowCheck(${it.no},this.checked)">
+        <div style="flex:1;">
+          <div class="lp-text">${esc(it.content)}</div>
+          <div class="lp-sub">
+            <span>현재 ${curScore}점 → 목표</span>
+            <input class="lp-num" type="number" min="1" max="10" value="${tgtScore}" placeholder="목표점"
+              oninput="onLowTarget(${it.no},this.value)">
+            <span>점</span>
+          </div>
+          ${(() => {
+          const prevGoal = prevShortGoals.find((sg) => sg.text && sg.text.includes(it.content));
+          return prevGoal ? `<div class="lp-prev">지난해 목표 : ${esc(prevGoal.text)}</div>` : "";
+        })()}
+        </div>
+      </div>`;
+      });
+      html += "</div>";
+    });
+    lowPanel.innerHTML = html;
+  }
+  window.onLowCheck = function(no, checked) {
+    if (!reportData.lowChecks) reportData.lowChecks = {};
+    if (!reportData.lowChecks[no]) reportData.lowChecks[no] = {};
+    reportData.lowChecks[no].checked = checked;
+  };
+  window.onLowTarget = function(no, val) {
+    if (!reportData.lowChecks) reportData.lowChecks = {};
+    if (!reportData.lowChecks[no]) reportData.lowChecks[no] = {};
+    reportData.lowChecks[no].target = parseInt(val) || "";
+  };
+  function renumberGoals() {
+    if (!reportData.longGoals) reportData.longGoals = [];
+    if (!reportData.shortGoals) reportData.shortGoals = [];
+    reportData.longGoals = reportData.longGoals.map((g, i) => `${i + 1}. ${String(g).replace(/^\s*\d+\.\s*/, "")}`);
+    const cnt = {};
+    reportData.shortGoals.map((g) => g).sort((a, b) => (a.longIdx || 0) - (b.longIdx || 0)).forEach((g) => {
+      const li = g.longIdx || 0;
+      cnt[li] = (cnt[li] || 0) + 1;
+      g.text = `${li + 1}-${cnt[li]}. ${String(g.text || "").replace(/^\s*\d+(-\d+)?\.\s*/, "")}`;
+    });
+    reportData.shortGoals.sort((a, b) => (a.longIdx || 0) - (b.longIdx || 0));
+  }
+  window.applyLowGoals = function() {
+    if (!window._currentItems) {
+      toast("먼저 사람을 선택하고 보고서를 로드하세요");
+      return;
+    }
+    if (!reportData.lowChecks) reportData.lowChecks = {};
+    if (!reportData.longGoals) reportData.longGoals = [];
+    if (!reportData.shortGoals) reportData.shortGoals = [];
+    const checks = reportData.lowChecks;
+    const lowItems = window._lowItems || [];
+    const catByNo = {};
+    groupItems(window._currentItems).forEach((g) => g.items.forEach((it) => {
+      catByNo[String(it.no)] = g.cat;
+    }));
+    const goalContent = (sg) => {
+      const m = (sg.text || "").match(/\] (.+?) - /);
+      return m ? m[1] : "";
+    };
+    const longCatOf = (g) => {
+      const m = (g || "").match(/^(?:\s*\d+\.\s*)?(.+?)의 수행률을/);
+      return m ? m[1] : null;
+    };
+    const registered = new Set(reportData.shortGoals.map(goalContent));
+    const isCheckedItem = (it) => {
+      const lc = checks[it.no];
+      return lc && lc.checked !== void 0 ? lc.checked : registered.has(it.content);
+    };
+    const checkedItems = lowItems.filter(isCheckedItem);
+    if (checkedItems.length === 0) {
+      toast("체크된 항목이 없어요");
+      return;
+    }
+    const targetOf = {};
+    for (const it of checkedItems) {
+      const cur = currentScores[String(it.no)] || 0;
+      let t = parseInt(checks[it.no]?.target);
+      if (!t) {
+        const ex = reportData.shortGoals.find((sg) => goalContent(sg) === it.content);
+        const m = ex && ex.text.match(/(\d+)점으로 향상/);
+        t = m ? parseInt(m[1]) : NaN;
+      }
+      if (!t) {
+        toast("목표점수를 입력하세요: " + it.content);
+        return;
+      }
+      if (t <= cur || t > 10) {
+        toast(`목표점수는 현재점수(${cur}점)보다 크고 10점 이하여야 해요: ` + it.content);
+        return;
+      }
+      targetOf[String(it.no)] = t;
+      checks[it.no] = { checked: true, target: t };
+    }
+    const uncheckedContents = new Set(lowItems.filter((it) => !isCheckedItem(it)).map((it) => it.content));
+    reportData.shortGoals = reportData.shortGoals.filter((sg) => {
+      const c = goalContent(sg);
+      return !(c && uncheckedContents.has(c));
+    });
+    const catGroups = {};
+    checkedItems.forEach((it) => {
+      const cat = catByNo[String(it.no)] || it.cat || "기타";
+      (catGroups[cat] = catGroups[cat] || []).push(it);
+    });
+    Object.keys(catGroups).forEach((cat) => {
+      const catStat = currentGroupStats.find((g) => g.cat === cat);
+      const curPct = catStat ? catStat.pct.toFixed(1) : "?";
+      let newSum = catStat ? catStat.sum : 0;
+      catGroups[cat].forEach((it) => {
+        newSum += targetOf[String(it.no)] - (currentScores[String(it.no)] || 0);
+      });
+      const newPct = catStat ? (newSum / catStat.max * 100).toFixed(1) : "?";
+      const body = `${cat}의 수행률을 ${curPct}%에서 ${newPct}%로 향상`;
+      const idx = reportData.longGoals.findIndex((g) => longCatOf(g) === cat);
+      if (idx === -1) reportData.longGoals.push(body);
+      else reportData.longGoals[idx] = body;
+    });
+    Object.keys(catGroups).forEach((cat) => {
+      const longIdx = reportData.longGoals.findIndex((g) => longCatOf(g) === cat);
+      catGroups[cat].forEach((it) => {
+        const cur = currentScores[String(it.no)] || 0;
+        const body = `[${cat}] ${it.content} - ${cur}점에서 ${targetOf[String(it.no)]}점으로 향상`;
+        const idx = reportData.shortGoals.findIndex((sg) => goalContent(sg) === it.content);
+        if (idx === -1) reportData.shortGoals.push({ text: body, longIdx, manager: currentPerson?.manager || "" });
+        else {
+          reportData.shortGoals[idx].text = body;
+          reportData.shortGoals[idx].longIdx = longIdx;
+        }
+      });
+    });
+    for (let i = reportData.longGoals.length - 1; i >= 0; i--) {
+      if (!longCatOf(reportData.longGoals[i])) continue;
+      if (!reportData.shortGoals.some((sg) => sg.longIdx === i)) {
+        reportData.longGoals.splice(i, 1);
+        reportData.shortGoals.forEach((sg) => {
+          if (sg.longIdx > i) sg.longIdx--;
+        });
+      }
+    }
+    const catOrder = [];
+    groupItems(window._currentItems).forEach((g) => {
+      if (!catOrder.includes(g.cat)) catOrder.push(g.cat);
+    });
+    const orderOf = (g) => {
+      const c = longCatOf(g);
+      const i = c ? catOrder.indexOf(c) : -1;
+      return i === -1 ? 999 : i;
+    };
+    const entries = reportData.longGoals.map((g, i) => ({ g, i }));
+    entries.sort((a, b) => orderOf(a.g) - orderOf(b.g) || a.i - b.i);
+    const newIdxOf = {};
+    entries.forEach((e, ni) => {
+      newIdxOf[e.i] = ni;
+    });
+    reportData.longGoals = entries.map((e) => e.g);
+    reportData.shortGoals.forEach((sg) => {
+      if (newIdxOf[sg.longIdx] !== void 0) sg.longIdx = newIdxOf[sg.longIdx];
+    });
+    renumberGoals();
+    renderGoals();
+    renderLowPanel();
+    renderPlanIfActive();
+    toast(`장기목표 ${Object.keys(catGroups).length}개, 단기목표 ${checkedItems.length}개 적용됨`);
+  };
+  function renderGoals() {
+    const rd = reportData;
+    if (!rd.longGoals) rd.longGoals = [];
+    if (!rd.shortGoals) rd.shortGoals = [];
+    rd.shortGoals = rd.shortGoals.filter((g) => g.text !== "새 단기목표");
+    const lgEl = document.getElementById("long-goal-list");
+    if (!lgEl) return;
+    lgEl.innerHTML = rd.longGoals.map((g, i) => `
+    <div style="display:flex;gap:4px;margin:2px 0;align-items:center;">
+      <input class="goal-inp" value="${esc(g)}" oninput="reportData.longGoals[${i}]=this.value;renderPlanIfActive()">
+      <button class="btn btn-danger btn-sm no-print" onclick="removeGoal('long',${i})">✕</button>
+    </div>`).join("");
+    const sgEl = document.getElementById("short-goal-list");
+    if (!sgEl) return;
+    const sortedShort = rd.shortGoals.map((g, i) => ({ ...g, _origIdx: i })).sort((a, b) => a.longIdx - b.longIdx);
+    const longSubCount = {};
+    sgEl.innerHTML = sortedShort.map((g) => {
+      const i = g._origIdx;
+      if (longSubCount[g.longIdx] === void 0) longSubCount[g.longIdx] = 0;
+      longSubCount[g.longIdx]++;
+      const subNum = `${g.longIdx + 1}-${longSubCount[g.longIdx]}.`;
+      return `
+    <div style="display:flex;gap:4px;margin:2px 0;padding:1px 0;align-items:center;">
+      <select style="display:none;" onchange="reportData.shortGoals[${i}].longIdx=parseInt(this.value)">
+        ${(rd.longGoals || []).map((lg, li) => `<option value="${li}" ${li == g.longIdx ? "selected" : ""}>${li + 1}번 장기목표</option>`).join("")}
+      </select>
+      <input class="goal-inp" value="${esc(g.text)}" style="flex:1;min-width:180px;" oninput="reportData.shortGoals[${i}].text=this.value;renderPlanIfActive()">
+      <button class="btn btn-danger btn-sm no-print" onclick="removeGoal('short',${i})">✕</button>
+    </div>`;
+    }).join("");
+  }
+  window.addGoal = function(type) {
+    if (!reportData.longGoals) reportData.longGoals = [];
+    if (!reportData.shortGoals) reportData.shortGoals = [];
+    if (type === "long") {
+      reportData.longGoals.push("새 장기목표");
+    } else {
+      const lastLongIdx = reportData.longGoals.length > 0 ? reportData.longGoals.length - 1 : 0;
+      reportData.shortGoals.push({ text: "새 단기목표", longIdx: lastLongIdx, manager: currentPerson?.manager || "" });
+    }
+    renumberGoals();
+    renderGoals();
+    renderPlanIfActive();
+  };
+  window.removeGoal = function(type, i) {
+    if (type === "long") {
+      const removedSgs = reportData.shortGoals.filter((sg) => sg.longIdx === i);
+      removedSgs.forEach((sg) => {
+        const m = sg.text.match(/\] (.+?) - /);
+        if (m && reportData.lowChecks) {
+          const item = (window._currentItems || []).find((it) => it.content === m[1]);
+          if (item) reportData.lowChecks[item.no] = { checked: false, target: "" };
+        }
+      });
+      reportData.shortGoals = reportData.shortGoals.filter((sg) => sg.longIdx !== i);
+      reportData.shortGoals.forEach((sg) => {
+        if (sg.longIdx > i) sg.longIdx--;
+      });
+      reportData.longGoals.splice(i, 1);
+    } else {
+      const sg = reportData.shortGoals[i];
+      if (sg) {
+        const m = sg.text.match(/\] (.+?) - /);
+        if (m && reportData.lowChecks) {
+          const item = (window._currentItems || []).find((it) => it.content === m[1]);
+          if (item) reportData.lowChecks[item.no] = { checked: false, target: "" };
+        }
+      }
+      reportData.shortGoals.splice(i, 1);
+      if (reportData.longGoals && reportData.shortGoals.length === 0) {
+        reportData.longGoals = [];
+      }
+    }
+    renumberGoals();
+    renderGoals();
+    renderLowPanel();
+    renderPlanIfActive();
+  };
+  window.renderPlanIfActive = function() {
+    if (document.getElementById("pane-plan").classList.contains("active")) renderPlan();
+  };
+  window.generateAIOpinion = async function() {
+    const el = document.getElementById("rpt-eval-opinion");
+    if (!el) return;
+    const prompt2 = `다음은 직업재활 평가 결과입니다. 2줄 이내로 간결하게 소견을 작성해주세요. 마크다운 기호 없이 일반 텍스트로만 쓰고, 수치에 근거해 자연스러운 한국어로 쓰세요. 대상자를 지칭할 때는 "${currentPerson?.name || "대상자"}씨"처럼 이름 뒤에 "씨"나 "님"을 붙이고 이름만 단독으로 쓰지 마세요.
+
+문체 지침(꼭 지킬 것):
+${STYLE_RULES}
+
+${currentGroupStats.map((g) => `${g.cat}: ${g.pct.toFixed(1)}%`).join("\n")}`;
+    try {
+      await copyPrompt(prompt2, currentPerson?.name);
+    } catch (e) {
+      toast("복사 실패: " + e.message);
+    }
+  };
+  window.fillGroupResult = function(gi) {
+    const el = document.getElementById("rpt-group-" + gi);
+    if (!el) return;
+    const groups = groupItems(scoreKeyOrder.map((k, i) => ({ no: k, _order: i })));
+    const badge = el.closest(".report-section")?.querySelectorAll(".auto-line")[gi];
+    if (badge) {
+      el.innerText = badge.innerText;
+      if (!reportData.groupResults) reportData.groupResults = [];
+      reportData.groupResults[gi] = el.innerText;
+    }
+  };
+  window.copyPrevReport = async function() {
+    if (!currentPerson) {
+      toast("먼저 사람을 선택하세요");
+      return;
+    }
+    const year = document.getElementById("rpt-year-sel").value;
+    const type = document.getElementById("rpt-type-sel").value;
+    const prevYear = String(parseInt(year) - 1);
+    let snap;
+    try {
+      snap = await getDoc(doc(db, "scores", `${currentPerson.id}_${prevYear}_${type}`));
+    } catch (e) {
+      toast("불러오기 실패: " + e.message);
+      return;
+    }
+    const prevReport = snap.exists() ? snap.data().report || {} : {};
+    const EXCLUDE = ["evalDate", "jobLevel", "longGoals", "shortGoals", "lowChecks", "scoreOpinion"];
+    const keys = Object.keys(prevReport).filter((k) => !EXCLUDE.includes(k) && prevReport[k] !== "" && prevReport[k] !== null);
+    if (keys.length === 0) {
+      toast(`${prevYear}년 "${type}" 보고서 내용이 없어요`);
+      return;
+    }
+    if (!confirm(`${currentPerson.name}씨의 ${prevYear}년 보고서 내용을 가져와 채웁니다.
+(평가일과 [6] 직업수준 및 목표는 가져오지 않음)
+
+지금 입력돼 있는 같은 항목은 덮어써집니다. 계속할까요?`)) return;
+    keys.forEach((k) => {
+      reportData[k] = JSON.parse(JSON.stringify(prevReport[k]));
+    });
+    window.reportData = reportData;
+    await renderReport();
+    toast(`${prevYear}년 보고서 내용 복사됨 — 확인 후 "종합보고서 저장"을 눌러주세요`);
+  };
+  window.copySameYearReport = async function() {
+    if (!currentPerson) {
+      toast("먼저 사람을 선택하세요");
+      return;
+    }
+    const year = document.getElementById("rpt-year-sel").value;
+    const type = document.getElementById("rpt-type-sel").value;
+    const INCLUDE = ["evalPurpose", "evalMethod", "bg_behavior", "bg_disability", "bg_family", "bg_education", "bg_learning", "bg_career", "bg_living", "strength", "limitation", "summary"];
+    const others = [...document.getElementById("rpt-type-sel").options].map((o) => o.value).filter((v) => v !== type);
+    const candidates = [];
+    for (const t of others) {
+      let snap;
+      try {
+        snap = await getDoc(doc(db, "scores", `${currentPerson.id}_${year}_${t}`));
+      } catch (e) {
+        toast("불러오기 실패: " + e.message);
+        return;
+      }
+      const rpt = snap.exists() ? snap.data().report || {} : {};
+      const keys = INCLUDE.filter((k) => rpt[k] !== "" && rpt[k] !== null && rpt[k] !== void 0);
+      if (keys.length > 0) candidates.push({ type: t, report: rpt, keys });
+    }
+    if (candidates.length === 0) {
+      toast(`${year}년에 작성된 다른 평가지 보고서가 없어요`);
+      return;
+    }
+    let chosen;
+    if (candidates.length === 1) {
+      chosen = candidates[0];
+      if (!confirm(`${currentPerson.name}씨의 ${year}년 "${chosen.type}" 보고서에서 배경정보·직업재활 방향 등 사람 정보를 가져와 채웁니다.
+(점수·평가일·직업수준 및 목표는 가져오지 않음)
+
+지금 입력돼 있는 같은 항목은 덮어써집니다. 계속할까요?`)) return;
+    } else {
+      const list = candidates.map((c, i) => `${i + 1}. ${c.type}`).join("\n");
+      const ans = prompt(`가져올 평가지 번호를 입력하세요:
+${list}`);
+      if (ans === null) return;
+      const idx = parseInt(ans, 10) - 1;
+      if (isNaN(idx) || idx < 0 || idx >= candidates.length) return;
+      chosen = candidates[idx];
+    }
+    chosen.keys.forEach((k) => {
+      reportData[k] = JSON.parse(JSON.stringify(chosen.report[k]));
+    });
+    window.reportData = reportData;
+    await renderReport();
+    toast(`${year}년 "${chosen.type}" 보고서 내용 복사됨 — 확인 후 "종합보고서 저장"을 눌러주세요`);
+  };
+  window.saveReport = async function() {
+    if (!currentPerson) return;
+    if (reportData.lowChecks && reportData.shortGoals) {
+      const registeredContents = new Set(reportData.shortGoals.map((sg) => {
+        const m = sg.text.match(/\] (.+?) - /);
+        return m ? m[1] : "";
+      }));
+      Object.keys(reportData.lowChecks).forEach((no) => {
+        const item = (window._currentItems || []).find((it) => String(it.no) === String(no));
+        if (item && !registeredContents.has(item.content)) {
+          reportData.lowChecks[no].checked = false;
+          reportData.lowChecks[no].target = "";
+        }
+      });
+    }
+    reportData.evalDate = document.getElementById("rpt-eval-date")?.value || "";
+    reportData.evalPurpose = document.querySelector('input[placeholder="평가목적을 입력하세요"]')?.value || reportData.evalPurpose || "";
+    reportData.evalMethod = document.querySelector('input[placeholder="평가방법을 입력하세요"]')?.value || reportData.evalMethod || "";
+    reportData.strength = document.getElementById("rpt-strength")?.innerText || reportData.strength || "";
+    reportData.limitation = document.getElementById("rpt-limitation")?.innerText || reportData.limitation || "";
+    reportData.summary = document.getElementById("rpt-summary")?.innerText || reportData.summary || "";
+    reportData.jobLevel = document.getElementById("rpt-joblevel")?.value || reportData.jobLevel || "";
+    ["bg_behavior", "bg_disability", "bg_family", "bg_education", "bg_learning", "bg_career", "bg_living"].forEach((key) => {
+      const el = document.getElementById("rpt-" + key);
+      if (el) reportData[key] = el.innerText;
+    });
+    if (!reportData.groupResults) reportData.groupResults = [];
+    document.querySelectorAll('[id^="rpt-group-"]').forEach((el) => {
+      const gi = parseInt(el.id.replace("rpt-group-", ""));
+      reportData.groupResults[gi] = el.innerText;
+    });
+    const evalOpinionEl = document.getElementById("rpt-eval-opinion");
+    if (evalOpinionEl) reportData.evalOpinion = evalOpinionEl.innerText;
+    const year = document.getElementById("rpt-year-sel").value;
+    const type = document.getElementById("rpt-type-sel").value;
+    try {
+      await setDoc(
+        doc(db, "scores", `${currentPerson.id}_${year}_${type}`),
+        { report: reportData },
+        { merge: true }
+      );
+      setStatusLoadedAt(0);
+      toast("보고서 저장 완료");
+    } catch (e) {
+      toast("저장 실패: " + e.message);
+    }
+  };
+
+  // src/js/사례회의.js
+  var conferenceData = {};
+  window.conferenceData = conferenceData;
+  window.loadConferencePersons = async function() {
+    const year = document.getElementById("conf-year-sel").value;
+    const type = document.getElementById("conf-type-sel").value;
+    const rosterSnap = await getDoc(doc(db, "roster", `${year}_${type}`));
+    const personIds = rosterSnap.exists() ? rosterSnap.data().personIds || [] : [];
+    const mgrs = rosterSnap.exists() ? rosterSnap.data().managers || {} : {};
+    const allList = await fetchPersonsAll();
+    const list = [];
+    allList.forEach((d) => {
+      if (personIds.includes(d.id) && !d.deleted) list.push({ ...d, manager: mgrs[d.id] !== void 0 ? mgrs[d.id] : d.manager || "" });
+    });
+    list.sort((a, b) => a.name.localeCompare(b.name, "ko"));
+    renderConferencePersonList(list);
+    if (currentPerson && list.find((p) => p.id === currentPerson.id)) {
+      await selectConferencePerson(currentPerson.id, list);
+    }
+  };
+  function renderConferencePersonList(list) {
+    const el = document.getElementById("conf-person-list");
+    if (!el) return;
+    el.innerHTML = "";
+    if (list.length === 0) {
+      el.innerHTML = '<div style="color:var(--text2);font-size:12px;text-align:center;padding:20px 0;">등록된 사람이 없어요</div>';
+      return;
+    }
+    list.forEach((p) => {
+      const div = document.createElement("div");
+      div.className = "person-card" + (currentPerson?.id === p.id ? " active" : "");
+      div.innerHTML = `<div class="pname">${esc(p.name)}</div><div class="pmeta">${esc(p.disability || "")} ${p.birth || ""}</div>`;
+      div.onclick = () => selectConferencePerson(p.id, list);
+      el.appendChild(div);
+    });
+  }
+  window.filterConferencePersons = function(q) {
+    const els = document.querySelectorAll("#conf-person-list .person-card");
+    els.forEach((el) => {
+      el.style.display = el.textContent.includes(q) ? "" : "none";
+    });
+  };
+  async function selectConferencePerson(id, list) {
+    const year = document.getElementById("conf-year-sel").value;
+    const type = document.getElementById("conf-type-sel").value;
+    setCurrentPerson(list.find((p) => p.id === id));
+    if (!currentPerson) return;
+    renderConferencePersonList(list);
+    const scoreSnap = await getDoc(doc(db, "scores", `${id}_${year}_${type}`));
+    setCurrentScores(scoreSnap.exists() ? scoreSnap.data().scores || {} : {});
+    setReportData(scoreSnap.exists() ? scoreSnap.data().report || {} : {});
+    window.reportData = reportData;
+    setPlanData(scoreSnap.exists() ? scoreSnap.data().plan || {} : {});
+    conferenceData = scoreSnap.exists() ? scoreSnap.data().conference || {} : {};
+    window.conferenceData = conferenceData;
+    window.planData = planData;
+    const prevYear = String(parseInt(year) - 1);
+    const prevSnap = await getDoc(doc(db, "scores", `${id}_${prevYear}_${type}`));
+    setPrevScores(prevSnap.exists() ? prevSnap.data().scores || {} : {});
+    setPrevShortGoals(prevSnap.exists() ? prevSnap.data().report?.shortGoals || [] : []);
+    const prevPlanData = prevSnap.exists() ? prevSnap.data().plan || {} : {};
+    const tmplData = await getTmplData(year, type);
+    window._currentItems = tmplData ? tmplData.items : DEFAULT_ITEMS;
+    const prevTmplData = await getTmplData(prevYear, type);
+    setPrevItems(prevTmplData ? prevTmplData.items || [] : []);
+    renderConference(year, type, prevYear, prevPlanData);
+  }
+  function renderConference(year, type, prevYear, prevPlanData) {
+    const p = currentPerson;
+    const rd = reportData;
+    const cd = conferenceData;
+    const items = window._currentItems || [];
+    const groups = groupItems(items);
+    const groupStats = groups.map((g) => {
+      const keys = g.items.map((it) => String(it.no));
+      const sum = calcSum(keys, currentScores);
+      const max = g.items.length * 10;
+      const pct = max > 0 ? sum / max * 100 : 0;
+      const prevGroups = prevItems.length > 0 ? groupItems(prevItems) : groups;
+      const pg = prevGroups.find((pg2) => pg2.cat === g.cat);
+      let psum = 0, pmax = 0;
+      if (pg && prevItems.length > 0) {
+        pg.items.forEach((pit) => {
+          const pkey = String(pit.no);
+          const sc = prevScores[pkey] !== void 0 ? prevScores[pkey] : null;
+          if (sc !== null) psum += sc;
+        });
+        pmax = pg.items.length * 10;
+      }
+      const ppct = pmax > 0 ? psum / pmax * 100 : 0;
+      return { cat: g.cat, sum, max, pct, psum, pmax, ppct };
+    });
+    const totalSum = groupStats.reduce((s, g) => s + g.sum, 0);
+    const totalMax = groupStats.reduce((s, g) => s + g.max, 0);
+    const totalPct = totalMax > 0 ? totalSum / totalMax * 100 : 0;
+    const grade = getGrade(totalPct);
+    if (!conferenceData.prevResults) conferenceData.prevResults = [];
+    prevShortGoals.forEach((sg, i) => {
+      if (!conferenceData.prevResults[i]) conferenceData.prevResults[i] = { goal: sg.text, result: "", achieved: false };
+    });
+    const prevResults = conferenceData.prevResults;
+    const dialogues = cd.dialogues || [];
+    document.getElementById("conf-body").innerHTML = `
+  <div style="max-width:900px;padding:4px 0;">
+    <h2 style="font-size:18px;font-weight:900;letter-spacing:2px;text-align:center;padding:10px 0 14px;color:var(--primary);">사례회의록</h2>
+
+    <!-- [1] 기본사항 -->
+    <div class="report-section" style="padding:10px 14px;">
+      <h3>[1] 기본사항</h3>
+      <table style="width:100%;border-collapse:collapse;margin-top:8px;">
+        <tr style="border-bottom:1px solid var(--border);">
+          <td rowspan="2" style="font-size:17px;font-weight:900;color:var(--primary);padding:4px 20px 4px 0;border-right:2px solid var(--border);width:90px;vertical-align:middle;text-align:center;">${esc(p.name)}</td>
+          <td style="padding:4px 16px;font-size:12px;color:var(--text2);">생년월일 : <b>${p.birth || "-"}</b></td>
+          <td style="padding:4px 16px;font-size:12px;color:var(--text2);">장애명 : <b>${esc(p.disability || "-")}</b></td>
+          <td style="padding:4px 16px;font-size:12px;color:var(--text2);">평가파트 : <b>${type}</b></td>
+        </tr>
+        <tr>
+          <td style="padding:4px 16px;font-size:12px;color:var(--text2);">회의일자 : <input class="form-inp" type="date" value="${esc(cd.meetingDate || "")}" style="width:140px;padding:3px 6px;flex:none;" oninput="conferenceData.meetingDate=this.value"></td>
+          <td style="padding:4px 16px;font-size:12px;color:var(--text2);">작성자 : <b>${esc(p.manager || "-")}</b></td>
+          <td style="padding:4px 16px;font-size:12px;color:var(--text2);">직업목표 : <b>${esc(rd.jobLevel || "보호고용")}</b></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- [2] 평가결과 요약 -->
+    <div class="report-section">
+      <h3>[2] ${year}년도 상황 및 현장 평가 결과 요약</h3>
+      <table class="result-table" style="margin-bottom:10px;">
+        <tr><th>영역</th><th>${year}년 수행률</th><th>${prevYear}년 수행률</th><th>등락</th></tr>
+        ${groupStats.map((g) => `
+          <tr>
+            <td>${esc(g.cat)}</td>
+            <td><b>${g.pct.toFixed(1)}%</b> (${g.sum}/${g.max}점)</td>
+            <td style="color:#888;">${g.ppct.toFixed(1)}% (${g.psum}/${g.pmax}점)</td>
+            <td class="${g.pct >= g.ppct ? "up" : "dn"}">${g.pct >= g.ppct ? "▲" : "▼"}${Math.abs(g.pct - g.ppct).toFixed(1)}%p</td>
+          </tr>`).join("")}
+        <tr style="background:#EDE7F6;">
+          <td><b>합계</b></td>
+          <td><b>${totalPct.toFixed(1)}% (${totalSum}/${totalMax}점)</b></td>
+          <td style="color:#888;">-</td>
+          <td><span class="grade-badge g${grade}" style="width:28px;height:28px;line-height:28px;font-size:15px;">${grade}</span> ${gradeLabel(grade)}</td>
+        </tr>
+      </table>
+      <div class="auto-block">
+        ${groupStats.map((g) => `<div class="auto-line">${g.cat} : ${g.sum}점/${g.max}점 (수행률 ${g.pct.toFixed(1)}%, 전년도 ${g.ppct.toFixed(1)}%)</div>`).join("")}
+      </div>
+    </div>
+
+    <!-- [3] ${year}년도 상황 및 현장 평가 종합소견 요약 -->
+    <div class="report-section">
+      <h3>[3] ${year}년도 상황 및 현장 평가 종합소견 요약</h3>
+      <div style="margin-bottom:8px;">
+        <div style="font-size:11px;font-weight:700;color:var(--text2);margin-bottom:4px;">직업적 강점</div>
+        <div class="editable-block" contenteditable="true" style="min-height:60px;"
+          oninput="conferenceData.strength=this.innerText">${esc(cd.strength || rd.strength || "")}</div>
+      </div>
+      <div style="margin-bottom:8px;">
+        <div style="font-size:11px;font-weight:700;color:var(--text2);margin-bottom:4px;">직업적 제한점</div>
+        <div class="editable-block" contenteditable="true" style="min-height:60px;"
+          oninput="conferenceData.limitation=this.innerText">${esc(cd.limitation || rd.limitation || "")}</div>
+      </div>
+      <div>
+        <div style="font-size:11px;font-weight:700;color:var(--text2);margin-bottom:4px;">직업적 소견</div>
+        <div class="editable-block" contenteditable="true" style="min-height:80px;"
+          oninput="conferenceData.summary=this.innerText">${esc(cd.summary || rd.summary || "")}</div>
+      </div>
+      <div style="margin-top:8px;">
+        <div style="font-size:11px;font-weight:700;color:var(--text2);margin-bottom:4px;">평가결과 소견</div>
+        <div class="editable-block" contenteditable="true" style="min-height:80px;"
+          oninput="conferenceData.evalOpinion=this.innerText">${esc(cd.evalOpinion || rd.evalOpinion || "")}</div>
+      </div>
+    </div>
+
+<!-- [4] 전년도 목표 달성 여부 -->
+    <div class="report-section">
+      <h3>[4] 전년도 목표 달성 여부 </h3>
+      ${prevShortGoals.length === 0 ? `<div style="color:var(--text2);font-size:12px;padding:8px 0;">전년도(${prevYear}년) 단기목표 데이터가 없습니다.</div>` : `<table class="result-table">
+            <tr><th style="text-align:left;">전년도 단기목표</th><th style="width:120px;">달성여부</th></tr>
+            ${prevShortGoals.map((sg, i) => `
+              <tr>
+                <td style="text-align:left;font-size:11px;">${esc(sg.text)}</td>
+                <td style="text-align:center;">
+                  <select class="form-inp" style="width:100%;padding:3px 4px;font-size:11px;"
+                    onchange="if(!conferenceData.prevResults)conferenceData.prevResults=[];if(!conferenceData.prevResults[${i}])conferenceData.prevResults[${i}]={goal:'',result:'',achieved:false};conferenceData.prevResults[${i}].achieved=this.value==='true'">
+                    <option value="false" ${!cd.prevResults?.[i]?.achieved ? "selected" : ""}>미달성</option>
+                    <option value="true" ${cd.prevResults?.[i]?.achieved ? "selected" : ""}>달성</option>
+                  </select>
+                </td>
+              </tr>`).join("")}
+          </table>`}
+    </div>
+
+    <!-- [5] 장애인 및 보호자 의견 -->
+    <div class="report-section">
+      <h3>[5] 장애인 및 보호자 의견</h3>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div>
+          <div style="font-size:11px;font-weight:700;color:var(--text2);margin-bottom:4px;">보호자 의견</div>
+          <div class="editable-block" contenteditable="true" style="min-height:40px;"
+            oninput="conferenceData.guardianNeeds=this.innerText">${esc(cd.guardianNeeds || "")}</div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;color:var(--text2);margin-bottom:4px;">이용인 의견</div>
+          <div class="editable-block" contenteditable="true" style="min-height:40px;"
+            oninput="conferenceData.userNeeds=this.innerText">${esc(cd.userNeeds || "없음")}</div>
+        </div>        
+      </div>
+    </div>
+
+    <!-- [6] 사례회의 내용 요약 -->
+    <div class="report-section">
+      <h3>[6] 사례회의 내용 요약
+        <button onclick="generateConferenceSummary()" id="btn-conf-summary" class="btn btn-primary btn-sm no-print" style="margin-left:10px;">프롬프트 복사</button>
+      </h3>
+      
+      <div style="font-size:11px;font-weight:700;color:var(--text2);margin-bottom:4px;">요약 내용</div>
+      <div class="editable-block" contenteditable="true" id="conf-summary-block" style="min-height:200px;white-space:pre-wrap;"
+        oninput="conferenceData.dialogueText=this.innerText">${esc(cd.dialogueText || "")}</div>
+    </div>
+
+    <!-- [7] 결정 목표 -->
+    <div class="report-section">
+      <h3>[7] ${parseInt(year) + 1}년도 결정 장기목표</h3>
+      ${(rd.longGoals || []).length === 0 ? `<div style="color:var(--text2);font-size:12px;">보고서 탭에서 장기목표를 입력하세요</div>` : (rd.longGoals || []).map((g, i) => `
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+              <div class="editable-block" contenteditable="true" style="flex:1;min-height:30px;padding:4px 8px;font-size:12px;"
+                oninput="if(!conferenceData.finalLongGoals)conferenceData.finalLongGoals=[];conferenceData.finalLongGoals[${i}]=this.innerText"
+                >${esc(conferenceData.finalLongGoals?.[i] || g)}</div>
+            </div>`).join("")}
+    </div>
+
+    <div class="report-section">
+      <h3>[8] ${parseInt(year) + 1}년도 결정 단기목표</h3>
+      ${(rd.shortGoals || []).length === 0 ? `<div style="color:var(--text2);font-size:12px;">보고서 탭에서 단기목표를 입력하세요</div>` : (rd.shortGoals || []).map((sg, i) => `
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+              <div class="editable-block" contenteditable="true" style="flex:1;min-height:30px;padding:4px 8px;font-size:12px;"
+                oninput="if(!conferenceData.finalShortGoals)conferenceData.finalShortGoals=[];conferenceData.finalShortGoals[${i}]=this.innerText"
+                >${esc(conferenceData.finalShortGoals?.[i] || sg.text)}</div>
+            </div>`).join("")}
+    </div>
+
+  <!-- [9] 서명 -->
+    <div class="report-section">
+      <h3>[9] 서명</h3>
+      <div style="font-size:12px;margin-bottom:10px;">위의 사례회의 결과를 기록하며 승인합니다.</div>
+      <div style="display:flex;flex-direction:column;gap:14px;font-size:12px;max-width:500px;">
+        
+        
+        ${(() => {
+      if (!conferenceData.signRows) conferenceData.signRows = [{ label: "담 당", name: "" }, { label: "팀 장", name: "" }, { label: "원 장", name: "" }];
+      return "";
+    })()}
+        <div id="conf-sign-rows">
+          ${conferenceData.signRows.map((row, i) => `
+            <div class="form-row" style="margin-bottom:14px;">
+              <span contenteditable="true" style="min-width:70px;display:inline-block;cursor:text;border-bottom:1px dashed transparent;outline:none;"
+                onmouseover="this.style.borderBottomColor='#90CAF9'"
+                onmouseout="this.style.borderBottomColor='transparent'"
+                onfocus="this.style.borderBottomColor='var(--primary)'"
+                onblur="conferenceData.signRows[${i}].label=this.innerText;this.style.borderBottomColor='transparent'"
+                title="클릭하여 직책 수정">${esc(row.label || "직책")} :</span>
+              <input class="form-inp" value="${esc(row.name || "")}" placeholder="이름" style="width:100px;flex:none;" oninput="conferenceData.signRows[${i}].name=this.value">
+              &nbsp;(인/서명)
+              <button onclick="removeConfSignRow(${i})" class="no-print" style="background:none;border:none;color:#BDBDBD;cursor:pointer;font-size:15px;padding:0 4px;line-height:1;" title="삭제">✕</button>
+            </div>`).join("")}
+        </div>
+        <div class="form-row no-print" style="margin-top:2px;">
+          <button onclick="addConfSignRow()" style="background:none;border:1px dashed #90CAF9;color:#1565C0;border-radius:4px;padding:4px 12px;font-size:11px;cursor:pointer;font-family:inherit;">+ 결재라인 추가</button>
+        </div>
+      </div>
+    </div>
+
+  </div>`;
+  }
+  window.addDialogue = function() {
+    if (!conferenceData.dialogues) conferenceData.dialogues = [];
+    conferenceData.dialogues.push({ speaker: "", content: "" });
+    const year = document.getElementById("conf-year-sel").value;
+    const type = document.getElementById("conf-type-sel").value;
+    const list = document.getElementById("conf-dialogue-list");
+    if (!list) return;
+    const i = conferenceData.dialogues.length - 1;
+    const div = document.createElement("div");
+    div.style.cssText = "display:flex;gap:8px;align-items:flex-start;margin-bottom:6px;";
+    div.innerHTML = `
+    <input class="form-inp" value="" placeholder="발언자"
+      style="width:80px;flex:none;font-weight:700;"
+      oninput="conferenceData.dialogues[${i}].speaker=this.value">
+    <span style="padding-top:6px;color:var(--text2);">:</span>
+    <div class="editable-block" contenteditable="true" style="flex:1;min-height:36px;padding:5px 8px;"
+      oninput="conferenceData.dialogues[${i}].content=this.innerText"></div>
+    <button onclick="removeDialogue(${i})" class="no-print"
+      style="background:none;border:none;color:#BDBDBD;cursor:pointer;font-size:16px;padding:4px;flex:none;">✕</button>`;
+    list.appendChild(div);
+    div.querySelector("input")?.focus();
+  };
+  window.removeDialogue = function(i) {
+    if (!conferenceData.dialogues) return;
+    conferenceData.dialogues.splice(i, 1);
+    const year = document.getElementById("conf-year-sel").value;
+    const type = document.getElementById("conf-type-sel").value;
+    const prevYear = String(parseInt(year) - 1);
+    renderConference(year, type, prevYear, {});
+  };
+  window.generateConferenceSummary = async function() {
+    const name = currentPerson?.name || "대상자";
+    const year = document.getElementById("conf-year-sel").value;
+    const rd = reportData;
+    const cd = conferenceData;
+    const items = window._currentItems || [];
+    const groups = groupItems(items);
+    const groupLines = groups.map((g) => {
+      const keys = g.items.map((it) => String(it.no));
+      const sum = calcSum(keys, currentScores);
+      const max = g.items.length * 10;
+      const pct = max > 0 ? (sum / max * 100).toFixed(1) : "0.0";
+      return `- ${g.cat}: ${sum}점/${max}점 (${pct}%)`;
+    }).join("\n");
+    const totalSum = groups.reduce((s, g) => s + calcSum(g.items.map((it) => String(it.no)), currentScores), 0);
+    const totalMax = groups.reduce((s, g) => s + g.items.length * 10, 0);
+    const totalPct = totalMax > 0 ? (totalSum / totalMax * 100).toFixed(1) : "0.0";
+    const prevResults = cd.prevResults || [];
+    const prevResultLines = prevShortGoals.map((sg, i) => {
+      const achieved = prevResults[i]?.achieved ? "달성" : "미달성";
+      return `- ${sg.text} → ${achieved}`;
+    }).join("\n");
+    const longGoals = (rd.longGoals || []).join("\n");
+    const shortGoals = (rd.shortGoals || []).map((sg) => sg.text).join("\n");
+    const prompt2 = `당신은 발달장애인 직업재활 전문가입니다. 아래 데이터를 바탕으로 ${name}씨의 ${year}년도 직업재활 사례회의록 요약문을 작성해주세요.
+
+작성 지침:
+- 마크다운 기호(**, ##, * 등) 절대 사용 금지. 일반 텍스트만 사용.
+- 제3자 서술 형식 (대화체 금지). 
+- 간결체(개조식) 문체 사용: 문장 어미를 "~함.", "~임.", "~됨.", "~없음.", "~요함." 으로 통일
+- "${name}씨의 ${year}년도 사례회의에서는..." 으로 시작
+- 평가결과 → 전년도 목표 진전도 → 보호자 욕구 → 결정 목표 순서로 서술
+- 3~5문단, 수치를 명확히 포함
+- 전년도 목표 달성여부와 비교하여 미달성일 경우 현 계획을 유지한다는 표현으로 서술
+- 결정 장기목표와 결정 단기목표를 확인하여 늘어난 항목은 추가한다는 표현으로, 줄어든 항목에 대해서는 삭제한다는 표현으로 서술
+- 대상자를 지칭할 때는 항상 "${name}씨" 또는 "${name}님"으로 쓰고 이름만 단독으로 쓰지 말 것
+${STYLE_RULES}
+
+[평가결과]
+전체 수행률: ${totalPct}% (${totalSum}/${totalMax}점)
+${groupLines}
+
+[전년도 목표 진전도]
+${prevResultLines || "전년도 데이터 없음"}
+
+[종합소견]
+강점: ${cd.strength || rd.strength || ""}
+제한점: ${cd.limitation || rd.limitation || ""}
+소견: ${cd.summary || rd.summary || ""}
+
+[보호자 욕구]
+${cd.guardianNeeds || ""}
+
+[근로인 욕구]
+${cd.userNeeds || ""}
+
+[결정 장기목표]
+${longGoals}
+
+[결정 단기목표]
+${shortGoals}`;
+    try {
+      await copyPrompt(prompt2, currentPerson?.name);
+    } catch (e) {
+      toast("복사 실패: " + e.message);
+    }
+  };
+  window.saveConference = async function() {
+    if (!currentPerson) return;
+    const year = document.getElementById("conf-year-sel").value;
+    const type = document.getElementById("conf-type-sel").value;
+    try {
+      await setDoc(
+        doc(db, "scores", `${currentPerson.id}_${year}_${type}`),
+        { conference: conferenceData },
+        { merge: true }
+      );
+      setStatusLoadedAt(0);
+      toast("사례회의록 저장 완료");
+    } catch (e) {
+      toast("저장 실패: " + e.message);
+    }
+  };
+  function setConferenceData(v) {
+    conferenceData = v;
+  }
+
+  // src/js/현재상황.js
+  async function rosterPersonList(year, type) {
+    const rosterSnap = await getDoc(doc(db, "roster", `${year}_${type}`));
+    const personIds = rosterSnap.exists() ? rosterSnap.data().personIds || [] : [];
+    const mgrs = rosterSnap.exists() ? rosterSnap.data().managers || {} : {};
+    const allList = await fetchPersonsAll();
+    const list = [];
+    allList.forEach((d) => {
+      if (personIds.includes(d.id) && !d.deleted) list.push({ ...d, manager: mgrs[d.id] !== void 0 ? mgrs[d.id] : d.manager || "" });
+    });
+    list.sort((a, b) => a.name.localeCompare(b.name, "ko"));
+    return list;
+  }
+  window.goToTab = async function(pane, pid, year, type) {
+    const selMap = {
+      "pane-person": ["eval-year-sel", "eval-type-sel"],
+      "pane-report": ["rpt-year-sel", "rpt-type-sel"],
+      "pane-conference": ["conf-year-sel", "conf-type-sel"],
+      "pane-plan": ["plan-year-sel", "plan-type-sel"]
+    };
+    const [ySel, tSel] = selMap[pane] || [];
+    const setSel = (selId, val) => {
+      const s = document.getElementById(selId);
+      if (!s) return;
+      for (const o of s.options) if (o.value === val) {
+        s.value = val;
+        break;
+      }
+    };
+    if (ySel) setSel(ySel, year);
+    if (tSel) setSel(tSel, type);
+    setSel("g-year-sel", year);
+    setSel("g-type-sel", type);
+    setCurrentPerson(null);
+    showPane(pane, true);
+    if (pane === "pane-person") {
+      await loadPersons();
+      await selectPerson(pid);
+      return;
+    }
+    const list = await rosterPersonList(year, type);
+    if (pane === "pane-report") {
+      renderReportPersonList(list);
+      await selectReportPerson(pid, list);
+    }
+    if (pane === "pane-conference") {
+      renderConferencePersonList(list);
+      await selectConferencePerson(pid, list);
+    }
+    if (pane === "pane-plan") {
+      renderPlanPersonList(list);
+      await selectPlanPerson(pid, list);
+    }
+    if (!currentPerson) toast("해당 연도·직무 명단에서 사람을 찾지 못했어요");
+  };
+  var statusGroups = [];
+  var statusLoadedAt = 0;
+  var STATUS_TTL = 5 * 60 * 1e3;
+  window.loadStatusBoard = async function() {
+    const board = document.getElementById("status-board");
+    if (!board) return;
+    board.innerHTML = '<div style="text-align:center;padding:40px;color:var(--text2);">데이터 불러오는 중...</div>';
+    try {
+      const [selSnap, personsSnap, rosterSnap, tmplsSnap, scoresSnap] = await Promise.all([
+        getDoc(doc(db, "settings", "selectors")),
+        getDocs(collection(db, "persons")),
+        getDocs(collection(db, "roster")),
+        getDocs(collection(db, "templates")),
+        getDocs(collection(db, "scores"))
+      ]);
+      const years = selSnap.exists() ? selSnap.data().years || [String((/* @__PURE__ */ new Date()).getFullYear())] : [String((/* @__PURE__ */ new Date()).getFullYear())];
+      const types = selSnap.exists() ? selSnap.data().types || ["기본"] : ["기본"];
+      const personsMap = {};
+      personsSnap.forEach((d) => {
+        personsMap[d.id] = d.data();
+      });
+      const rosterMap = {};
+      rosterSnap.forEach((d) => {
+        rosterMap[d.id] = d.data();
+      });
+      const tmplMap = {};
+      tmplsSnap.forEach((d) => {
+        tmplMap[d.id] = d.data();
+      });
+      const scoresMap = {};
+      scoresSnap.forEach((d) => {
+        scoresMap[d.id] = d.data();
+      });
+      statusGroups = [];
+      const sortedYears = [...years].sort((a, b) => Number(b) - Number(a));
+      for (const year of sortedYears) {
+        for (const type of types) {
+          const rosterData = rosterMap[`${year}_${type}`];
+          const personIds = rosterData ? rosterData.personIds || [] : [];
+          const mgrs = rosterData ? rosterData.managers || {} : {};
+          if (personIds.length === 0) continue;
+          const tmplData = tmplMap[`${year}_${type}`];
+          const tmplExists = !!(tmplData && (tmplData.items || []).length > 0);
+          const rows = [];
+          for (const pid of personIds) {
+            const base = personsMap[pid];
+            if (!base || base.deleted) continue;
+            const p = { ...base, manager: mgrs[pid] !== void 0 ? mgrs[pid] : base.manager || "" };
+            const data = scoresMap[`${pid}_${year}_${type}`] || {};
+            const scoreKeys = data.scores ? Object.keys(data.scores).length : 0;
+            const tmplCount = tmplData ? (tmplData.items || []).length : 41;
+            const scorePct = tmplCount > 0 ? Math.round(scoreKeys / tmplCount * 100) : 0;
+            const hasScores = scoreKeys > 0;
+            const rptChecks = [data.report?.strength, data.report?.limitation, data.report?.summary, data.report?.longGoals?.length > 0, data.report?.shortGoals?.length > 0];
+            const rptPct = Math.round(rptChecks.filter(Boolean).length / rptChecks.length * 100);
+            const hasReport = rptPct > 0;
+            const confChecks = [data.conference?.strength || data.report?.strength, data.conference?.limitation || data.report?.limitation, data.conference?.summary || data.report?.summary, data.conference?.guardianNeeds, data.conference?.dialogueText, data.report?.longGoals?.length > 0, data.report?.shortGoals?.length > 0];
+            const confPct = Math.round(confChecks.filter(Boolean).length / confChecks.length * 100);
+            const hasConf = data.conference && Object.keys(data.conference).length > 0;
+            const pl = data.plan || {};
+            const planChecks = [pl.planDate, pl.user, pl.signRows?.length > 0, pl.methods && Object.keys(pl.methods).length > 0, pl.opinion];
+            const planPct = Math.round(planChecks.filter(Boolean).length / planChecks.length * 100);
+            const hasPlan = data.plan && Object.keys(data.plan).length > 0;
+            rows.push({ name: p.name, manager: p.manager, hasScores, hasReport, hasConf, hasPlan, scorePct, rptPct, confPct, planPct, pid });
+          }
+          statusGroups.push({ year, type, tmplExists, rows });
+        }
+      }
+      renderStatusBoard();
+      statusLoadedAt = Date.now();
+    } catch (e) {
+      board.innerHTML = `<div style="color:#F44336;padding:20px;">오류: ${e.message}</div>`;
+    }
+  };
+  window.showStatusBoard = async function() {
+    if (statusLoadedAt && Date.now() - statusLoadedAt < STATUS_TTL) {
+      renderStatusBoard();
+      return;
+    }
+    return loadStatusBoard();
+  };
+  function statusGroupHtml(g) {
+    const { year, type, tmplExists } = g;
+    const rows = g.rows;
+    const icon = (ok) => ok ? '<span class="st-badge st-done">있음</span>' : '<span class="st-badge st-none">없음</span>';
+    const mark = (has, pct) => !has ? '<span class="st-badge st-none">미작성</span>' : pct >= 100 ? '<span class="st-badge st-done">완료</span>' : `<span class="st-badge st-part">${pct}%</span>`;
+    return `
+        <div class="st-group">
+          <div class="st-group-head">
+            <span class="st-group-title">${year}년 ${type}</span>
+            <span class="st-cnt" style="font-size:14px;">${rows.length}명</span>
+          </div>
+          <table>
+            ${(() => {
+      const headRow = `<tr>
+                <th style="width:66px;"></th>
+                <th style="width:86px;">이름</th>
+                <th>현장평가지</th>
+                <th>종합보고서</th>
+                <th>사례회의</th>
+                <th>직업재활계획서</th>
+                <th class="st-div" style="width:66px;"></th>
+                <th style="width:86px;">이름</th>
+                <th>현장평가지</th>
+                <th>종합보고서</th>
+                <th>사례회의</th>
+                <th>직업재활계획서</th>
+              </tr>`;
+      const byMgr = {};
+      for (const r of rows) {
+        const m = r.manager || "담당 미지정";
+        (byMgr[m] = byMgr[m] || []).push(r);
+      }
+      const mgrNames = Object.keys(byMgr).sort((a, b) => {
+        if (a === "담당 미지정") return 1;
+        if (b === "담당 미지정") return -1;
+        return a.localeCompare(b, "ko");
+      });
+      let trs = "";
+      for (const m of mgrNames) {
+        const list = byMgr[m].sort((a, b) => a.name.localeCompare(b.name, "ko"));
+        trs += `<tr class="st-mgr-row"><td colspan="12">${esc(m)} <span class="st-cnt">· ${list.length}명</span></td></tr>` + headRow;
+        for (let j = 0; j < list.length; j += 2) {
+          const r = list[j];
+          const r2 = list[j + 1];
+          trs += `<tr>
+                  <td class="st-mgr"></td>
+                  <td class="st-name">${esc(r.name)}</td>
+                  <td class="st-cell" onclick="goToTab('pane-person','${r.pid}','${year}','${type}')">${mark(r.hasScores, r.scorePct)}</td>
+                  <td class="st-cell" onclick="goToTab('pane-report','${r.pid}','${year}','${type}')">${mark(r.hasReport, r.rptPct)}</td>
+                  <td class="st-cell" onclick="goToTab('pane-conference','${r.pid}','${year}','${type}')">${mark(r.hasConf, r.confPct)}</td>
+                  <td class="st-cell" onclick="goToTab('pane-plan','${r.pid}','${year}','${type}')">${mark(r.hasPlan, r.planPct)}</td>
+                  ${r2 ? `
+                  <td class="st-mgr st-div"></td>
+                  <td class="st-name">${esc(r2.name)}</td>
+                  <td class="st-cell" onclick="goToTab('pane-person','${r2.pid}','${year}','${type}')">${mark(r2.hasScores, r2.scorePct)}</td>
+                  <td class="st-cell" onclick="goToTab('pane-report','${r2.pid}','${year}','${type}')">${mark(r2.hasReport, r2.rptPct)}</td>
+                  <td class="st-cell" onclick="goToTab('pane-conference','${r2.pid}','${year}','${type}')">${mark(r2.hasConf, r2.confPct)}</td>
+                  <td class="st-cell" onclick="goToTab('pane-plan','${r2.pid}','${year}','${type}')">${mark(r2.hasPlan, r2.planPct)}</td>
+                  ` : `<td colspan="6" class="st-div"></td>`}
+                </tr>`;
+        }
+      }
+      return trs;
+    })()}
+          </table>
+        </div>`;
+  }
+  function renderStatusBoard() {
+    const board = document.getElementById("status-board");
+    if (!board) return;
+    let html = "";
+    for (const g of statusGroups) html += statusGroupHtml(g);
+    if (!html) html = '<div style="text-align:center;padding:40px;color:var(--text2);">등록된 데이터가 없습니다.</div>';
+    board.innerHTML = html;
+  }
+  function setStatusLoadedAt(v) {
+    statusLoadedAt = v;
+  }
+
+  // src/js/점수입력.js
+  window.syncFromTemplate = async function() {
+    const tmplSel = document.getElementById("tmpl-type-sel");
+    const evalSel = document.getElementById("eval-type-sel");
+    const evalYear = document.getElementById("eval-year-sel");
+    const tmplYear = document.getElementById("tmpl-year-sel");
+    const existing = new Set(Array.from(evalSel.options).map((o) => o.value));
+    Array.from(tmplSel.options).forEach((opt) => {
+      if (!existing.has(opt.value)) {
+        const newOpt = document.createElement("option");
+        newOpt.value = opt.value;
+        newOpt.textContent = opt.textContent;
+        evalSel.appendChild(newOpt);
+      }
+    });
+    const existingY = new Set(Array.from(evalYear.options).map((o) => o.value));
+    Array.from(tmplYear.options).forEach((opt) => {
+      if (!existingY.has(opt.value)) {
+        const newOpt = document.createElement("option");
+        newOpt.value = opt.value;
+        newOpt.textContent = opt.textContent;
+        evalYear.appendChild(newOpt);
+      }
+    });
+    ["rpt-type-sel", "plan-type-sel"].forEach((selId) => {
+      const sel = document.getElementById(selId);
+      if (!sel) return;
+      const ex = new Set(Array.from(sel.options).map((o) => o.value));
+      Array.from(tmplSel.options).forEach((opt) => {
+        if (!ex.has(opt.value)) {
+          const o = document.createElement("option");
+          o.value = opt.value;
+          o.textContent = opt.textContent;
+          sel.appendChild(o);
+        }
+      });
+    });
+    ["rpt-year-sel", "plan-year-sel"].forEach((selId) => {
+      const sel = document.getElementById(selId);
+      if (!sel) return;
+      const ex = new Set(Array.from(sel.options).map((o) => o.value));
+      Array.from(tmplYear.options).forEach((opt) => {
+        if (!ex.has(opt.value)) {
+          const o = document.createElement("option");
+          o.value = opt.value;
+          o.textContent = opt.textContent;
+          sel.appendChild(o);
+        }
+      });
+    });
+    const yearsLocal = Array.from(document.getElementById("tmpl-year-sel").options).map((o) => o.value);
+    const typesLocal = Array.from(document.getElementById("tmpl-type-sel").options).map((o) => o.value);
+    let prevYears = [], prevTypes = [];
+    try {
+      const prev = await getDoc(doc(db, "settings", "selectors"));
+      if (prev.exists()) {
+        prevYears = prev.data().years || [];
+        prevTypes = prev.data().types || [];
+      }
+    } catch (e) {
+    }
+    const years = Array.from(/* @__PURE__ */ new Set([...prevYears, ...yearsLocal])).sort((a, b) => parseInt(b) - parseInt(a));
+    const types = Array.from(/* @__PURE__ */ new Set([...prevTypes, ...typesLocal]));
+    await setDoc(doc(db, "settings", "selectors"), { years, types });
+    await loadSelectors();
+    toast("직무/연도 동기화 완료");
+  };
+  window.onEvalSelChange = async function() {
+    setCurrentPerson(null);
+    setCurrentScores({});
+    setPrevScores({});
+    document.getElementById("btn-save-scores").disabled = true;
+    document.getElementById("score-area").innerHTML = `
+    <div style="display:flex;align-items:center;justify-content:center;height:200px;color:var(--text2);">
+      ← 왼쪽에서 사람을 선택하세요
+    </div>`;
+    const prevPanel = document.getElementById("prev-score-list");
+    if (prevPanel) prevPanel.innerHTML = '<div style="text-align:center;color:#999;font-size:11px;padding:20px 8px;">사람을 선택하면<br>전년도 점수가<br>표시됩니다</div>';
+    const year = document.getElementById("eval-year-sel").value;
+    const type = document.getElementById("eval-type-sel").value;
+    ["rpt-year-sel", "plan-year-sel"].forEach((id) => {
+      const sel = document.getElementById(id);
+      if (sel) sel.value = year;
+    });
+    ["rpt-type-sel", "plan-type-sel"].forEach((id) => {
+      const sel = document.getElementById(id);
+      if (sel) sel.value = type;
+    });
+    await loadPersons();
+    await loadReportPersons();
+    await loadPlanPersons();
+  };
+  window.openAddPerson = () => {
+    setEditingPersonId(null);
+    document.getElementById("new-name").value = "";
+    document.getElementById("new-birth").value = "";
+    document.getElementById("new-disability").value = "";
+    document.getElementById("new-manager").value = "";
+    document.querySelector("#modal-add-person h3").textContent = "새 평가 대상 추가";
+    document.querySelector("#modal-add-person .btn-primary").textContent = "추가";
+    openModal("modal-add-person");
+  };
+  window.addPerson = async function() {
+    const name = document.getElementById("new-name").value.trim();
+    if (!name) {
+      toast("이름을 입력하세요");
+      return;
+    }
+    const year = document.getElementById("eval-year-sel").value;
+    const type = document.getElementById("eval-type-sel").value;
+    const birth = document.getElementById("new-birth").value;
+    const disability = document.getElementById("new-disability").value;
+    const manager = document.getElementById("new-manager").value;
+    if (editingPersonId) {
+      try {
+        await updateDoc(doc(db, "persons", editingPersonId), { name, birth, disability });
+        await setDoc(doc(db, "roster", `${year}_${type}`), { managers: { [editingPersonId]: manager } }, { merge: true });
+        personsCacheAll = null;
+        setEditingPersonId(null);
+        closeModal("modal-add-person");
+        toast(`${name} 수정 완료`);
+        await loadPersons();
+      } catch (e) {
+        toast("수정 실패: " + e.message);
+      }
+      return;
+    }
+    try {
+      const allList = await fetchPersonsAll(true);
+      let existingId = null;
+      allList.forEach((d) => {
+        if (d.name === name) existingId = d.id;
+      });
+      let personId;
+      if (existingId) {
+        personId = existingId;
+        toast(`기존 사람 "${name}"을 이 목록에 추가했어요`);
+      } else {
+        const ref = await addDoc(collection(db, "persons"), {
+          name,
+          birth,
+          disability,
+          createdAt: (/* @__PURE__ */ new Date()).toISOString()
+        });
+        personId = ref.id;
+        personsCacheAll = null;
+      }
+      await registerToRoster(personId, year, type, manager);
+      closeModal("modal-add-person");
+      await loadPersons();
+      selectPerson(personId);
+    } catch (e) {
+      toast("추가 실패: " + e.message);
+    }
+  };
+  async function registerToRoster(personId, year, type, manager) {
+    const rosterId = `${year}_${type}`;
+    const rosterRef = doc(db, "roster", rosterId);
+    const snap = await getDoc(rosterRef);
+    const ids = snap.exists() ? snap.data().personIds || [] : [];
+    if (!ids.includes(personId)) ids.push(personId);
+    const payload = { personIds: ids, year, type };
+    if (manager !== void 0) payload.managers = { [personId]: manager };
+    await setDoc(rosterRef, payload, { merge: true });
+  }
+  var personsCacheAll = null;
+  async function fetchPersonsAll(force) {
+    if (!force && personsCacheAll) return personsCacheAll;
+    const snap = await getDocs(collection(db, "persons"));
+    const list = [];
+    snap.forEach((d) => list.push({ id: d.id, ...d.data() }));
+    personsCacheAll = list;
+    return list;
+  }
+  async function loadPersons() {
+    const year = document.getElementById("eval-year-sel").value;
+    const type = document.getElementById("eval-type-sel").value;
+    const rosterId = `${year}_${type}`;
+    try {
+      const rosterSnap = await getDoc(doc(db, "roster", rosterId));
+      const personIds = rosterSnap.exists() ? rosterSnap.data().personIds || [] : [];
+      const mgrs = rosterSnap.exists() ? rosterSnap.data().managers || {} : {};
+      if (personIds.length === 0) {
+        setPersons([]);
+        renderPersonList([]);
+        return;
+      }
+      const allList = await fetchPersonsAll();
+      setPersons([]);
+      allList.forEach((d) => {
+        if (personIds.includes(d.id) && !d.deleted) persons.push({ ...d, manager: mgrs[d.id] !== void 0 ? mgrs[d.id] : d.manager || "" });
+      });
+      persons.sort((a, b) => a.name.localeCompare(b.name, "ko"));
+      renderPersonList(persons);
+    } catch (e) {
+      console.error(e);
+      setPersons([]);
+      renderPersonList([]);
+    }
+  }
+  window.filterPersons = function(q) {
+    const filtered = q ? persons.filter((p) => p.name.includes(q)) : persons;
+    renderPersonList(filtered);
+  };
+  function renderPersonList(list) {
+    const el = document.getElementById("person-list");
+    el.innerHTML = "";
+    if (list.length === 0) {
+      el.innerHTML = '<div style="color:var(--text2);font-size:12px;text-align:center;padding:20px 0;">이 연도+직무에<br>등록된 사람이 없어요<br><br>+ 사람 추가로 등록하세요</div>';
+      return;
+    }
+    list.forEach((p) => {
+      const div = document.createElement("div");
+      div.className = "person-card" + (currentPerson?.id === p.id ? " active" : "");
+      div.style.position = "relative";
+      div.innerHTML = `
+      <div class="pname">${esc(p.name)}</div>
+      <div class="pmeta">${esc(p.disability || "")} ${p.birth || ""}</div>
+      <button onclick="editPerson('${p.id}',event)" style="position:absolute;top:6px;right:28px;background:none;border:none;color:#90CAF9;cursor:pointer;font-size:14px;padding:0 2px;" title="수정">수정</button>
+      <button onclick="deletePerson('${p.id}','${esc(p.name)}',event)"
+        style="position:absolute;top:6px;right:6px;background:none;border:none;color:#BDBDBD;cursor:pointer;font-size:14px;padding:0 2px;line-height:1;"
+        title="삭제">✕</button>`;
+      div.onclick = (e) => {
+        if (!e.target.closest("button")) selectPerson(p.id);
+      };
+      el.appendChild(div);
+    });
+  }
+  window.editPerson = function(id, e) {
+    e.stopPropagation();
+    const p = persons.find((p2) => p2.id === id);
+    if (!p) return;
+    document.getElementById("new-name").value = p.name || "";
+    document.getElementById("new-birth").value = p.birth || "";
+    document.getElementById("new-disability").value = p.disability || "";
+    document.getElementById("new-manager").value = p.manager || "";
+    setEditingPersonId(id);
+    document.querySelector("#modal-add-person h3").textContent = "평가 대상 수정";
+    document.querySelector("#modal-add-person .btn-primary").textContent = "수정";
+    openModal("modal-add-person");
+  };
+  window.deletePerson = async function(id, name, e) {
+    e.stopPropagation();
+    const confirmed = confirm(`"${name}"을(를) 휴지통으로 이동합니다.
+
+데이터는 보존되며, 휴지통에서 복원하거나 완전삭제할 수 있습니다.`);
+    if (!confirmed) return;
+    try {
+      await setDoc(doc(db, "persons", id), { deleted: true }, { merge: true });
+      personsCacheAll = null;
+      if (currentPerson?.id === id) {
+        setCurrentPerson(null);
+        setCurrentScores({});
+        document.getElementById("btn-save-scores").disabled = true;
+        document.getElementById("score-area").innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:200px;color:var(--text2);">← 왼쪽에서 사람을 선택하세요</div>';
+      }
+      toast(`"${name}" 휴지통으로 이동`);
+      await loadPersons();
+      loadReportPersons();
+      loadPlanPersons();
+      loadConferencePersons();
+    } catch (err) {
+      toast("삭제 실패: " + err.message);
+    }
+  };
+  async function selectPerson(id) {
+    setCurrentPerson(persons.find((p) => p.id === id));
+    if (!currentPerson) return;
+    renderPersonList(persons);
+    document.getElementById("btn-save-scores").disabled = false;
+    const year = document.getElementById("eval-year-sel").value;
+    const type = document.getElementById("eval-type-sel").value;
+    const tmplData = await getTmplData(year, type);
+    const items = tmplData ? tmplData.items : DEFAULT_ITEMS;
+    if (!items || items.length === 0) toast("평가지 관리에서 평가지를 먼저 만드세요");
+    const scoreRef = doc(db, "scores", `${id}_${year}_${type}`);
+    const scoreSnap = await getDoc(scoreRef);
+    setCurrentScores(scoreSnap.exists() ? scoreSnap.data().scores || {} : {});
+    setReportData(scoreSnap.exists() ? scoreSnap.data().report || {} : {});
+    window.reportData = reportData;
+    setPlanData(scoreSnap.exists() ? scoreSnap.data().plan || {} : {});
+    window.planData = planData;
+    const prevYear = String(parseInt(year) - 1);
+    const prevRef = doc(db, "scores", `${id}_${prevYear}_${type}`);
+    const prevSnap = await getDoc(prevRef);
+    setPrevScores(prevSnap.exists() ? prevSnap.data().scores || {} : {});
+    const prevTmplData = await getTmplData(prevYear, type);
+    setPrevItems(prevTmplData ? prevTmplData.items || [] : []);
+    renderScoreInput(items, year, type);
+  }
+  var scoreKeyOrder = [];
+  function buildPrevCatStats() {
+    const stats = {};
+    if (!prevItems || prevItems.length === 0) return stats;
+    groupItems(prevItems).forEach((pg) => {
+      let sum = 0, scored = 0;
+      pg.items.forEach((it) => {
+        const v = prevScores[String(it.no)];
+        if (v !== void 0) {
+          sum += v;
+          scored++;
+        }
+      });
+      stats[pg.cat] = { sum, max: pg.items.length * 10, scored };
+    });
+    return stats;
+  }
+  function buildPrevMap(currentItems) {
+    const map = {};
+    if (!prevItems || prevItems.length === 0) {
+      currentItems.forEach((it) => {
+        const ps = prevScores[String(it.no)];
+        if (ps !== void 0) map[String(it.no)] = ps;
+      });
+      return map;
+    }
+    const prevByContent = {};
+    prevItems.forEach((pit) => {
+      const key = (pit.content || "").trim();
+      if (key && prevByContent[key] === void 0) prevByContent[key] = String(pit.no);
+    });
+    currentItems.forEach((it) => {
+      const key = (it.content || "").trim();
+      const pno = prevByContent[key];
+      if (pno !== void 0 && prevScores[pno] !== void 0) {
+        map[String(it.no)] = prevScores[pno];
+      }
+    });
+    return map;
+  }
+  function renderScoreInput(items, year, type) {
+    const p = currentPerson;
+    const el = document.getElementById("score-area");
+    const prevYear = parseInt(year) - 1;
+    scoreKeyOrder = items.map((it) => String(it.no));
+    const prevCatStats = buildPrevCatStats();
+    const prevMap = buildPrevMap(items);
+    el.innerHTML = `
+    <div id="score-wrap-outer" style="padding:4px 0;max-width:900px;">
+      <h2 style="font-size:18px;font-weight:900;letter-spacing:2px;text-align:center;padding:10px 0 14px;color:var(--primary);">상황 및 현장 평가지</h2>
+      <div class="report-section" style="padding:10px 14px;margin-bottom:10px;">
+        <table style="width:100%;border-collapse:collapse;">
+          <tr style="border-bottom:1px solid var(--border);">
+            <td rowspan="2" style="font-size:17px;font-weight:900;color:var(--primary);padding:4px 20px 4px 0;border-right:2px solid var(--border);width:90px;vertical-align:middle;text-align:center">${esc(p.name)}</td>
+            <td style="padding:4px 16px;font-size:12px;color:var(--text2);">생년월일 : <b>${p.birth || "-"}</b></td>
+            <td style="padding:4px 16px;font-size:12px;color:var(--text2);">장애명 : <b>${esc(p.disability || "-")}</b></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td style="padding:4px 16px;font-size:12px;color:var(--text2);">평가일 : <b>${reportData.evalDate || "-"}</b></td>
+            <td style="padding:4px 16px;font-size:12px;color:var(--text2);">평가파트 : <b>${type}</b></td>
+            <td style="padding:4px 16px;font-size:12px;color:var(--text2);">평가자 : <b>${esc(p.manager || "-")}</b></td>
+          </tr>
+        </table>
+      </div>
+      <div class="xl-wrap" id="score-wrap">
+        <table class="xl-table" id="score-table" style="width:100%;">
+          <thead>
+            <tr>
+              <th style="width:30px;">번호</th>
+              <th>평가항목</th>
+              <th style="width:80px;background:#FAFAFA;">${year}년<br>평가점수</th>
+              <th style="width:70px;background:#FAFAFA;">${year}년<br>수행률</th>
+              <th class="prev-year-col" style="width:80px;background:#FAFAFA;">${prevYear}년<br>점수</th>
+            </tr>
+          </thead>
+          <tbody id="score-body"></tbody>
+        </table>
+      </div>
+    </div>`;
+    const tbody = document.getElementById("score-body");
+    const groups = groupItems(items);
+    let rowIdx = 0;
+    groups.forEach((group) => {
+      group.items.forEach((item, gi) => {
+        const key = String(item.no);
+        const currVal = currentScores[key] !== void 0 ? currentScores[key] : "";
+        const prevVal = prevScores[key] !== void 0 ? prevScores[key] : "";
+        const pctTxt = currVal !== "" ? (currVal / 10 * 100).toFixed(0) + "%" : "-";
+        const tr = document.createElement("tr");
+        tr.dataset.key = key;
+        if (gi === 0) {
+          const catTr = document.createElement("tr");
+          catTr.className = "cat-title-row";
+          const catTd = document.createElement("td");
+          catTd.colSpan = 5;
+          catTd.style.cssText = "background:#FAFAFA;color:#37474F;font-weight:700;font-size:12px;padding:5px 10px;";
+          catTd.textContent = "" + (group.cat || "");
+          catTr.appendChild(catTd);
+          tbody.appendChild(catTr);
+        }
+        const noTd = document.createElement("td");
+        noTd.className = "idx";
+        noTd.textContent = rowIdx + 1;
+        tr.appendChild(noTd);
+        const contentTd = document.createElement("td");
+        contentTd.style.cssText = "font-size:12px;padding:5px 8px;white-space:nowrap;";
+        contentTd.textContent = item.content;
+        tr.appendChild(contentTd);
+        const scoreTd = document.createElement("td");
+        scoreTd.className = "score-cell";
+        scoreTd.style.background = "";
+        const inp = document.createElement("input");
+        inp.type = "number";
+        inp.min = 0;
+        inp.max = 10;
+        inp.className = "score-inp" + (currVal === "" ? " empty" : "");
+        inp.value = currVal;
+        inp.placeholder = "-";
+        inp.dataset.key = key;
+        inp.dataset.order = rowIdx;
+        inp.addEventListener("input", () => onScoreInput(inp));
+        inp.addEventListener("keydown", (e) => {
+          const order = parseInt(inp.dataset.order);
+          if (e.key === "Enter" || e.key === "Tab") {
+            e.preventDefault();
+            focusScoreByOrder(e.shiftKey ? order - 1 : order + 1);
+          } else if (e.key === "ArrowDown") {
+            e.preventDefault();
+            focusScoreByOrder(order + 1);
+          } else if (e.key === "ArrowUp") {
+            e.preventDefault();
+            focusScoreByOrder(order - 1);
+          }
+        });
+        inp.addEventListener("focus", () => {
+          inp.style.background = "#BBDEFB";
+          inp.select();
+        });
+        inp.addEventListener("blur", () => {
+          inp.style.background = "";
+        });
+        inp.addEventListener("paste", (e) => {
+          e.preventDefault();
+          const text = (e.clipboardData || window.clipboardData).getData("text");
+          handlePaste(text, parseInt(inp.dataset.order));
+        });
+        scoreTd.appendChild(inp);
+        tr.appendChild(scoreTd);
+        const rateTd = document.createElement("td");
+        rateTd.className = "rate-cell";
+        rateTd.id = "rate-" + key;
+        rateTd.textContent = pctTxt;
+        tr.appendChild(rateTd);
+        const prevTd = document.createElement("td");
+        prevTd.className = "prev-year-col";
+        prevTd.style.cssText = "text-align:center;background:none;font-size:12px;color:#546E7A;font-weight:600;";
+        let pVal = prevMap[key] !== void 0 ? prevMap[key] : null;
+        prevTd.textContent = pVal !== null ? pVal : "-";
+        tr.appendChild(prevTd);
+        tbody.appendChild(tr);
+        rowIdx++;
+      });
+      const subKeys = group.items.map((it) => String(it.no));
+      const subSum = calcSum(subKeys, currentScores);
+      const subMax = group.items.length * 10;
+      const subPct = subMax > 0 ? (subSum / subMax * 100).toFixed(1) : "0.0";
+      const subtr = document.createElement("tr");
+      subtr.className = "subtotal-row";
+      subtr.id = "sub-" + group.cat;
+      const pcs = prevCatStats[group.cat];
+      const prevSubTxt = pcs && pcs.scored > 0 ? `${pcs.sum} / ${pcs.max}점` : "-";
+      subtr.innerHTML = `
+      <td colspan="2" style="text-align:left;padding-left:8px;font-size:11px;">${esc(group.cat || "")} 소계</td>
+      <td id="sub-sum-${esc(group.cat)}" style="text-align:center;white-space:nowrap;">${subSum} / ${subMax}점</td>
+      <td id="sub-pct-${esc(group.cat)}" style="text-align:center;">${subPct}%</td>
+      <td class="prev-year-col" style="text-align:center;background:none;color:#546E7A;font-weight:700;">${prevSubTxt}</td>`;
+      tbody.appendChild(subtr);
+    });
+    const allKeys = items.map((it) => String(it.no));
+    const total = calcSum(allKeys, currentScores);
+    const maxTotal = items.length * 10;
+    const totalPct = maxTotal > 0 ? (total / maxTotal * 100).toFixed(1) : "0.0";
+    const totaltr = document.createElement("tr");
+    totaltr.className = "total-row";
+    totaltr.id = "total-row";
+    const prevCatsArr = Object.values(prevCatStats);
+    const prevTotalSum2 = prevCatsArr.reduce((s, c) => s + c.sum, 0);
+    const prevTotalMax2 = prevCatsArr.reduce((s, c) => s + c.max, 0);
+    const prevScoredCnt = prevCatsArr.reduce((s, c) => s + c.scored, 0);
+    const prevTotalTxt = prevScoredCnt > 0 ? `${prevTotalSum2} / ${prevTotalMax2}점` : "-";
+    totaltr.innerHTML = `
+    <td colspan="2" style="font-size:12px;">총 계</td>
+    <td id="total-sum-cell" style="text-align:center;white-space:nowrap;">${total} / ${maxTotal}점</td>
+    <td id="total-pct-cell" style="text-align:center;white-space:nowrap;">${totalPct}%</td>
+    <td class="prev-year-col" style="text-align:center;background:none;color:#546E7A;font-weight:700;white-space:nowrap;">${prevTotalTxt}</td>`;
+    tbody.appendChild(totaltr);
+    const opinionDiv = document.createElement("div");
+    opinionDiv.style.cssText = "margin-top:16px;";
+    opinionDiv.innerHTML = `
+    <div class="report-section">
+      <h3 style="font-size:13px;font-weight:700;color:var(--primary);border-bottom:1.5px solid var(--primary);padding-bottom:5px;margin-bottom:10px;">
+        평가결과 종합 의견
+        <button onclick="generateScoreOpinion()" id="btn-score-opinion" class="btn btn-primary btn-sm no-print" style="margin-left:10px;">프롬프트 복사</button>
+      </h3>
+      <div class="editable-block" contenteditable="true" id="score-opinion"
+        oninput="reportData.scoreOpinion=this.innerText"
+        style="min-height:120px;">${esc(reportData.scoreOpinion || "")}</div>
+    </div>`;
+    const wrapOuter = document.getElementById("score-wrap-outer") || el;
+    wrapOuter.appendChild(opinionDiv);
+    window._currentItems = items;
+    renderPrevPanel(items);
+  }
+  function handlePaste(text, startOrder) {
+    const rows = text.trim().split(/\r?\n/);
+    const values = [];
+    rows.forEach((row) => {
+      const cols = row.split("	");
+      const val = cols[0].trim();
+      if (val !== "") values.push(val);
+    });
+    if (values.length === 0) return;
+    const inputs = document.querySelectorAll("#score-body .score-inp");
+    const inputArr = Array.from(inputs);
+    let filled = 0;
+    values.forEach((val, i) => {
+      const targetIdx = startOrder + i;
+      const inp = inputArr[targetIdx];
+      if (!inp) return;
+      const n = parseInt(val);
+      if (!isNaN(n) && n >= 0 && n <= 10) {
+        inp.value = n;
+        inp.classList.remove("empty");
+        currentScores[inp.dataset.key] = n;
+        const rateEl = document.getElementById("rate-" + inp.dataset.key);
+        if (rateEl) rateEl.textContent = (n / 10 * 100).toFixed(0) + "%";
+        filled++;
+      }
+    });
+    updateAllSubtotals();
+    toast(`${filled}개 점수 붙여넣기 완료`);
+    focusScoreByOrder(startOrder + filled);
+  }
+  function focusScoreByOrder(order) {
+    const inputs = document.querySelectorAll("#score-body .score-inp");
+    const inp = Array.from(inputs)[order];
+    if (inp) inp.focus();
+  }
+  function renderPrevPanel(items) {
+    const panel = document.getElementById("prev-score-list");
+    if (!panel) return;
+    if (Object.keys(prevScores).length === 0) {
+      panel.innerHTML = '<div style="text-align:center;color:#999;font-size:11px;padding:16px 8px;">전년도 데이터 없음</div>';
+      return;
+    }
+    const groups = groupItems(items);
+    const prevMap = buildPrevMap(items);
+    let html = "";
+    let rowIdx = 0;
+    groups.forEach((group) => {
+      html += `<div style="background:#FFCCBC;font-size:10px;font-weight:700;padding:4px 8px;color:#BF360C;border-top:1px solid #FFAB91;">${group.cat}</div>`;
+      group.items.forEach((item) => {
+        const key = String(item.no);
+        const val = prevMap[key] !== void 0 ? prevMap[key] : "-";
+        const pct = val !== "-" ? (val / 10 * 100).toFixed(0) + "%" : "-";
+        const color = val === "-" ? "#bbb" : val >= 8 ? "#2E7D32" : val >= 5 ? "#E65100" : "#C62828";
+        html += `<div style="display:flex;justify-content:space-between;align-items:center;padding:3px 8px;border-bottom:1px solid #E3F2FD;font-size:11px;">
+        <span style="color:#555;flex:0 0 18px;text-align:center;">${rowIdx + 1}</span>
+        <span style="color:${color};font-weight:700;font-size:13px;min-width:20px;text-align:center;">${val}</span>
+        <span style="color:#888;font-size:10px;">${pct}</span>
+      </div>`;
+        rowIdx++;
+      });
+      const subKeys = group.items.map((it) => String(it.no));
+      const subSum = subKeys.reduce((s, k) => s + (prevMap[k] !== void 0 ? prevMap[k] : 0), 0);
+      const subMax = group.items.length * 10;
+      html += `<div style="background:#FFE0B2;display:flex;justify-content:space-between;padding:3px 8px;font-size:10px;font-weight:700;color:#BF360C;">
+      <span>소계</span><span>${subSum}/${subMax}</span>
+    </div>`;
+    });
+    const allKeys = items.map((it) => String(it.no));
+    const total = allKeys.reduce((s, k) => s + (prevMap[k] !== void 0 ? prevMap[k] : 0), 0);
+    const maxTotal = items.length * 10;
+    html += `<div style="background:#E64A19;color:white;display:flex;justify-content:space-between;padding:5px 8px;font-size:11px;font-weight:700;margin-top:4px;">
+    <span>총계</span><span>${total}/${maxTotal}</span>
+  </div>`;
+    panel.innerHTML = html;
+  }
+  window.onScoreInput = function(inp) {
+    let v = parseInt(inp.value);
+    if (isNaN(v) || inp.value === "") {
+      inp.classList.add("empty");
+      delete currentScores[inp.dataset.key];
+    } else {
+      v = Math.max(0, Math.min(10, v));
+      inp.value = v;
+      inp.classList.remove("empty");
+      currentScores[inp.dataset.key] = v;
+    }
+    const key = inp.dataset.key;
+    const rateEl = document.getElementById("rate-" + key);
+    if (rateEl) rateEl.textContent = currentScores[key] !== void 0 ? (currentScores[key] / 10 * 100).toFixed(0) + "%" : "-";
+    updateAllSubtotals();
+  };
+  function updateAllSubtotals() {
+    if (!currentPerson) return;
+    const inputs = document.querySelectorAll("#score-body .score-inp");
+    const groups = groupItems(scoreKeyOrder.map((k, i) => ({ no: k, _order: i })));
+    document.querySelectorAll(".subtotal-row").forEach((row) => {
+      const catName = row.id.replace("sub-", "");
+      const sumEl2 = document.getElementById("sub-sum-" + catName);
+      const pctEl2 = document.getElementById("sub-pct-" + catName);
+      if (!sumEl2) return;
+      let sibling = row.previousElementSibling;
+      const keys = [];
+      while (sibling && !sibling.classList.contains("subtotal-row") && !sibling.classList.contains("total-row")) {
+        const inp = sibling.querySelector(".score-inp");
+        if (inp) keys.push(inp.dataset.key);
+        sibling = sibling.previousElementSibling;
+      }
+      const sum = calcSum(keys, currentScores);
+      const max = keys.length * 10;
+      const pct = max > 0 ? (sum / max * 100).toFixed(1) : "0.0";
+      sumEl2.textContent = `${sum} / ${max}점`;
+      pctEl2.textContent = `${pct}%`;
+    });
+    const allKeys = [];
+    inputs.forEach((inp) => allKeys.push(inp.dataset.key));
+    const total = calcSum(allKeys, currentScores);
+    const maxTotal = allKeys.length * 10;
+    const totalPct = maxTotal > 0 ? (total / maxTotal * 100).toFixed(1) : "0.0";
+    const sumEl = document.getElementById("total-sum-cell");
+    const pctEl = document.getElementById("total-pct-cell");
+    if (sumEl) sumEl.textContent = `${total} / ${maxTotal}점`;
+    if (pctEl) pctEl.textContent = `${totalPct}%`;
+  }
+  function calcSum(keys, scores) {
+    return keys.reduce((s, k) => s + (scores[k] !== void 0 ? scores[k] : 0), 0);
+  }
+  function groupItems(items) {
+    const groups = [];
+    let current = null;
+    items.forEach((item) => {
+      if (item.cat && item.cat !== (current?.cat || "")) {
+        current = { cat: item.cat, items: [] };
+        groups.push(current);
+      } else if (!current) {
+        current = { cat: "", items: [] };
+        groups.push(current);
+      }
+      current.items.push(item);
+    });
+    return groups;
+  }
+  window.generateScoreOpinion = async function() {
+    const el = document.getElementById("score-opinion");
+    if (!el) return;
+    const name = currentPerson?.name || "대상자";
+    const allKeys = scoreKeyOrder;
+    const total = calcSum(allKeys, currentScores);
+    const maxTotal = allKeys.length * 10;
+    const totalPct = maxTotal > 0 ? (total / maxTotal * 100).toFixed(1) : "0.0";
+    const groups = groupItems(window._currentItems || []);
+    const groupLines = groups.map((g) => {
+      const keys = g.items.map((it) => String(it.no));
+      const sum = calcSum(keys, currentScores);
+      const max = g.items.length * 10;
+      const pct = max > 0 ? (sum / max * 100).toFixed(1) : "0.0";
+      const lowItems = g.items.filter((it) => {
+        const v = currentScores[String(it.no)];
+        return v !== void 0 && v <= 5;
+      }).map((it) => `${it.content}(${currentScores[String(it.no)]}점)`).join(", ");
+      return `- ${g.cat}: ${sum}점/${max}점 (${pct}%)${lowItems ? `
+  5점 이하 항목: ${lowItems}` : ""}`;
+    }).join("\n");
+    const prompt2 = `당신은 발달장애인 직업재활 전문가, 직업재활시설 직업훈련교사입니다. 아래 평가 결과를 바탕으로 소견을 작성해주세요.
+
+대상자: ${name}
+전체 수행률: ${totalPct}% (${total}점/${maxTotal}점)
+영역별 결과:
+${groupLines}
+
+아래 형식으로 작성해주세요. 마크다운 기호(**, ##, --, * 등)는 절대 사용하지 마세요. 일반 텍스트로만 작성해주세요.
+
+문체 지침(꼭 지킬 것):
+- 대상자를 지칭할 때는 이름 뒤에 반드시 "씨"나 "님"을 붙일 것(예: "${name}씨"). 이름만 단독으로 쓰지 말 것.
+${STYLE_RULES}
+- 문장 길이에 변화를 줄 것(짧은 문장과 긴 문장을 섞기). 같은 종결어미를 네 문장 넘게 잇달아 쓰지 말고, "~하고 있다"는 "~한다"로 줄일 것.
+
+[평가 전체적 요약]
+점수 결과 위주로 사실에 근거하여 작성. 수치를 명확히 포함할 것.
+
+[영역별 세부 요약]
+각 영역별 점수 결과 위주로 사실에 근거하여 작성. 수치를 명확히 포함할 것.
+
+[중점지도 및 목표 계획]
+5점 이하 항목 중 가장 낮은 항목 2~3개를 언급하고 그에 대한 지도 방향에 대해 대분류 수준으로 간략히 추천할 것(추천사항이라서 지도방향을 꼭 따라야 할 필요가 없음).`;
+    try {
+      await copyPrompt(prompt2, currentPerson?.name);
+    } catch (e) {
+      toast("복사 실패: " + e.message);
+    }
+  };
+  window.saveScores = async function() {
+    if (!currentPerson) return;
+    const year = document.getElementById("eval-year-sel").value;
+    const type = document.getElementById("eval-type-sel").value;
+    const docId = `${currentPerson.id}_${year}_${type}`;
+    document.getElementById("score-saving").textContent = "저장 중...";
+    try {
+      await setDoc(doc(db, "scores", docId), {
+        personId: currentPerson.id,
+        personName: currentPerson.name,
+        year,
+        type,
+        scores: currentScores,
+        report: reportData,
+        plan: planData,
+        updatedAt: (/* @__PURE__ */ new Date()).toISOString()
+      }, { merge: true });
+      await registerToRoster(currentPerson.id, year, type);
+      setStatusLoadedAt(0);
+      setTmplLockCache({});
+      document.getElementById("score-saving").textContent = "저장됨";
+      toast("점수 저장 완료");
+      setTimeout(() => document.getElementById("score-saving").textContent = "", 3e3);
+    } catch (e) {
+      toast("저장 실패: " + e.message);
+    }
+  };
+  function setPersonsCacheAll(v) {
+    personsCacheAll = v;
+  }
+
+  // src/js/계획서.js
+  window.printPlan = function() {
+    const st = document.createElement("style");
+    st.textContent = "@media print { @page { size: A4 portrait; margin: 14mm 10mm; } }";
+    document.head.appendChild(st);
+    window.print();
+    setTimeout(() => st.remove(), 500);
+  };
+  window.loadPlanPersons = async function() {
+    const year = document.getElementById("plan-year-sel").value;
+    const type = document.getElementById("plan-type-sel").value;
+    const rosterSnap = await getDoc(doc(db, "roster", `${year}_${type}`));
+    const personIds = rosterSnap.exists() ? rosterSnap.data().personIds || [] : [];
+    const mgrs = rosterSnap.exists() ? rosterSnap.data().managers || {} : {};
+    const allList = await fetchPersonsAll();
+    const list = [];
+    allList.forEach((d) => {
+      if (personIds.includes(d.id) && !d.deleted) list.push({ ...d, manager: mgrs[d.id] !== void 0 ? mgrs[d.id] : d.manager || "" });
+    });
+    list.sort((a, b) => a.name.localeCompare(b.name, "ko"));
+    renderPlanPersonList(list);
+    if (currentPerson && list.find((p) => p.id === currentPerson.id)) {
+      await selectPlanPerson(currentPerson.id, list);
+    }
+  };
+  function renderPlanPersonList(list) {
+    const el = document.getElementById("plan-person-list");
+    if (!el) return;
+    el.innerHTML = "";
+    if (list.length === 0) {
+      el.innerHTML = '<div style="color:var(--text2);font-size:12px;text-align:center;padding:20px 0;">등록된 사람이 없어요</div>';
+      return;
+    }
+    list.forEach((p) => {
+      const div = document.createElement("div");
+      div.className = "person-card" + (currentPerson?.id === p.id ? " active" : "");
+      div.innerHTML = `<div class="pname">${esc(p.name)}</div><div class="pmeta">${esc(p.disability || "")} ${p.birth || ""}</div>`;
+      div.onclick = () => {
+        selectPlanPerson(p.id, list);
+      };
+      el.appendChild(div);
+    });
+  }
+  async function selectPlanPerson(id, list) {
+    const year = document.getElementById("plan-year-sel").value;
+    const type = document.getElementById("plan-type-sel").value;
+    setCurrentPerson(list.find((p) => p.id === id));
+    if (!currentPerson) return;
+    renderPlanPersonList(list);
+    const scoreSnap = await getDoc(doc(db, "scores", `${id}_${year}_${type}`));
+    setCurrentScores(scoreSnap.exists() ? scoreSnap.data().scores || {} : {});
+    setReportData(scoreSnap.exists() ? scoreSnap.data().report || {} : {});
+    window.reportData = reportData;
+    setPlanData(scoreSnap.exists() ? scoreSnap.data().plan || {} : {});
+    setConferenceData(scoreSnap.exists() ? scoreSnap.data().conference || {} : {});
+    if (!planData.evalDatePlan && reportData.evalDate) planData.evalDatePlan = reportData.evalDate.replace(/-/g, ". ");
+    if (!planData.meetingDate && conferenceData.meetingDate) planData.meetingDate = conferenceData.meetingDate.replace(/-/g, ". ");
+    window.planData = planData;
+    window.conferenceData = conferenceData;
+    renderPlan();
+  }
+  window.filterPlanPersons = function(q) {
+    const els = document.querySelectorAll("#plan-person-list .person-card");
+    els.forEach((el) => {
+      el.style.display = el.textContent.includes(q) ? "" : "none";
+    });
+  };
+  window.renderPlan = function() {
+    if (!currentPerson) return;
+    const year = document.getElementById("plan-year-sel").value;
+    const p = currentPerson;
+    const rd = reportData;
+    const longGoals = rd.longGoals || [];
+    const shortGoals = rd.shortGoals || [];
+    if (planData.methods) {
+      shortGoals.forEach((sg, i) => {
+        if (planData.methods[i]) sg.method = planData.methods[i];
+      });
+    }
+    document.getElementById("plan-body").innerHTML = `
+  <div style="max-width:860px;">
+    <div style="text-align:center;margin-bottom:12px;">
+      <h2 style="font-size:20px;font-weight:900;letter-spacing:3px;margin:0 0 8px;">직업재활계획서</h2>
+      <div style="display:flex;align-items:center;gap:12px;border:1px solid var(--border);border-radius:6px;padding:6px 16px;font-size:12px;background:#fff;width:fit-content;">
+        <span>접수번호 :</span>
+        <input class="form-inp" style="width:120px;padding:3px 6px;" 
+          value="${esc(planData.receiptNo || "")}" oninput="planData.receiptNo=this.value">
+        <label style="display:flex;align-items:center;gap:4px;cursor:pointer;">
+          <input type="checkbox" ${planData.isInitial !== false ? "checked" : ""} onchange="planData.isInitial=this.checked;"> 초기
+        </label>
+        <label style="display:flex;align-items:center;gap:4px;cursor:pointer;">
+          <input type="checkbox" ${planData.isRevised ? "checked" : ""} onchange="planData.isRevised=this.checked;"> 수정
+        </label>
+      </div>
+    </div>
+
+    <div class="plan-section">
+      <h3>1. 장애인 인적사항</h3>
+      <table class="plan-table">
+        <tr><td style="width:80px;background:#BBDEFB;font-weight:700;text-align:center;">성 명</td><td style="width:140px;">${esc(p.name)}</td>
+            <td style="width:80px;background:#BBDEFB;font-weight:700;text-align:center;">생년월일</td><td style="width:140px;">${esc(p.birth || "")}</td></tr>
+        <tr><td style="background:#BBDEFB;font-weight:700;text-align:center;">장애유형</td><td style="width:140px;">${esc(p.disability || "")}</td>
+            <td style="background:#BBDEFB;font-weight:700;text-align:center;">계획기간</td><td style="width:140px;">${parseInt(year) + 1}-01-01 ~ ${parseInt(year) + 1}-12-31</td></tr>
+        <tr><td style="font-size:10px;">직업상담 실시일자</td>
+            <td colspan="3"><input class="form-inp" type="text" placeholder="예) 2026. 01. 01" value="${esc(planData.counselingDate || "")}" oninput="planData.counselingDate=this.value" style="width:400px;flex:none;"></td></tr>
+        <tr><td style="font-size:10px;">직업평가 실시일자</td>
+            <td colspan="3"><input class="form-inp" type="text" placeholder="예) 2026. 01. 01" value="${esc(planData.evalDatePlan || "")}" oninput="planData.evalDatePlan=this.value" style="width:400px;flex:none;"></td></tr>
+        <tr><td style="font-size:10px;">사례회의 실시일자</td>
+            <td colspan="3"><input class="form-inp" type="text" placeholder="예) 2026. 01. 01" value="${esc(planData.meetingDate || "")}" oninput="planData.meetingDate=this.value" style="width:400px;flex:none;"></td></tr>
+        <tr><td colspan="4" style="font-size:10px;color:var(--text2);padding:6px 8px;">
+            ※ 장애인의 배경정보, 직업평가결과는 초기면접지, 직업평가보고서, 사례회의록 등을 참조
+        </td></tr>
+      </table>
+    </div>
+
+    <div class="plan-section">
+      <h3>2. 장애인 및 보호자 의견</h3>
+      <div class="editable-block" contenteditable="true" style="min-height:50px;"
+        oninput="planData.opinion=this.innerText"
+        >${esc(planData.opinion || "없음")}</div>
+    </div>
+
+    <div class="plan-section">
+      <h3>3. 직업목표</h3>
+      <div style="font-size:12px;font-weight:600;padding:6px 0;">${esc(rd.jobLevel || "보호고용")}</div>
+    </div>
+
+    <div class="plan-section">
+      <h3>4. 장기목표</h3>
+      ${longGoals.map((g) => `<div style="padding:3px 0;font-size:12px;">${esc(g)}</div>`).join("") || '<div style="color:var(--text2);font-size:12px;">보고서에서 장기목표를 입력하세요</div>'}
+    </div>
+
+    <div class="plan-section">
+      <h3>5. 단기목표</h3>
+      ${shortGoals.map((g) => `<div style="padding:3px 0;font-size:12px;">${esc(g.text)}</div>`).join("") || '<div style="color:var(--text2);font-size:12px;">보고서에서 단기목표를 입력하세요</div>'}
+    </div>
+
+    <div class="plan-section plan-page2">
+      <h3>6. 직업재활계획 수행</h3>
+      <table class="plan-table">
+        <tr>
+          <th style="width:20%;">장기목표</th>
+          <th style="width:25%;">단기목표</th>
+          <th style="width:10%;">기간</th>
+          <th style="width:10%;">담당자</th>
+          <th style="width:25%;">수행방법</th>
+          <th style="width:10%;">달성</th>
+        </tr>
+        ${(() => {
+      const rowspanMap = {};
+      shortGoals.forEach((sg) => {
+        const idx = sg.longIdx;
+        rowspanMap[idx] = (rowspanMap[idx] || 0) + 1;
+      });
+      const renderedLong = /* @__PURE__ */ new Set();
+      return shortGoals.map((sg) => {
+        const lg = longGoals[sg.longIdx] || "";
+        const isFirst = !renderedLong.has(sg.longIdx);
+        if (isFirst) renderedLong.add(sg.longIdx);
+        const rowspan = rowspanMap[sg.longIdx] || 1;
+        return `<tr>
+              ${isFirst ? `<td style="font-size:11px;vertical-align:middle;" rowspan="${rowspan}">${esc(lg)}</td>` : ""}
+              <td style="font-size:11px;">${esc(sg.text)}</td>
+              <td style="text-align:center;font-size:11px;">${parseInt(year) + 1}.01~${parseInt(year) + 1}.12</td>
+              <td style="text-align:center;"><input type="text" maxlength="5" value="${esc(planData.methods && planData.methods["manager_" + shortGoals.indexOf(sg)] || "")}" oninput="if(!planData.methods)planData.methods={};planData.methods['manager_'+${shortGoals.indexOf(sg)}]=this.value" style="width:52px;border:1px solid var(--border);border-radius:3px;padding:3px 4px;font-size:12px;text-align:center;font-family:inherit;"></td>
+              <td id="method-td-${shortGoals.indexOf(sg)}" style="font-size:11px;cursor:pointer;position:relative;transition:background .15s;" onclick="openMethodPicker(${shortGoals.indexOf(sg)})" title="클릭하여 수행방법 선택">
+                <span id="method-cell-${shortGoals.indexOf(sg)}" style="color:${sg.method ? "inherit" : "#BDBDBD"};white-space:pre-wrap;">${sg.method || "클릭하여 선택"}</span>
+              </td>
+              <td style="text-align:center;"><input type="checkbox" ${planData.achieved && planData.achieved[shortGoals.indexOf(sg)] ? "checked" : ""} onchange="if(!planData.achieved)planData.achieved={};planData.achieved[${shortGoals.indexOf(sg)}]=this.checked;"></td>
+            </tr>`;
+      }).join("");
+    })()}
+      </table>
+    </div>
+
+    <div class="plan-section">
+      <h3>7. 서명</h3>
+      <div style="font-size:11px;margin-bottom:10px;">위의 직업재활계획을 검토하였고 이를 성취하기 위한 최대한의 협력에 동의합니다.</div>
+      <div style="display:flex;flex-direction:column;gap:14px;font-size:12px;max-width:500px;">
+        <div class="form-row"><span style="min-width:70px;">작성일 :</span>
+          <input class="form-inp" type="date" value="${esc(planData.planDate || "")}" style="width:150px;flex:none;" oninput="planData.planDate=this.value"></div>
+        <div class="form-row"><span style="min-width:70px;">이용자 :</span><input class="form-inp" value="${esc(planData.user || "")}" style="width:100px;flex:none;" oninput="planData.user=this.value">&nbsp;(인/서명)</div>
+        <div class="form-row"><span style="min-width:70px;">보호자 :</span><input class="form-inp" value="${esc(planData.guardian || "")}" style="width:100px;flex:none;" oninput="planData.guardian=this.value">&nbsp;(인/서명)</div>
+        ${(() => {
+      if (!planData.signRows) planData.signRows = [{ label: "담 당", name: "" }, { label: "팀 장", name: "" }, { label: "원 장", name: "" }];
+      return "";
+    })()}
+        <div id="sign-extra-rows">
+          ${planData.signRows.map((row, i) => `
+            <div class="form-row" style="margin-bottom:14px;">
+              <span contenteditable="true" style="min-width:70px;display:inline-block;cursor:text;border-bottom:1px dashed transparent;outline:none;"
+                onmouseover="this.style.borderBottomColor='#90CAF9'"
+                onmouseout="this.style.borderBottomColor='transparent'"
+                onfocus="this.style.borderBottomColor='var(--primary)'"
+                onblur="planData.signRows[${i}].label=this.innerText;this.style.borderBottomColor='transparent'"
+                title="클릭하여 직책 수정">${esc(row.label || "직책")} :</span>
+              <input class="form-inp" value="${esc(row.name || "")}" placeholder="이름" style="width:100px;flex:none;" oninput="planData.signRows[${i}].name=this.value">
+              &nbsp;(인/서명)
+              <button onclick="removeSignRow(${i})" class="no-print" style="background:none;border:none;color:#BDBDBD;cursor:pointer;font-size:15px;padding:0 4px;line-height:1;" title="삭제">✕</button>
+            </div>`).join("")}
+        </div>
+        <div class="form-row no-print" style="margin-top:2px;">
+          <button onclick="addSignRow()" style="background:none;border:1px dashed #90CAF9;color:#1565C0;border-radius:4px;padding:4px 12px;font-size:11px;cursor:pointer;font-family:inherit;">+ 결재라인 추가</button>
+        </div>
+      </div>
+    </div>
+  </div>`;
+  };
+  var methodItems = [];
+  var pickingIdx = null;
+  window.addMethodItem = async function() {
+    const mEl = document.getElementById("method-inp-method");
+    const cEl = document.getElementById("method-inp-content");
+    const sEl = document.getElementById("method-inp-session");
+    const method = mEl.value.trim(), content = cEl.value.trim(), session = sEl.value.trim();
+    if (!method) {
+      toast("방법을 적어 주세요");
+      mEl.focus();
+      return;
+    }
+    if (methodItems.some((it) => it.method === method && it.content === content && it.session === session)) {
+      toast("같은 내용이 이미 목록에 있어요");
+      return;
+    }
+    methodItems.push({ method, content, session, title: method, full: "방법: " + method + "\n내용: " + content + "\n회기: " + session });
+    try {
+      await setDoc(doc(db, "settings", "methodItems"), { items: methodItems });
+      toast(`추가됨 (총 ${methodItems.length}개)`);
+      mEl.value = "";
+      cEl.value = "";
+      sEl.value = "";
+      mEl.focus();
+    } catch (e) {
+      toast(`추가 (저장 실패: ${e.message})`);
+    }
+    renderMethodList();
+  };
+  function methodDesc(item) {
+    if (item.method === void 0) return (item.full || "").substring((item.title || "").length).trim();
+    const parts = [];
+    if (item.content) parts.push("내용: " + item.content);
+    if (item.session) parts.push("회기: " + item.session);
+    return parts.join(" / ");
+  }
+  function renderMethodList() {
+    const el = document.getElementById("method-list");
+    if (!el) return;
+    if (methodItems.length === 0) {
+      el.innerHTML = '<div class="mp-empty">방법·내용·회기를 적고 [추가]를 누르세요</div>';
+      return;
+    }
+    el.innerHTML = methodItems.map((item, i) => `
+    <div class="mp-item" onclick="selectMethod(${i})">
+      <button class="mp-del" onclick="event.stopPropagation();deleteMethodItem(${i})" title="삭제">✕</button>
+      <div class="mp-title">${esc(item.title)}</div>
+      <div class="mp-desc">${esc(methodDesc(item))}</div>
+    </div>`).join("");
+  }
+  window.deleteMethodItem = async function(i) {
+    const item = methodItems[i];
+    if (!confirm(`"${item.title}" 항목을 삭제할까요?`)) return;
+    methodItems.splice(i, 1);
+    try {
+      await setDoc(doc(db, "settings", "methodItems"), { items: methodItems });
+      toast("삭제됨");
+    } catch (e) {
+      toast(`삭제 (저장 실패: ${e.message})`);
+    }
+    renderMethodList();
+  };
+  window.openMethodPicker = function(idx) {
+    document.querySelectorAll('td[id^="method-td-"]').forEach((td2) => {
+      td2.style.background = "";
+      td2.style.outline = "";
+    });
+    pickingIdx = idx;
+    const td = document.getElementById("method-td-" + idx);
+    if (td) {
+      td.style.background = "#E3F2FD";
+      td.style.outline = "2px solid var(--primary)";
+    }
+    const panel = document.getElementById("method-panel");
+    if (panel) {
+      panel.style.borderLeft = "1px solid var(--primary)";
+      panel.scrollTop = 0;
+    }
+    const header = panel?.querySelector("div:first-child");
+    if (header) {
+      header.style.background = "var(--primary)";
+      header.style.color = "#fff";
+      header.textContent = "수행방법을 골라보세요!";
+    }
+  };
+  window.selectMethod = function(methodIdx) {
+    applyMethodItem(methodItems[methodIdx]);
+  };
+  function applyMethodItem(item) {
+    if (pickingIdx === null) {
+      toast("먼저 수행방법 셀을 클릭하세요");
+      return;
+    }
+    if (!item) return;
+    if (reportData.shortGoals && reportData.shortGoals[pickingIdx] !== void 0) {
+      reportData.shortGoals[pickingIdx].method = item.full;
+    }
+    if (!planData.methods) planData.methods = {};
+    planData.methods[pickingIdx] = item.full;
+    const cell = document.getElementById("method-cell-" + pickingIdx);
+    if (cell) {
+      cell.textContent = item.full;
+      cell.style.whiteSpace = "pre-wrap";
+      cell.style.color = "inherit";
+    }
+    document.querySelectorAll('td[id^="method-td-"]').forEach((td) => {
+      td.style.background = "";
+      td.style.outline = "";
+    });
+    const panel = document.getElementById("method-panel");
+    if (panel) {
+      panel.style.borderLeft = "1px solid #dee3e9";
+    }
+    const header = panel?.querySelector("div:first-child");
+    if (header) {
+      header.style.background = "#fff";
+      header.style.color = "#0a1317";
+      header.textContent = "수행방법 목록";
+    }
+    toast(`"${item.title}" 적용됨`);
+    pickingIdx = null;
+  }
+  function initSignRows() {
+    if (!planData.signRows) {
+      planData.signRows = [{ label: "담 당", name: "" }, { label: "팀 장", name: "" }, { label: "원 장", name: "" }];
+    }
+  }
+  window.addConfSignRow = function() {
+    if (!conferenceData.signRows) conferenceData.signRows = [{ label: "담 당", name: "" }, { label: "팀 장", name: "" }, { label: "원 장", name: "" }];
+    conferenceData.signRows.push({ label: "", name: "" });
+    const year = document.getElementById("conf-year-sel").value;
+    const type = document.getElementById("conf-type-sel").value;
+    renderConference(year, type, String(parseInt(year) - 1), {});
+  };
+  window.removeConfSignRow = function(i) {
+    if (!conferenceData.signRows) return;
+    if (conferenceData.signRows.length <= 1) {
+      toast("최소 1개는 있어야 해요");
+      return;
+    }
+    conferenceData.signRows.splice(i, 1);
+    const year = document.getElementById("conf-year-sel").value;
+    const type = document.getElementById("conf-type-sel").value;
+    renderConference(year, type, String(parseInt(year) - 1), {});
+  };
+  window.addSignRow = function() {
+    initSignRows();
+    planData.signRows.push({ label: "", name: "" });
+    renderPlan();
+  };
+  window.removeSignRow = function(i) {
+    initSignRows();
+    if (planData.signRows.length <= 1) {
+      toast("최소 1개는 있어야 해요");
+      return;
+    }
+    planData.signRows.splice(i, 1);
+    renderPlan();
+  };
+  window.savePlan = async function() {
+    if (!currentPerson) return;
+    const year = document.getElementById("plan-year-sel").value;
+    const type = document.getElementById("plan-type-sel").value;
+    try {
+      await setDoc(
+        doc(db, "scores", `${currentPerson.id}_${year}_${type}`),
+        { plan: planData },
+        { merge: true }
+      );
+      setStatusLoadedAt(0);
+      toast("계획서 저장 완료");
+    } catch (e) {
+      toast("저장 실패: " + e.message);
+    }
+  };
+  function setMethodItems(v) {
+    methodItems = v;
+  }
+
+  // src/js/평가지관리.js
+  var DEFAULT_ITEMS = [];
+  function getTmplId() {
+    const y = document.getElementById("tmpl-year-sel").value;
+    const t = document.getElementById("tmpl-type-sel").value;
+    return `${y}_${t}`;
+  }
+  var tmplLocked = false;
+  var tmplLockCache = {};
+  async function tmplHasScores(y, t) {
+    const key = `${y}_${t}`;
+    if (!(key in tmplLockCache)) {
+      try {
+        const c = await getCountFromServer(query(collection(db, "scores"), where("year", "==", y), where("type", "==", t)));
+        tmplLockCache[key] = c.data().count;
+      } catch (e) {
+        tmplLockCache[key] = 0;
+      }
+    }
+    return tmplLockCache[key] > 0;
+  }
+  async function checkTmplLock() {
+    const y = document.getElementById("tmpl-year-sel").value;
+    const t = document.getElementById("tmpl-type-sel").value;
+    tmplLocked = await tmplHasScores(y, t) && !window._tmplUnlocked;
+    const tree = document.getElementById("tmpl-tree");
+    const banner = document.getElementById("tmpl-lock-banner");
+    if (tmplLocked) {
+      if (tree) {
+        tree.style.pointerEvents = "none";
+        tree.style.opacity = "0.75";
+      }
+      if (banner) {
+        banner.style.display = "";
+        banner.textContent = `이 평가지로 입력된 자료가 있어 잠금 상태입니다 (보기 전용)`;
+      }
+    } else {
+      if (tree) {
+        tree.style.pointerEvents = "";
+        tree.style.opacity = "";
+      }
+      if (banner) banner.style.display = "none";
+    }
+  }
+  async function renderTmplExplorer() {
+    const el = document.getElementById("tmpl-explorer");
+    if (!el) return;
+    const ySel = document.getElementById("tmpl-year-sel");
+    const tSel = document.getElementById("tmpl-type-sel");
+    const years = Array.from(ySel.options).map((o) => o.value);
+    const types = Array.from(tSel.options).map((o) => o.value);
+    const curY = ySel.value, curT = tSel.value;
+    let html = "";
+    for (const y of years) {
+      html += `<div class="tx-year">${esc(y)}년</div>`;
+      for (const t of types) {
+        const tmpl = await getTmplData(y, t);
+        const empty = !tmpl || !(tmpl.items || []).length;
+        const locked = await tmplHasScores(y, t);
+        const tags = [];
+        if (empty) tags.push("(비어있음)");
+        if (locked) tags.push("(잠김)");
+        html += `<div class="person-card tx-item${y === curY && t === curT ? " active" : ""}" onclick="pickTemplate('${y}','${t}')">
+                 <div class="pname">${esc(t)}</div>
+                 ${tags.length ? `<div class="pmeta">${tags.join(" ")}</div>` : ""}
+               </div>`;
+      }
+    }
+    el.innerHTML = html;
+  }
+  window.pickTemplate = function(y, t) {
+    if (!confirmDiscardTmpl()) return;
+    document.getElementById("tmpl-year-sel").value = y;
+    document.getElementById("tmpl-type-sel").value = t;
+    loadTemplate();
+    renderTmplExplorer();
+  };
+  window.unlockTemplate = function() {
+    window._tmplUnlocked = true;
+    checkTmplLock();
+    toast("잠금 해제됨 — 이번 세션 동안만 유효합니다");
+  };
+  var tmplDocCache = {};
+  async function getTmplData(year, type) {
+    const key = `${year}_${type}`;
+    if (key in tmplDocCache) return tmplDocCache[key];
+    const snap = await getDoc(doc(db, "templates", key));
+    tmplDocCache[key] = snap.exists() ? snap.data() : null;
+    return tmplDocCache[key];
+  }
+  async function loadSelectors() {
+    try {
+      const snap = await getDoc(doc(db, "settings", "selectors"));
+      let years, types;
+      if (snap.exists()) {
+        years = snap.data().years || [];
+        types = snap.data().types || [];
+      } else {
+        years = [String((/* @__PURE__ */ new Date()).getFullYear())];
+        types = ["기본"];
+        await setDoc(doc(db, "settings", "selectors"), { years, types });
+      }
+      const selIds = ["g-year-sel", "tmpl-year-sel", "eval-year-sel", "rpt-year-sel", "plan-year-sel", "conf-year-sel"];
+      const typeIds = ["g-type-sel", "tmpl-type-sel", "eval-type-sel", "rpt-type-sel", "plan-type-sel", "conf-type-sel"];
+      selIds.forEach((id) => {
+        const sel = document.getElementById(id);
+        if (!sel) return;
+        const existing = new Set(Array.from(sel.options).map((o) => o.value));
+        years.forEach((y) => {
+          if (!existing.has(y)) {
+            const opt = document.createElement("option");
+            opt.value = y;
+            opt.textContent = y + "년";
+            sel.appendChild(opt);
+          }
+        });
+        const sortedY = Array.from(sel.options).sort((a, b) => parseInt(b.value) - parseInt(a.value));
+        sel.innerHTML = "";
+        sortedY.forEach((o) => sel.appendChild(o));
+      });
+      typeIds.forEach((id) => {
+        const sel = document.getElementById(id);
+        if (!sel) return;
+        const existing = new Set(Array.from(sel.options).map((o) => o.value));
+        types.forEach((t) => {
+          if (!existing.has(t)) {
+            const opt = document.createElement("option");
+            opt.value = t;
+            opt.textContent = t;
+            sel.appendChild(opt);
+          }
+        });
+      });
+    } catch (e) {
+      console.error("셀렉터 불러오기 실패:", e);
+    }
+  }
+  async function loadMethodItems() {
+    try {
+      const snap = await getDoc(doc(db, "settings", "methodItems"));
+      if (snap.exists()) {
+        setMethodItems(snap.data().items || []);
+        renderMethodList();
+      }
+    } catch (e) {
+      console.error("수행방법 불러오기 실패:", e);
+    }
+  }
+  var tmplGSeq = 0;
+  var tmplDirty = false;
+  var tmplLoaded = { y: "", t: "" };
+  window.markTmplDirty = function() {
+    tmplDirty = true;
+  };
+  function tagCatGroups(items) {
+    let g = null, curCat = "";
+    items.forEach((it) => {
+      const c = it.cat || "";
+      if (g === null || c && c !== curCat) {
+        g = ++tmplGSeq;
+        curCat = c;
+      }
+      it._g = g;
+      it.cat = curCat;
+    });
+    return items;
+  }
+  function confirmDiscardTmpl() {
+    return !tmplDirty || confirm("저장하지 않은 변경이 있습니다. 버리고 이동할까요?");
+  }
+  window.addEventListener("beforeunload", (e) => {
+    if (tmplDirty) {
+      e.preventDefault();
+      e.returnValue = "";
+    }
+  });
+  window.onTmplSelChange = function() {
+    if (!confirmDiscardTmpl()) {
+      document.getElementById("tmpl-year-sel").value = tmplLoaded.y;
+      document.getElementById("tmpl-type-sel").value = tmplLoaded.t;
+      return;
+    }
+    loadTemplate();
+  };
+  function markTmplLoaded() {
+    tmplLoaded = { y: document.getElementById("tmpl-year-sel").value, t: document.getElementById("tmpl-type-sel").value };
+    tmplDirty = false;
+  }
+  window.loadTemplate = async function() {
+    document.getElementById("tmpl-saving").textContent = "불러오는 중...";
+    try {
+      const ref = doc(db, "templates", getTmplId());
+      const snap = await getDoc(ref);
+      if (snap.exists()) {
+        setTmplItems(tagCatGroups(snap.data().items || []));
+      } else {
+        setTmplItems(JSON.parse(JSON.stringify(DEFAULT_ITEMS)));
+      }
+      markTmplLoaded();
+      renderTemplateTree();
+      if (document.getElementById("pane-template")?.classList.contains("active")) checkTmplLock();
+      document.getElementById("tmpl-saving").textContent = "";
+    } catch (e) {
+      toast("불러오기 실패: " + e.message);
+      setTmplItems(JSON.parse(JSON.stringify(DEFAULT_ITEMS)));
+      markTmplLoaded();
+      renderTemplateTree();
+    }
+  };
+  function checkTemplate() {
+    const groups = buildCatGroups(tmplItems);
+    const catInp = (g) => document.querySelector(`.tree-cat-name-inp[data-g="${g}"]`);
+    const cellInp = (idx) => document.querySelector(`.tree-cell[data-field="content"][data-idx="${idx}"]`);
+    const short = (t) => t.length > 30 ? t.slice(0, 30) + "…" : t;
+    const emptyCat = groups.find((cg) => !cg.cat.trim());
+    if (emptyCat) return { msg: "대분류 이름을 적어 주세요", el: catInp(emptyCat.g) };
+    const seenCat = /* @__PURE__ */ new Set();
+    for (const cg of groups) {
+      const name = cg.cat.trim();
+      if (seenCat.has(name)) return { msg: `같은 이름의 대분류가 있습니다: ${name}`, el: catInp(cg.g) };
+      seenCat.add(name);
+    }
+    const empties = tmplItems.filter((it) => !(it.content || "").trim());
+    if (empties.length) return { msg: `내용이 빈 항목이 ${empties.length}개 있습니다`, el: cellInp(empties[0]._idx) };
+    const seen = /* @__PURE__ */ new Set();
+    for (const it of tmplItems) {
+      const c = it.content.trim();
+      if (seen.has(c)) return { msg: `같은 내용의 항목이 있습니다: ${short(c)}`, el: cellInp(it._idx) };
+      seen.add(c);
+    }
+    return null;
+  }
+  window.saveTemplate = async function() {
+    if (tmplLocked) {
+      toast("점수가 입력된 평가지라 잠겨 있어요");
+      return;
+    }
+    collectTreeData();
+    const bad = checkTemplate();
+    if (bad) {
+      toast(bad.msg, 3500);
+      if (bad.el) bad.el.focus();
+      return;
+    }
+    tmplItems.forEach((item, i) => {
+      item.cat = (item.cat || "").trim();
+      item.content = (item.content || "").trim();
+      item.no = i + 1;
+    });
+    const items = tmplItems.map(({ _g, _idx, ...rest }) => rest);
+    document.getElementById("tmpl-saving").textContent = "저장 중...";
+    try {
+      await setDoc(doc(db, "templates", getTmplId()), { items, updatedAt: (/* @__PURE__ */ new Date()).toISOString() });
+      tmplDirty = false;
+      setStatusLoadedAt(0);
+      tmplDocCache = {};
+      renderTemplateTree();
+      renderTmplExplorer();
+      document.getElementById("tmpl-saving").textContent = "저장됨";
+      toast("평가지 저장 완료");
+      setTimeout(() => document.getElementById("tmpl-saving").textContent = "", 3e3);
+    } catch (e) {
+      toast("저장 실패: " + e.message);
+    }
+  };
+  window.initDefaultTemplate = function() {
+    if (tmplLocked) {
+      toast("점수가 입력된 평가지라 잠겨 있어요");
+      return;
+    }
+    if (!confirm("평가지를 초기화하시겠습니까? 모든 항목이 삭제됩니다.")) return;
+    setTmplItems([]);
+    tmplDirty = true;
+    renderTemplateTree();
+  };
+  window.addYear = function() {
+    if (!confirmDiscardTmpl()) return;
+    const input = prompt("추가할 연도를 입력하세요 (예: 2027)");
+    if (!input) return;
+    const n = parseInt(input.replace(/[^0-9]/g, ""));
+    if (isNaN(n)) return;
+    if (n < 2e3 || n > 2100) {
+      toast("연도는 2000~2100 사이로 적어 주세요");
+      return;
+    }
+    const year = String(n);
+    const sel = document.getElementById("tmpl-year-sel");
+    for (let opt2 of sel.options) {
+      if (opt2.value === year) {
+        toast("이미 있는 연도예요");
+        sel.value = year;
+        loadTemplate();
+        renderTmplExplorer();
+        return;
+      }
+    }
+    const opt = document.createElement("option");
+    opt.value = year;
+    opt.textContent = year + "년";
+    sel.appendChild(opt);
+    const opts = Array.from(sel.options).sort((a, b) => parseInt(b.value) - parseInt(a.value));
+    sel.innerHTML = "";
+    opts.forEach((o) => sel.appendChild(o));
+    sel.value = year;
+    setTmplItems([]);
+    markTmplLoaded();
+    renderTemplateTree();
+    syncFromTemplate();
+    renderTmplExplorer();
+    toast(`${year}년 추가됨`);
+  };
+  window.copyPrevTemplate = async function() {
+    if (tmplLocked) {
+      toast("점수가 입력된 평가지라 잠겨 있어요");
+      return;
+    }
+    const year = document.getElementById("tmpl-year-sel").value;
+    const type = document.getElementById("tmpl-type-sel").value;
+    const prevYear = String(parseInt(year) - 1);
+    let snap;
+    try {
+      snap = await getDoc(doc(db, "templates", `${prevYear}_${type}`));
+    } catch (e) {
+      toast("불러오기 실패: " + e.message);
+      return;
+    }
+    const prevItems2 = snap.exists() ? snap.data().items || [] : [];
+    if (prevItems2.length === 0) {
+      toast(`${prevYear}년 "${type}" 평가지가 없어요`);
+      return;
+    }
+    if (tmplItems.length > 0 && !confirm(`지금 편집 중인 항목 ${tmplItems.length}개를 지우고 ${prevYear}년 "${type}" 평가지(${prevItems2.length}개 항목)를 가져옵니다. 계속할까요?`)) return;
+    setTmplItems(tagCatGroups(JSON.parse(JSON.stringify(prevItems2))));
+    tmplDirty = true;
+    renderTemplateTree();
+    toast(`${prevYear}년 평가지 ${prevItems2.length}개 항목 복사됨 — 확인 후 "평가지 저장"을 눌러주세요`);
+  };
+  window.addJobType = function() {
+    if (!confirmDiscardTmpl()) return;
+    const name = prompt("추가할 직무 이름을 입력하세요 (예: 데이터라벨링)");
+    if (!name || !name.trim()) return;
+    const trimmed = name.trim();
+    if (/['"\/\\<>]/.test(trimmed)) {
+      toast(`직무 이름에 ' " / \\ < > 는 쓸 수 없어요`, 3500);
+      return;
+    }
+    const sel = document.getElementById("tmpl-type-sel");
+    for (let opt2 of sel.options) {
+      if (opt2.value === trimmed) {
+        toast("이미 있는 직무예요");
+        sel.value = trimmed;
+        loadTemplate();
+        renderTmplExplorer();
+        return;
+      }
+    }
+    const opt = document.createElement("option");
+    opt.value = trimmed;
+    opt.textContent = trimmed;
+    sel.appendChild(opt);
+    sel.value = trimmed;
+    setTmplItems([]);
+    markTmplLoaded();
+    renderTemplateTree();
+    syncFromTemplate();
+    renderTmplExplorer();
+    toast(`"${trimmed}" 직무 추가됨`);
+  };
+  window.deleteJobType = async function() {
+    if (tmplLocked) {
+      toast("점수가 입력된 평가지라 잠겨 있어요");
+      return;
+    }
+    const sel = document.getElementById("tmpl-type-sel");
+    const val = sel.value;
+    if (sel.options.length <= 1) {
+      toast("마지막 직무는 삭제할 수 없어요");
+      return;
+    }
+    if (!confirmDiscardTmpl()) return;
+    if (!confirm(`"${val}" 직무를 목록에서 삭제할까요?
+(저장된 데이터는 유지됩니다)`)) return;
+    try {
+      const ref = doc(db, "settings", "selectors");
+      const snap = await getDoc(ref);
+      if (snap.exists()) {
+        await setDoc(ref, { years: snap.data().years || [], types: (snap.data().types || []).filter((t) => t !== val) });
+      }
+    } catch (e) {
+      toast("삭제 실패: " + e.message);
+      return;
+    }
+    ["g-type-sel", "tmpl-type-sel", "eval-type-sel", "rpt-type-sel", "plan-type-sel", "conf-type-sel"].forEach((id) => {
+      const s = document.getElementById(id);
+      if (!s) return;
+      Array.from(s.options).forEach((o) => {
+        if (o.value === val) o.remove();
+      });
+    });
+    tmplDirty = false;
+    loadTemplate();
+    renderTmplExplorer();
+    toast(`"${val}" 직무 삭제됨`);
+  };
+  function collectTreeData() {
+    document.querySelectorAll(".tree-cell[data-field]").forEach((inp) => {
+      const idx = parseInt(inp.dataset.idx);
+      const field = inp.dataset.field;
+      if (!tmplItems[idx]) return;
+      if (field === "no") tmplItems[idx].no = parseInt(inp.value) || idx + 1;
+      if (field === "content") tmplItems[idx].content = inp.value;
+    });
+  }
+  function renderTemplateTree() {
+    const container = document.getElementById("tmpl-tree");
+    if (!container) return;
+    container.innerHTML = "";
+    const catGroups = buildCatGroups(tmplItems);
+    catGroups.forEach((catGroup) => {
+      const catDiv = document.createElement("div");
+      catDiv.className = "tree-cat";
+      const catHeader = document.createElement("div");
+      catHeader.className = "tree-cat-header";
+      const totalItems = catGroup.items.length;
+      catHeader.innerHTML = `
+      <span class="chevron open">▶</span>
+      <input class="tree-cat-name-inp" value="${escHtml(catGroup.cat)}"
+        placeholder="대분류 이름 (예: 직무기능-현수막)" data-g="${catGroup.g}" oninput="onCatRename(this)">
+      <span style="font-size:11px;color:#546E7A;margin-left:4px;">${totalItems}문항</span>
+      <div class="cat-actions" style="margin-left:auto;display:flex;gap:4px;">
+        <button class="btn btn-danger btn-sm" onclick="deleteCat(${catGroup.g},event)">삭제</button>
+      </div>`;
+      catHeader.addEventListener("click", (e) => {
+        if (e.target.closest(".cat-actions,.tree-cat-name-inp")) return;
+        const body = catDiv.querySelector(".tree-cat-body");
+        const ch = catHeader.querySelector(".chevron");
+        body.classList.toggle("open");
+        ch.classList.toggle("open");
+      });
+      catDiv.appendChild(catHeader);
+      const catBody = document.createElement("div");
+      catBody.className = "tree-cat-body open";
+      catBody.appendChild(buildItemsTable(catGroup.items));
+      catBody.appendChild(buildAddRow(catGroup.g));
+      catDiv.appendChild(catBody);
+      container.appendChild(catDiv);
+    });
+    const addCatDiv = document.createElement("div");
+    addCatDiv.style.cssText = "margin-top:8px;display:flex;gap:8px;";
+    addCatDiv.innerHTML = `
+    <button class="tree-add-cat-btn" onclick="addCat()">＋ 대분류 추가</button>`;
+    container.appendChild(addCatDiv);
+    bindTreePaste();
+  }
+  function buildCatGroups(items) {
+    const catMap = [];
+    items.forEach((item, idx) => {
+      item._idx = idx;
+      if (item._g === void 0) item._g = ++tmplGSeq;
+      let cg = catMap.find((c) => c.g === item._g);
+      if (!cg) {
+        cg = { g: item._g, cat: item.cat || "", items: [] };
+        catMap.push(cg);
+      }
+      cg.items.push(item);
+    });
+    return catMap;
+  }
+  function buildItemsTable(items) {
+    const table = document.createElement("table");
+    table.className = "tree-items-table";
+    table.innerHTML = `<thead><tr>
+    <th style="width:36px;text-align:center;">번호</th>
+    <th>평가 내용</th>
+    <th style="width:46px;"></th>
+  </tr></thead>`;
+    const tbody = document.createElement("tbody");
+    items.forEach((item, ii) => {
+      const tr = document.createElement("tr");
+      tr.dataset.idx = item._idx;
+      tr.innerHTML = `
+      <td style="text-align:center;color:#555;font-size:12px;font-weight:600;padding:4px;width:36px;">${ii + 1}</td>
+      <td><input class="tree-cell" value="${escHtml(item.content)}"
+        placeholder="평가 내용" data-idx="${item._idx}" data-field="content"
+        onkeydown="onTreeItemKey(event,${item._idx})"
+        oninput="tmplItems[${item._idx}]&&(tmplItems[${item._idx}].content=this.value);markTmplDirty()"></td>
+      <td style="text-align:center;">
+        <button class="btn btn-danger btn-sm" onclick="deleteTreeItem(${item._idx})">✕</button>
+      </td>`;
+      tbody.appendChild(tr);
+    });
+    table.appendChild(tbody);
+    return table;
+  }
+  function buildAddRow(g) {
+    const div = document.createElement("div");
+    div.className = "tree-add-row";
+    div.innerHTML = `<button class="tree-add-btn"
+    onclick="addItem(${g},event)">+ 항목 추가</button>
+    <span style="font-size:11px;color:#bbb;">내용 셀에서 Ctrl+V로 엑셀 복붙 가능</span>`;
+    return div;
+  }
+  window.onCatRename = function(inp) {
+    const g = parseInt(inp.dataset.g);
+    tmplItems.forEach((it) => {
+      if (it._g === g) it.cat = inp.value;
+    });
+    tmplDirty = true;
+  };
+  window.onTreeItemKey = function(e, idx) {
+    if ((e.key === "Enter" || e.key === "Tab") && !e.shiftKey) {
+      e.preventDefault();
+      const all = Array.from(document.querySelectorAll('.tree-cell[data-field="content"]'));
+      const cur = all.findIndex((el) => parseInt(el.dataset.idx) === idx);
+      if (cur < all.length - 1) all[cur + 1].focus();
+    } else if (e.key === "Tab" && e.shiftKey) {
+      e.preventDefault();
+      const all = Array.from(document.querySelectorAll('.tree-cell[data-field="content"]'));
+      const cur = all.findIndex((el) => parseInt(el.dataset.idx) === idx);
+      if (cur > 0) all[cur - 1].focus();
+    }
+  };
+  window.addCat = function() {
+    collectTreeData();
+    const names = new Set(tmplItems.map((it) => (it.cat || "").trim()));
+    let newCat = "새 대분류";
+    for (let n = 2; names.has(newCat); n++) newCat = "새 대분류 " + n;
+    const g = ++tmplGSeq;
+    tmplItems.push({ cat: newCat, no: tmplItems.length + 1, content: "", _g: g });
+    tmplDirty = true;
+    renderTemplateTree();
+    const inp = document.querySelector(`.tree-cat-name-inp[data-g="${g}"]`);
+    if (inp) {
+      inp.focus();
+      inp.select();
+    }
+  };
+  window.addItem = function(g, e) {
+    if (e) e.stopPropagation();
+    collectTreeData();
+    let lastIdx = -1;
+    tmplItems.forEach((it, i) => {
+      if (it._g === g) {
+        lastIdx = i;
+      }
+    });
+    if (lastIdx < 0) return;
+    const newItem = { cat: tmplItems[lastIdx].cat, no: lastIdx + 2, content: "", _g: g };
+    tmplItems.splice(lastIdx + 1, 0, newItem);
+    tmplDirty = true;
+    renderTemplateTree();
+    const all = document.querySelectorAll('.tree-cell[data-field="content"]');
+    const targetInp = Array.from(all).find((el) => parseInt(el.dataset.idx) === lastIdx + 1);
+    if (targetInp) targetInp.focus();
+    else if (all.length) all[all.length - 1].focus();
+  };
+  window.deleteTreeItem = function(idx) {
+    if (tmplItems.length <= 1) {
+      toast("마지막 항목은 삭제할 수 없어요");
+      return;
+    }
+    collectTreeData();
+    tmplItems.splice(idx, 1);
+    tmplDirty = true;
+    renderTemplateTree();
+  };
+  window.deleteCat = function(g, e) {
+    if (e) e.stopPropagation();
+    collectTreeData();
+    const cg = buildCatGroups(tmplItems).find((c) => c.g === g);
+    if (!cg) return;
+    const total = cg.items.length;
+    if (!confirm(`"${cg.cat}" 대분류와 항목 ${total}개를 모두 삭제할까요?`)) return;
+    setTmplItems(tmplItems.filter((it) => it._g !== g));
+    tmplDirty = true;
+    renderTemplateTree();
+  };
+  function bindTreePaste() {
+    document.querySelectorAll('.tree-cell[data-field="content"]').forEach((inp) => {
+      inp.addEventListener("paste", (e) => {
+        const text = (e.clipboardData || window.clipboardData).getData("text");
+        if (!/[\r\n]/.test(text.replace(/[\r\n]+$/, ""))) return;
+        e.preventDefault();
+        handleTreePaste(text, parseInt(inp.dataset.idx));
+      });
+    });
+  }
+  function handleTreePaste(text, startIdx) {
+    collectTreeData();
+    const baseItem = tmplItems[startIdx];
+    if (!baseItem) return;
+    const lines = text.replace(/\r\n/g, "\n").replace(/\r/g, "\n").trimEnd().split("\n");
+    let insertIdx = startIdx;
+    let filled = 0;
+    lines.forEach((line) => {
+      const val = line.split("	")[0].trim();
+      if (!val) return;
+      if (filled === 0) {
+        tmplItems[insertIdx].content = val;
+      } else {
+        insertIdx++;
+        tmplItems.splice(insertIdx, 0, {
+          cat: baseItem.cat,
+          _g: baseItem._g,
+          no: insertIdx + 1,
+          content: val
+        });
+      }
+      filled++;
+    });
+    tmplDirty = true;
+    renderTemplateTree();
+    toast(`${filled}개 항목 붙여넣기 완료`);
+  }
+  function escHtml(s) {
+    if (!s) return "";
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+  function setTmplLockCache(v) {
+    tmplLockCache = v;
+  }
+
+  // src/js/공통.js
+  function applyZoom(z) {
+    document.documentElement.style.setProperty("--ui-zoom", z);
+    const a = document.getElementById("zoom-100"), b = document.getElementById("zoom-125");
+    if (a) a.classList.toggle("on", z < 1.25);
+    if (b) b.classList.toggle("on", z >= 1.25);
+  }
+  window.setZoom = function(z) {
+    localStorage.setItem("eval_zoom", String(z));
+    applyZoom(z);
+  };
+  applyZoom(parseFloat(localStorage.getItem("eval_zoom") || "1"));
+  setTimeout(async () => {
+    await loadSelectors();
+    loadTemplate();
+    loadPersons();
+    loadMethodItems();
+  }, 0);
+  var tmplItems = [];
+  window.tmplItems = tmplItems;
+  var persons = [];
+  var currentPerson = null;
+  var currentScores = {};
+  var prevScores = {};
+  var prevItems = [];
+  var prevShortGoals = [];
+  var currentGroupStats = [];
+  var editingPersonId = null;
+  var reportData = {};
+  window.reportData = reportData;
+  window.planData = {};
+  var planData = window.planData;
+  var PANE_SELS = {
+    "pane-person": ["eval-year-sel", "eval-type-sel"],
+    "pane-report": ["rpt-year-sel", "rpt-type-sel"],
+    "pane-conference": ["conf-year-sel", "conf-type-sel"],
+    "pane-plan": ["plan-year-sel", "plan-type-sel"]
+  };
+  function applyGlobalSel() {
+    const y = document.getElementById("g-year-sel")?.value;
+    const t = document.getElementById("g-type-sel")?.value;
+    if (!y || !t) return;
+    Object.values(PANE_SELS).forEach(([yId, tId]) => {
+      const ys = document.getElementById(yId), ts = document.getElementById(tId);
+      if (ys && Array.from(ys.options).some((o) => o.value === y)) ys.value = y;
+      if (ts && Array.from(ts.options).some((o) => o.value === t)) ts.value = t;
+    });
+  }
+  window.onGlobalSelChange = function() {
+    applyGlobalSel();
+    const active = document.querySelector(".pane.active");
+    if (!active) return;
+    if (active.id === "pane-person") return onEvalSelChange();
+    reloadPane(active.id);
+  };
+  async function reloadPane(id) {
+    if (id === "pane-person") {
+      await loadPersons();
+      if (currentPerson && persons.find((p) => p.id === currentPerson.id)) await selectPerson(currentPerson.id);
+      return;
+    }
+    if (id === "pane-report") return loadReportPersons();
+    if (id === "pane-conference") return loadConferencePersons();
+    if (id === "pane-plan") return loadPlanPersons();
+    if (id === "pane-status") return showStatusBoard();
+    if (id === "pane-template") {
+      checkTmplLock();
+      return renderTmplExplorer();
+    }
+  }
+  window.showPane = function(id, skipReload) {
+    document.querySelectorAll(".pane").forEach((p) => p.classList.remove("active"));
+    document.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+    const btn = document.querySelector(`.tab-btn[data-pane="${id}"]`);
+    if (btn) btn.classList.add("active");
+    if (skipReload) return;
+    applyGlobalSel();
+    reloadPane(id);
+  };
+  window.toast = function(msg, dur = 2200) {
+    const t = document.getElementById("toast");
+    t.textContent = msg;
+    t.classList.add("show");
+    setTimeout(() => t.classList.remove("show"), dur);
+  };
+  window.openModal = (id) => document.getElementById(id).classList.add("show");
+  window.closeModal = (id) => document.getElementById(id).classList.remove("show");
+  function setCurrentGroupStats(v) {
+    currentGroupStats = v;
+  }
+  function setCurrentPerson(v) {
+    currentPerson = v;
+  }
+  function setCurrentScores(v) {
+    currentScores = v;
+  }
+  function setEditingPersonId(v) {
+    editingPersonId = v;
+  }
+  function setPersons(v) {
+    persons = v;
+  }
+  function setPlanData(v) {
+    planData = v;
+  }
+  function setPrevItems(v) {
+    prevItems = v;
+  }
+  function setPrevScores(v) {
+    prevScores = v;
+  }
+  function setPrevShortGoals(v) {
+    prevShortGoals = v;
+  }
+  function setReportData(v) {
+    reportData = v;
+  }
+  function setTmplItems(v) {
+    tmplItems = v;
+    window.tmplItems = v;
+  }
+
+  // src/js/휴지통.js
+  window.openTrash = async function() {
+    document.getElementById("modal-trash").style.display = "flex";
+    const el = document.getElementById("trash-list");
+    el.innerHTML = '<div style="text-align:center;color:var(--text2);padding:20px;">불러오는 중...</div>';
+    const allList = await fetchPersonsAll();
+    const deleted = [];
+    allList.forEach((d) => {
+      if (d.deleted) deleted.push({ ...d });
+    });
+    if (deleted.length === 0) {
+      el.innerHTML = '<div style="text-align:center;color:var(--text2);padding:20px;">휴지통이 비어있습니다</div>';
+      return;
+    }
+    el.innerHTML = deleted.map((p) => `
+    <div style="display:flex;align-items:center;gap:10px;padding:8px 12px;border:1px solid var(--border);border-radius:6px;">
+      <div style="flex:1;">
+        <div style="font-weight:700;">${esc(p.name)}</div>
+        <div style="font-size:11px;color:var(--text2);">${esc(p.disability || "")} ${p.birth || ""}</div>
+      </div>
+      <button class="btn btn-primary btn-sm" onclick="restorePerson('${p.id}','${esc(p.name)}')">복원</button>
+      <button class="btn btn-sm" style="background:#F44336;color:#fff;" onclick="permanentDelete('${p.id}','${esc(p.name)}')">완전삭제</button>
+    </div>`).join("");
+  };
+  window.restorePerson = async function(id, name) {
+    try {
+      await setDoc(doc(db, "persons", id), { deleted: false }, { merge: true });
+      setPersonsCacheAll(null);
+      toast(`"${name}" 복원 완료`);
+      openTrash();
+      loadPersons();
+      loadReportPersons();
+      loadPlanPersons();
+      loadConferencePersons();
+    } catch (e) {
+      toast("복원 실패: " + e.message);
+    }
+  };
+  window.permanentDelete = async function(id, name) {
+    if (!confirm(`"${name}"의 모든 데이터를 완전히 삭제합니다.
+
+• 인적사항
+• 모든 연도·직무의 점수/보고서/회의록/계획서
+
+이 작업은 되돌릴 수 없습니다!`)) return;
+    try {
+      const rosterSnap = await getDocs(collection(db, "roster"));
+      for (const rDoc of rosterSnap.docs) {
+        const ids = (rDoc.data().personIds || []).filter((pid) => pid !== id);
+        await setDoc(doc(db, "roster", rDoc.id), { personIds: ids }, { merge: true });
+        const mgrs = rDoc.data().managers || {};
+        if (Object.prototype.hasOwnProperty.call(mgrs, id)) {
+          await updateDoc(doc(db, "roster", rDoc.id), { [`managers.${id}`]: deleteField() });
+        }
+      }
+      const scoresSnap = await getDocs(collection(db, "scores"));
+      for (const sDoc of scoresSnap.docs) {
+        if (sDoc.id.startsWith(id + "_")) await deleteDoc(sDoc.ref);
+      }
+      await deleteDoc(doc(db, "persons", id));
+      setPersonsCacheAll(null);
+      toast(`"${name}" 완전 삭제 완료`);
+      openTrash();
+      loadPersons();
+    } catch (e) {
+      toast("삭제 실패: " + e.message);
+    }
+  };
+})();
+</script>
+</div><!-- app-container 끝 -->
+</body>
+</html>

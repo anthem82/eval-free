@@ -33,4 +33,6 @@ if (bad.length) throw new Error('dist 에 남으면 안 되는 것이 있습니�
 
 fs.mkdirSync(path.join(root, 'dist'), { recursive: true });
 fs.writeFileSync(path.join(root, 'dist', 'index.html'), html);
+// 내려받아 더블클릭하는 사람용 — 내용은 index.html 과 같고 이름만 알아보기 쉽게
+fs.writeFileSync(path.join(root, 'dist', '직업재활평가 및 계획서 작성기.html'), html);
 console.log('dist/index.html', (html.length / 1024).toFixed(0) + 'KB');
